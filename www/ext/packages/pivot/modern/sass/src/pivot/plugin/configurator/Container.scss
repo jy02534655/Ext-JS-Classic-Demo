@@ -1,0 +1,45 @@
+.#{$prefix}pivot-grid-config-container{
+  border: $pivot-grid-config-container-body-border-style $pivot-grid-config-container-body-border-color;
+  border-width: $pivot-grid-config-container-body-border-width;
+}
+
+
+.#{$prefix}pivot-grid-left-indicator {
+  @include font-icon($pivot-grid-left-indicator-icon);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.#{$prefix}pivot-grid-right-indicator {
+  @include font-icon($pivot-grid-right-indicator-icon);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.#{$prefix}pivot-drag-proxy-placeholder {
+  z-index: 1000000!important;
+  pointer-events: none;
+  position: absolute;
+  border: $pivot-grid-config-container-body-border-style $pivot-grid-config-container-body-border-color;
+  border-width: 1px;
+  padding: 5px;
+  //font-size: 16px;
+}
+
+.#{$prefix}pivot-drag-proxy-placeholder-valid {
+  .#{$prefix}pivot-drag-placeholder-icon {
+    @include font-icon($pivot-drag-proxy-placeholder-valid-icon);
+  }
+  color: green;
+}
+.#{$prefix}pivot-drag-proxy-placeholder-invalid {
+  .#{$prefix}pivot-drag-placeholder-icon {
+    @include font-icon($pivot-drag-proxy-placeholder-invalid-icon);
+  }
+  color: red;
+}
+
+.#{$prefix}drag-dragging {
+  pointer-events: auto;
+}

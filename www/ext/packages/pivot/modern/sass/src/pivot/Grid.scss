@@ -1,0 +1,45 @@
+.#{$prefix}pivot-grid-group-icon {
+    display: none;
+}
+
+.#{$prefix}pivot-grid-group-header-collapsible {
+    .#{$prefix}body-el,
+    .#{$prefix}text-el {
+        display: flex;
+    }
+
+    .#{$prefix}pivot-grid-group-icon {
+        display: flex;
+        margin: $pivot-grid-group-icon-margin;
+        height: $expandercell-icon-size;
+        width: $expandercell-icon-size;
+        color: $expandercell-icon-color;
+
+        @if $enable-big {
+            .#{$prefix}big & {
+                height: $expandercell-icon-size-big;
+                width: $expandercell-icon-size-big;
+            }
+        }
+
+        @include icon(
+            $icon: $expandercell-collapse-icon,
+            $font-size: $expandercell-icon-font-size,
+            $font-size-big: $expandercell-icon-font-size-big
+        );
+    }
+
+    cursor: $pivot-grid-group-header-cursor;
+}
+
+.#{$prefix}pivot-grid-group-title {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.#{$prefix}pivot-grid-group-header-collapsed {
+    .#{$prefix}pivot-grid-group-icon {
+        @include icon($expandercell-expand-icon);
+    }
+}

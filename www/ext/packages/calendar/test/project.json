@@ -1,0 +1,45 @@
+{
+    "framework": "custom",
+    "libs": [
+        {
+            "disabled": false,
+            "path": "/ext/test/lib/json2.js"
+        },
+        {
+            "disabled": false,
+            "path": "/ext/test/lib/jasmine.js"
+        },
+        {
+            "disabled": false,
+            "path": "/ext/test/lib/jazzman-orion.js"
+        },
+        {
+            "disabled": false,
+            "path": "/ext/packages/core/test/resources/helpers.js"
+        },
+        {
+            "disabled": false,
+            "path": "/ext/test/shared/init.js"
+        }
+    ],
+    "coverageFilters": [],
+    "scenarios": [
+        {
+            "libs": [],
+            "coverageFilters": [],
+            "directory": "unit",
+            "name": "Unit Tests - Classic",
+            "profile": "triton",
+            "page": "triton/index.html"
+        },
+        {
+            "libs": [],
+            "coverageFilters": [],
+            "profile": "modern-neptune",
+            "directory": "unit",
+            "name": "Unit Tests - Modern",
+            "page": "modern-neptune/index.html"
+        }
+    ],
+    "subjectUrl": "/.sencha/temp/calendar/"
+}

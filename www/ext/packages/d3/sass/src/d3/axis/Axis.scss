@@ -1,0 +1,45 @@
+/**
+ * @class Ext.d3.axis.Axis
+ */
+
+.#{$d3-prefix}axis {
+
+    .tick text {
+        fill: $d3-axis-label-fill;
+
+        font-size: $d3-axis-label-font-size;
+        font-weight: $d3-axis-label-font-weight;
+        font-family: $d3-axis-label-font-family;
+    }
+
+    path, line {
+        fill: none;
+        stroke: $d3-axis-line-stroke;
+        stroke-width: $d3-axis-line-stroke-width;
+        shape-rendering: crispEdges;
+    }
+
+    .#{$d3-prefix}axis-title {
+        fill: $d3-axis-title-fill;
+
+        font-size: $d3-axis-title-font-size;
+        font-weight: $d3-axis-title-font-weight;
+        font-family: $d3-axis-title-font-family;
+    }
+}
+
+.#{$prefix}rtl {
+    .#{$d3-prefix}axis[data-orient="left"] {
+        .tick text {
+            text-anchor: start !important;
+        }
+
+    }
+    .#{$d3-prefix}axis[data-orient="right"] {
+        .tick text {
+            text-anchor: end !important;
+        }
+
+    }
+}
+

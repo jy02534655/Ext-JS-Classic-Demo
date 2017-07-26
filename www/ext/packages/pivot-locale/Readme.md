@@ -1,0 +1,2 @@
+# pivot-locale - Read Me
+

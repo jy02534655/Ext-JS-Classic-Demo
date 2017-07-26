@@ -1,0 +1,100 @@
+{
+  "name": "calendar",
+  "namespace": "Ext",
+  "format": "1",
+  "version": "6.5.1.345",
+  "compatVersion": "6.1.0",
+  "creator": "Sencha",
+  "summary": "Sencha Calendar",
+  "detailedDescription": "Calendar components",
+  "type": "code",
+  "signatures": [
+    {
+      "name": "Sencha",
+      "uuid": "1d6b0d9c-3333-4e65-885f-5b07a1fc3198",
+      "created": "2017-07-18T23:22:05Z",
+      "algorithm": "SHA1withRSA",
+      "nonce": "T3KBwa/UfE8\u003d",
+      "signature": "bwTRoRJbGtCLokzGpmJCScrpKmcjsZccS9STW82bcRVgQhWWiTc3J5mKlYvZzGxDix59JMl308e6giuLtttX8o3sVAU0dHGW4mwbRHxUqus3m4oNQxwLjyHolLbfde6nc7gkWCzXDAYG/ZTm9uuFsA5nvGxBPq589bxkPsCuGxzU51mtfJmqwmWnWfKFAngRWE6MZKdQCV+gZGYmVLPXa7NoFMysIGiFxmzT+j6cdMMta2MHB5Zi3hyArFe5G2jb++QFCfbtsz5zDoDgbbTbeCVIjZ7ySshqgSux/BhyyNUBazXDhPy8PdDFS06li6L+sYQsqsF2DC2/mg/vAsx9ZA\u003d\u003d"
+    }
+  ],
+  "resources": [
+    {
+      "path": "resources"
+    },
+    {
+      "path": "${toolkit.name}/resources"
+    }
+  ],
+  "slicer": {},
+  "builds": {
+    "triton": {
+      "toolkit": "classic",
+      "theme": "theme-triton"
+    },
+    "neptune": {
+      "toolkit": "classic",
+      "theme": "theme-neptune"
+    },
+    "crisp": {
+      "toolkit": "classic",
+      "theme": "theme-crisp"
+    },
+    "classic": {
+      "toolkit": "classic",
+      "theme": "theme-classic"
+    },
+    "modern-triton": {
+      "toolkit": "modern",
+      "theme": "theme-triton"
+    },
+    "modern-neptune": {
+      "toolkit": "modern",
+      "theme": "theme-neptune"
+    },
+    "ios": {
+      "toolkit": "modern",
+      "theme": "theme-ios"
+    },
+    "material": {
+      "toolkit": "modern",
+      "theme": "theme-material"
+    }
+  },
+  "framework": "ext",
+  "output": {
+    "base": "${package.dir}/build/${toolkit.name}/${build.id}",
+    "js": "..",
+    "sass": ""
+  },
+  "sass": {
+    "namespace": "Ext",
+    "etc": [
+      "${package.dir}/sass/etc/all.scss",
+      "${package.dir}/${toolkit.name}/sass/etc/all.scss"
+    ],
+    "var": [
+      "${package.dir}/sass/var/all.scss",
+      "${package.dir}/sass/var",
+      "${package.dir}/${toolkit.name}/sass/var/all.scss",
+      "${package.dir}/${toolkit.name}/sass/var"
+    ],
+    "src": [
+      "${package.dir}/sass/src",
+      "${package.dir}/${toolkit.name}/sass/src"
+    ]
+  },
+  "classpath": [
+    "${package.dir}/src",
+    "${package.dir}/${toolkit.name}/src"
+  ],
+  "overrides": [
+    "${package.dir}/overrides",
+    "${package.dir}/${toolkit.name}/overrides"
+  ],
+  "development": {
+    "tests": {
+      "path": "test/project.json"
+    }
+  }
+}

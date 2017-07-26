@@ -1,0 +1,168 @@
+.#{$prefix}column-header-last {
+    border-right: $grid-header-trigger-border;
+}
+.#{$prefix}rtl.#{$prefix}column-header-last {
+    border-left: $grid-header-trigger-border;
+}
+
+
+
+@if $ext-pivot-trial {
+    @font-face {
+        font-family: 'ext-watermark';
+        src:url('#{$pivot-font-path}/ext-watermark.eot?n6lnws');
+        src:url('#{$pivot-font-path}/ext-watermark.eot?#iefixn6lnws') format('embedded-opentype'),
+        url('#{$pivot-font-path}/ext-watermark.woff?n6lnws') format('woff'),
+        url('#{$pivot-font-path}/ext-watermark.ttf?n6lnws') format('truetype'),
+        url('#{$pivot-font-path}/ext-watermark.svg?n6lnws#ext-watermark') format('svg');
+        font-weight: normal;
+        font-style: normal;
+    }
+    .#{$prefix}pivot-grid{
+        .#{$prefix}title-text {
+            &:after {
+                font-family: ext-watermark;
+                font-size: ($panel-header-line-height + vertical($panel-header-padding)) * 0.75;
+                content: 'd';
+                position: absolute;
+                top: 0;
+                right: 0;
+                // since IE8 does not support opacity on pseudo elements we simulate it by
+                // mixing the text color with the background color
+                color: mix($panel-header-color, $panel-header-background-color, 40%);
+            }
+
+            @if $include-rtl {
+                &.#{$prefix}rtl:after {
+                    right: auto;
+                    left: 0;
+                }
+            }
+        }
+    }
+}
+
+// Common classes
+
+.#{$prefix}pivot-grid{
+    .#{$prefix}column-header-align-right{
+        .#{$prefix}column-header-text{
+            margin: 0;
+        }
+    }
+}
+
+.#{$prefix}pivot-grid-group-header {
+    border-width: $pivot-grid-group-header-border-width;
+    border-style: $pivot-grid-group-header-border-style;
+    border-color: $pivot-grid-group-header-border-color;
+    white-space: nowrap;
+}
+
+.#{$prefix}pivot-grid-group-header-collapsible {
+    cursor: $pivot-grid-group-header-cursor;
+}
+
+.#{$prefix}pivot-grid-group-header-collapsible {
+    .#{$prefix}pivot-grid-group {
+        background-color: transparent;
+        background-repeat: no-repeat;
+        background-position: left center;
+        background-image: theme-background-image('group-collapse');
+        padding: $pivot-grid-group-icon-padding;
+    }
+}
+
+.#{$prefix}rtl.#{$prefix}grid-view .#{$prefix}pivot-grid-group-header-collapsible .#{$prefix}pivot-grid-group {
+    background-position: right center;
+    padding: rtl($pivot-grid-group-icon-padding);
+}
+
+.#{$prefix}pivot-grid-group-title {
+    color: $pivot-grid-group-title-color;
+    font: $pivot-grid-group-title-font;
+}
+
+.#{$prefix}pivot-grid-group-header-collapsed {
+    .#{$prefix}pivot-grid-group {
+        background-image: theme-background-image('group-expand');
+    }
+}
+
+.#{$prefix}pivot-grid-group-total {
+
+    .#{$prefix}grid-cell-inner,
+    .#{$prefix}column-header-inner {
+        font: $pivot-grid-group-total-font;
+        color: $pivot-grid-group-total-color;
+    }
+
+    .#{$prefix}grid-cell {
+        font: $pivot-grid-group-title-font;
+        border-color: $grid-row-cell-border-color;
+        border-style: $grid-row-cell-border-style;
+    }
+
+    .#{$prefix}pivot-group-header {
+        // if we use background-color here it will override the cell selected background-color
+        //background-color: $pivot-grid-group-total-background-color;
+    }
+}
+
+.#{$prefix}pivot-grid-grand-total {
+
+    .#{$prefix}grid-cell-inner,
+    .#{$prefix}column-header-inner {
+        font: $pivot-grid-grand-total-font;
+        color: $pivot-grid-grand-total-color;
+    }
+
+    .#{$prefix}grid-cell {
+        font: $pivot-grid-group-title-font;
+    }
+
+    .#{$prefix}pivot-grid-group-header {
+        // if we use background-color here it will override the cell selected background-color
+        //background-color: $pivot-grid-grand-total-background-color;
+    }
+}
+
+// Outline view classes
+
+.#{$prefix}grid-with-row-lines {
+    .#{$prefix}pivot-grid-outline-cell-hidden{
+        border-bottom-width: 0px;
+    }
+}
+.#{$prefix}grid-with-col-lines {
+    .#{$prefix}pivot-grid-outline-cell-hidden{
+        border-right-width: 0px;
+    }
+}
+.#{$prefix}pivot-grid-outline-cell-previous-expanded{
+    // this is not really necessary
+    //border-top-width: 1px;
+}
+
+.#{$prefix}pivot-grid-group-header-compact {
+    border: none;
+    background: $pivot-grid-group-header-background-color;
+    border-width: 0 !important;
+
+    .#{$prefix}grid-cell-inner {
+        //background-color: $pivot-grid-group-header-compact-background-color;
+
+        border-width: $pivot-grid-group-header-compact-border-width;
+        border-style: $pivot-grid-group-header-compact-border-style;
+        border-color: $pivot-grid-group-header-compact-border-color;
+    }
+}
+
+
+.#{$prefix}pivot-grid-group-header-outline {
+    background: $pivot-grid-group-header-background-color;
+}
+
+.#{$prefix}pivot-grid-group-header-tabular {
+    background: $pivot-grid-group-header-background-color;
+}

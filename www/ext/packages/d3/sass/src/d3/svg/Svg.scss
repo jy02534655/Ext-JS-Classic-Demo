@@ -1,0 +1,15 @@
+.#{$prefix}d3 {
+    svg {
+        @include user-select(none);
+        -ms-user-select: none;
+        display: block;
+    }
+}
+
+.#{$prefix}d3-invisible {
+    visibility: hidden;
+}
+
+.#{$prefix}d3-hidden {
+    display: none;
+}

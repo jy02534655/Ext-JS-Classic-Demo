@@ -1,0 +1,66 @@
+/**
+ * @class Ext.calendar.Event
+ */
+
+.#{$prefix}calendar-event {
+    position: absolute;
+    overflow: hidden;
+
+    &.#{$prefix}calendar-event-static {
+        position: static;
+    }
+}
+
+.#{$prefix}calendar-event-inner {
+    @include no-select;
+    height: 100%;
+    width: 100%;
+
+    // The no-select mixin emits cursor: default
+    cursor: pointer;
+}
+
+.#{$prefix}calendar-event-inline-title {
+    .#{$prefix}calendar-event-time {
+        display: inline;
+    }
+
+    .#{$prefix}calendar-event-time-separator, .#{$prefix}calendar-event-time-end {
+        display: none;
+    }
+
+
+    .#{$prefix}calendar-event-inner {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+}
+
+.#{$prefix}calendar-compact {
+    .#{$prefix}calendar-event-time {
+        display: none;
+    }
+
+    .#{$prefix}calendar-event-inner {
+        overflow: hidden;
+    }
+}
+
+.#{$prefix}calendar-event-resizer {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    cursor: s-resize;
+    display: none;
+
+    .#{$prefix}calendar-event-resizable:hover &, .#{$prefix}calendar-event-resizing & {
+        display: block;
+    }
+}
+
+
+@include calendar-event-default-ui;
+@include calendar-event-week-span-ui;
+@include calendar-event-week-inline-ui;
+@include calendar-event-day-ui;

@@ -1,0 +1,35 @@
+/**
+ * @class Ext.d3.hierarchy.TreeMap
+ */
+
+.#{$d3-prefix}treemap {
+
+    .#{$d3-prefix}node {
+
+        .#{$d3-prefix}label {
+            text-anchor: middle;
+            // IE and Edge don't support this CSS property.
+            dominant-baseline: central;
+        }
+
+        &.#{$d3-prefix}parent {
+            .#{$d3-prefix}label {
+                text-anchor: start;
+                dominant-baseline: text-before-edge;
+            }
+        }
+
+    }
+
+}
+
+.#{$prefix}rtl {
+    .#{$d3-prefix}treemap {
+
+        .#{$d3-prefix}parent {
+            .#{$d3-prefix}label {
+                text-anchor: end;
+            }
+        }
+    }
+}
