@@ -1,5 +1,2 @@
-# app/resources
-
-This folder contains resources (such as images) needed by the application. 
-
-This file can be removed.
+# app/resources 目录
+用于放置资源文件，比如图片，外部js等

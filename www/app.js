@@ -1,18 +1,15 @@
 /*
- * This file launches the application by asking Ext JS to create
- * and launch() the Application class.
+ *项目入口文件，继承于app.Application
  */
 Ext.application({
     extend: 'app.Application',
-
+    //应用默认包名
     name: 'app',
-
-    requires: [
-        // This will automatically load all classes in the app namespace
-        // so that application classes do not need to require each other.
-        'app.*'
-    ],
-
-    // The name of the initial view to create.
-    mainView: 'app.view.main.Main'
+    //引入数据源
+    stores: ['NavigationTree'],
+    //自动引入app目录下所以的类，不需要在其他地方再次引入
+    requires: ['app.*'],
+    defaultToken: 'home',
+    // 默认起始页面
+    mainView: 'app.view.main.Box'
 });
