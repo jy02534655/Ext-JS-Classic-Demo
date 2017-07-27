@@ -9,9 +9,12 @@ Ext.define('app.store.Views', {
         type: 'string'
     },
     {
-        //是否window弹窗
-        name: 'isWindow',
+        //一个标识，标识切换视图时不需要选中左侧菜单栏
+        name: 'isOther',
         type: 'boolean',
         defaultValue: true
+    }],
+    data: [{
+        viewType: 'faq'
     }]
 });

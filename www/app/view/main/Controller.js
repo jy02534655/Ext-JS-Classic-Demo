@@ -108,8 +108,8 @@ Ext.define('app.view.main.Controller', {
             }
         }
 
-        //如果不是Window视图，则选中对应的节点
-        if (node && !node.get('isWindow')) {
+        //如果不是白名单中的视图，则选中对应的节点
+        if (node && !node.get('isOther')) {
             navigationList.setSelection(node);
         }
         //获取焦点

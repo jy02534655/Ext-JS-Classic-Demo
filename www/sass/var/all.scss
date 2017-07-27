@@ -1,20 +1,16 @@
-/*
- * This file defines variables used throughout the application for modern and
- * classic builds.
- */
-//默认基础配置
+//榛樿鍩虹閰嶇疆
 $base-color: dynamic(#35baf6);
 $base-border-color: dynamic(#ddd);
 $font-weight: dynamic(400);
 $font-weight-bold: dynamic(500);
-//导航菜单样式配置
+//瀵艰埅鑿滃崟鏍峰紡閰嶇疆
 $panel-navigation-background-color: dynamic(#32404e);
 $panel-navigation-item-line-height: dynamic(64px);
 $panel-navigation-item-text-color: dynamic(#ADB3B8);
 
 $progress-bar-background-color: dynamic(#458fd2);
 
-//颜色 主要用与按钮
+//棰滆壊 涓昏鐢ㄤ笌鎸夐挳
 $color-blue: dynamic(#167abc);
 $color-soft-cyan: dynamic(#03b4d5);
 $color-soft-blue: dynamic(#2eadf5);

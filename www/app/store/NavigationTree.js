@@ -2,28 +2,23 @@
 //导航菜单
 Ext.define('app.store.NavigationTree', {
     extend: 'Ext.data.TreeStore',
-
+    //全局id可以通过Ext.getStore('navigationTree')找到这个对象
     storeId: 'navigationTree',
-
     fields: [{
         name: 'text'
     }],
-
+    //导航菜单
     root: {
         expanded: true,
         children: [
             {
+                //标题
                 text: '首页',
+                //图标
                 iconCls: 'x-fa fa-desktop',
-                rowCls: 'nav-tree-badge nav-tree-badge-new',
+                //指向视图
                 viewType: 'home',
-                routeId: 'home',
-                leaf: true
-            },
-            {
-                text: '帮助页',
-                iconCls: 'x-fa fa-question',
-                viewType: 'faq',
+                //是否有子节点
                 leaf: true
             },
             {
