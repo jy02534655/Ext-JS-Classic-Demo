@@ -1,4 +1,6 @@
 # Ext-JS-Classic-Demo
-基于Ext Js 6.5.1 Classic 面向pc端示例，低于此版本可能存在兼容问题，慎用
+鍩轰簬Ext Js 6.5.1 Classic 闈㈠悜pc绔ず渚嬶紝浣庝簬姝ょ増鏈彲鑳藉瓨鍦ㄥ吋瀹归棶棰橈紝鎱庣敤
 
-先立一个flag，工作日1-2日一更，周末一日一更，完结为止
+鍏堢珛涓�涓猣lag锛屽伐浣滄棩1-2鏃ヤ竴鏇达紝鍛ㄦ湯涓�鏃ヤ竴鏇达紝瀹岀粨涓烘
+
+鎴戠殑鍗氬锛歨ttp://www.cnblogs.com/mlzs/
