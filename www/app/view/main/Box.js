@@ -5,7 +5,6 @@ Ext.define('app.view.main.Box', {
     requires: ['Ext.button.Segmented', 'Ext.list.Tree'],
     controller: 'main',
     viewModel: 'main',
-    cls: 'sencha-dash-viewport',
     itemId: 'mainView',
     layout: {
         type: 'vbox',
@@ -14,6 +13,7 @@ Ext.define('app.view.main.Box', {
     },
 
     listeners: {
+        //监听页面初始化事件
         render: 'onMainViewRender'
     },
 
@@ -42,23 +42,27 @@ Ext.define('app.view.main.Box', {
             handler: 'onToggleNavigationSize'
         },
         '->', {
-            iconCls: 'x-fa fa-search',
+            //版主按钮
+            iconCls: 'x-fa fa-question',
             ui: 'header',
-            href: '#searchresults',
+            //触发路由
+            href: '#view.faq',
+            //本页打开
             hrefTarget: '_self',
-            tooltip: 'See latest search'
+            tooltip: '帮助'
         },
         {
+            //相当于一个label
             xtype: 'tbtext',
-            text: 'Goff Smith',
-            cls: 'top-user-name'
+            text: '戈夫·史密斯'
         },
         {
+            //图片
             xtype: 'image',
             cls: 'header-right-profile-image',
             height: 35,
             width: 35,
-            alt: 'current user image',
+            alt: '当前用户图像',
             src: 'resources/images/user-profile/2.png'
         }]
     },
@@ -102,6 +106,7 @@ Ext.define('app.view.main.Box', {
                 //只有一个节点能展开
                 singleExpand: true,
                 listeners: {
+                    //监听导航菜单选中改变事件
                     selectionchange: 'onNavigationTreeSelectionChange'
                 }
             }]
@@ -112,13 +117,16 @@ Ext.define('app.view.main.Box', {
             height: '100%',
             flex: 1,
             reference: 'mainCardPanel',
-            cls: 'sencha-dash-right-main-container',
             itemId: 'contentPanel',
             layout: {
                 //跑马灯布局
                 type: 'card',
                 //暂时不知道用处
                 anchor: '100%'
+            },
+            //子item默认配置
+            defaults: {
+                padding: 20
             }
         }]
     }]

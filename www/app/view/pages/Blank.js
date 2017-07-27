@@ -6,6 +6,5 @@ Ext.define('app.view.pages.Blank', {
     requires: [
         'Ext.container.Container'
     ],
-    padding:10,
     html: '空白页'
 });

@@ -3,6 +3,8 @@
  */
 Ext.define('app.Application', {
     extend: 'Ext.app.Application',
+    //应用命名空间
+    name: 'app',
     quickTips: false,
     platformConfig: {
         desktop: {
