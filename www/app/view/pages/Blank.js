@@ -4,7 +4,7 @@ Ext.define('app.view.pages.Blank', {
     extend: 'Ext.container.Container',
     xtype: 'pageblank',
     //引入需要的类
-    requires: ['Ext.container.Container', 'Ext.form.Label'],
+    requires: ['Ext.container.Container'],
     anchor: '100% -1',
     //竖向布局，内容居中显示
     layout: {

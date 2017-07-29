@@ -13,7 +13,7 @@ Ext.define('app.view.pages.Base', {
     closable: false,
     //最大化显示
     maximized: true,
-    //模态窗口
+    //模态窗口，在最上层
     modal: true,
     //标题
     title: '提示',
