@@ -1,0 +1,17 @@
+/**
+ * @class Ext.d3.hierarchy.Pack
+ */
+
+.#{$d3-prefix}pack {
+
+    .#{$d3-prefix}node {
+
+        .#{$d3-prefix}label {
+            text-anchor: middle;
+            alignment-baseline: middle;
+            dominant-baseline: middle; // for Firefox
+        }
+
+    }
+
+}

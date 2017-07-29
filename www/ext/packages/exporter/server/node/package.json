@@ -1,0 +1,10 @@
+{
+    "name"          :   "exporter.sencha.com",
+    "description"   :   "exporter.sencha.com service",
+    "version"       :   "0.0.1",
+    "author"        :   "Adrian Teodorescu <adrian@sencha.com>",
+    "private"       :   true,
+    "scripts"       :   {
+        "start" :   "node main.js"
+    }
+}         

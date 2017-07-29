@@ -1,0 +1,102 @@
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/modern/theme-neptune/sass/var/Button.scss:1547 */
+.x-button-alt.x-button-decline {
+    color: #fff;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/modern/theme-neptune/sass/var/Button.scss:1550 */
+.x-button-alt.x-button-decline .x-inner-el {
+    background-color: #c62828;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/modern/theme-neptune/sass/var/Button.scss:1554 */
+.x-button-alt.x-button-decline .x-icon-el {
+    color: #fff;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/modern/theme-neptune/sass/var/Button.scss:1558 */
+.x-button-alt.x-button-decline.x-hovered {
+    color: #fff;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/modern/theme-neptune/sass/var/Button.scss:1561 */
+.x-button-alt.x-button-decline.x-hovered .x-inner-el {
+    background-color: #c62828;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/modern/theme-neptune/sass/var/Button.scss:1565 */
+.x-button-alt.x-button-decline.x-hovered .x-icon-el {
+    color: #fff;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/modern/theme-neptune/sass/var/Button.scss:1570 */
+.x-button-alt.x-button-decline.x-pressing,
+.x-button-alt.x-button-decline.x-pressed {
+    color: #fff;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/modern/theme-neptune/sass/var/Button.scss:1573 */
+.x-button-alt.x-button-decline.x-pressing .x-inner-el,
+.x-button-alt.x-button-decline.x-pressed .x-inner-el {
+    background-color: #c62828;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/modern/theme-neptune/sass/var/Button.scss:1577 */
+.x-button-alt.x-button-decline.x-pressing .x-icon-el,
+.x-button-alt.x-button-decline.x-pressed .x-icon-el {
+    color: #fff;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/modern/theme-neptune/sass/var/Button.scss:1583 */
+.x-keyboard-mode .x-button-alt.x-button-decline.x-focused {
+    color: #fff;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/modern/theme-neptune/sass/var/Button.scss:1586 */
+.x-keyboard-mode .x-button-alt.x-button-decline.x-focused .x-inner-el {
+    background-color: #c62828;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/modern/theme-neptune/sass/var/Button.scss:1590 */
+.x-keyboard-mode .x-button-alt.x-button-decline.x-focused .x-icon-el {
+    color: #fff;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/modern/theme-neptune/sass/var/Button.scss:1547 */
+.x-button-alt.x-button-confirm {
+    color: #fff;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/modern/theme-neptune/sass/var/Button.scss:1550 */
+.x-button-alt.x-button-confirm .x-inner-el {
+    background-color: #7cb342;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/modern/theme-neptune/sass/var/Button.scss:1554 */
+.x-button-alt.x-button-confirm .x-icon-el {
+    color: #fff;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/modern/theme-neptune/sass/var/Button.scss:1558 */
+.x-button-alt.x-button-confirm.x-hovered {
+    color: #fff;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/modern/theme-neptune/sass/var/Button.scss:1561 */
+.x-button-alt.x-button-confirm.x-hovered .x-inner-el {
+    background-color: #7cb342;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/modern/theme-neptune/sass/var/Button.scss:1565 */
+.x-button-alt.x-button-confirm.x-hovered .x-icon-el {
+    color: #fff;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/modern/theme-neptune/sass/var/Button.scss:1570 */
+.x-button-alt.x-button-confirm.x-pressing,
+.x-button-alt.x-button-confirm.x-pressed {
+    color: #fff;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/modern/theme-neptune/sass/var/Button.scss:1573 */
+.x-button-alt.x-button-confirm.x-pressing .x-inner-el,
+.x-button-alt.x-button-confirm.x-pressed .x-inner-el {
+    background-color: #7cb342;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/modern/theme-neptune/sass/var/Button.scss:1577 */
+.x-button-alt.x-button-confirm.x-pressing .x-icon-el,
+.x-button-alt.x-button-confirm.x-pressed .x-icon-el {
+    color: #fff;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/modern/theme-neptune/sass/var/Button.scss:1583 */
+.x-keyboard-mode .x-button-alt.x-button-confirm.x-focused {
+    color: #fff;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/modern/theme-neptune/sass/var/Button.scss:1586 */
+.x-keyboard-mode .x-button-alt.x-button-confirm.x-focused .x-inner-el {
+    background-color: #7cb342;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/modern/theme-neptune/sass/var/Button.scss:1590 */
+.x-keyboard-mode .x-button-alt.x-button-confirm.x-focused .x-icon-el {
+    color: #fff;
+}

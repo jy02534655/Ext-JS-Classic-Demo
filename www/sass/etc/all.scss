@@ -1,0 +1,61 @@
+/*#region 自定义mixin*/
+@mixin btn-border($background-color) {
+    background-color: $background-color;
+    border-color: $background-color !important;
+
+    .x-btn-inner-default-toolbar-small {
+        color: $lightest-color;
+    }
+
+    &:hover {
+        background-color: transparent;
+
+        .x-btn-inner-default-toolbar-small,
+        .x-btn-inner-default-small {
+            color: $background-color;
+        }
+
+        .x-btn-icon-el-default-small,
+        .x-btn-icon-el-default-toolbar-small {
+            color: $background-color;
+        }
+    }
+}
+
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
+}
+
+@mixin box-shadow($value) {
+    -webkit-box-shadow: $value;
+    -moz-box-shadow: $value;
+    -ms-box-shadow: $value;
+    box-shadow: $value;
+}
+/*#endregion*/
+/*#region 默认样式*/
+// 兼容ico配置
+body.x-ios.x-webview.x-portrait {
+    margin-top: 20px;
+}
+
+.x-menu-header {
+    z-index: 0 !important;
+}
+
+.x-css-shadow {
+    box-shadow: none !important;
+}
+
+.shadow {
+    @include box-shadow(0 1px 2px 0 rgba(0,0,0,0.2));
+}
+
+.x-fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 $font-family;
+}
+/*#endregion*/

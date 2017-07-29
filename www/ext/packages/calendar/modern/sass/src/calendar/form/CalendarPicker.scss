@@ -1,0 +1,22 @@
+/**
+ * @class Ext.calendar.form.CalendarPicker
+ */
+
+.#{$prefix}calendar-picker-list-icon, .#{$prefix}calendar-picker-field-icon {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+}
+
+.#{$prefix}calendar-picker-list .#{$prefix}picker-item {
+    position: relative;
+    width: 100%;
+}
+
+@include ext-calendar-calendarpicker(
+    $icon-width: $calendarpicker-icon-width,
+    $icon-height: $calendarpicker-icon-height,
+    $icon-spacer: $calendarpicker-icon-spacer,
+    $slot-icon-margin: $calendarpicker-slot-icon-margin
+);

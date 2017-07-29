@@ -1,0 +1,29 @@
+/**
+ * @class Ext.d3.HeatMap
+ */
+
+.#{$d3-prefix}heatmap {
+
+    font: $font-weight $font-size $font-family;
+
+    .#{$d3-prefix}tile {
+        &:hover {
+            rect {
+                fill: rgb(95, 162, 221) !important;
+            }
+        }
+        rect {
+            shape-rendering: crispEdges;
+        }
+        text {
+            fill: $d3-heatmap-label-fill;
+            font-size: $d3-heatmap-label-font-size;
+            font-weight: $d3-heatmap-label-font-weight;
+            font-family: $d3-heatmap-label-font-family;
+            stroke: none;
+            text-anchor: middle;
+            dominant-baseline: central;
+        }
+    }
+
+}

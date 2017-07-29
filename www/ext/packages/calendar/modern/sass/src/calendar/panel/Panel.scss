@@ -1,0 +1,20 @@
+/**
+ * @class Ext.calendar.panel.Panel
+ */
+
+@include calendar-panel-ui(
+    $sidebar-padding: $calendar-panel-sidebar-padding,
+    $sidebar-max-width: $calendar-panel-sidebar-max-width,
+    $sheet-padding: $calendar-panel-sheet-padding,
+    $sheet-max-width: $calendar-panel-sheet-max-width,
+    $create-button-horizontal-padding: $calendar-panel-create-button-horizontal-padding
+);
+
+.#{$prefix}compact {
+    .#{$prefix}calendar-panel-title {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        @include transform(translateX(-50%) translateY(-50%));
+    }
+}

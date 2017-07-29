@@ -1,0 +1,39 @@
+/**
+ * @class Ext.d3.hierarchy.Tree
+ */
+
+.#{$d3-prefix}tree {
+
+    .#{$d3-prefix}node {
+
+        stroke-width: $d3-node-stroke-width * 2;
+
+    }
+
+    .#{$d3-prefix}label {
+        // IE and Edge don't support this CSS property.
+        dominant-baseline: middle;
+        text-anchor: start;
+    }
+
+    .#{$d3-prefix}parent {
+        .#{$d3-prefix}label {
+            text-anchor: end;
+        }
+    }
+}
+
+.#{$prefix}rtl {
+    .#{$d3-prefix}tree {
+
+        .#{$d3-prefix}label {
+            text-anchor: end;
+        }
+        .#{$d3-prefix}parent {
+            .#{$d3-prefix}label {
+                text-anchor: start;
+            }
+        }
+
+    }
+}

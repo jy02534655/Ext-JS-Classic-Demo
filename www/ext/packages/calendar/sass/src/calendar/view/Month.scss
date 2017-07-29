@@ -1,0 +1,29 @@
+/**
+ * @class Ext.calendar.view.Month
+ */
+
+.#{$prefix}calendar-month-4weeks {
+    .#{$prefix}calendar-weeks-row {
+        height: 25%;
+
+        &[data-week="4"], &[data-week="5"] {
+            display: none;
+        }
+    }
+}
+
+.#{$prefix}calendar-month-5weeks {
+    .#{$prefix}calendar-weeks-row {
+        height: 20%;
+
+       &[data-week="5"] {
+            display: none;
+        }
+    }
+}
+
+.#{$prefix}calendar-month-6weeks {
+    .#{$prefix}calendar-weeks-row {
+        height: 16.66%;
+    }
+}

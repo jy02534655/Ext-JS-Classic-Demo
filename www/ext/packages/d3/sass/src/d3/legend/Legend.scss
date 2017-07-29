@@ -1,0 +1,10 @@
+/**
+ * @class Ext.d3.legend.Legend
+ */
+
+.#{$d3-prefix}legend-item text {
+    fill: $d3-legend-label-fill;
+    font-size: $d3-legend-label-font-size;
+    font-weight: $d3-legend-label-font-weight;
+    font-family: $d3-legend-label-font-weight;
+}

@@ -1,0 +1,828 @@
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/modern/theme-triton/sass/etc/all.scss:4 */
+@font-face {
+    font-family: 'Open Sans';
+    src: url('fonts/OpenSans-Light.ttf');
+    font-weight: 300;
+    font-style: normal;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/modern/theme-triton/sass/etc/all.scss:11 */
+@font-face {
+    font-family: 'Open Sans';
+    src: url('fonts/OpenSans-LightItalic.ttf');
+    font-weight: 300;
+    font-style: italic;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/modern/theme-triton/sass/etc/all.scss:18 */
+@font-face {
+    font-family: 'Open Sans';
+    src: url('fonts/OpenSans-Regular.ttf');
+    font-weight: 400;
+    font-style: normal;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/modern/theme-triton/sass/etc/all.scss:25 */
+@font-face {
+    font-family: 'Open Sans';
+    src: url('fonts/OpenSans-Italic.ttf');
+    font-weight: 400;
+    font-style: italic;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/modern/theme-triton/sass/etc/all.scss:32 */
+@font-face {
+    font-family: 'Open Sans';
+    src: url('fonts/OpenSans-Semibold.ttf');
+    font-weight: 600;
+    font-style: normal;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/modern/theme-triton/sass/etc/all.scss:39 */
+@font-face {
+    font-family: 'Open Sans';
+    src: url('fonts/OpenSans-SemiboldItalic.ttf');
+    font-weight: 600;
+    font-style: italic;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/modern/theme-triton/sass/etc/all.scss:46 */
+@font-face {
+    font-family: 'Open Sans';
+    src: url('fonts/OpenSans-Bold.ttf');
+    font-weight: 700;
+    font-style: normal;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/modern/theme-triton/sass/etc/all.scss:53 */
+@font-face {
+    font-family: 'Open Sans';
+    src: url('fonts/OpenSans-BoldItalic.ttf');
+    font-weight: 700;
+    font-style: italic;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/modern/theme-triton/sass/etc/all.scss:60 */
+@font-face {
+    font-family: 'Open Sans';
+    src: url('fonts/OpenSans-ExtraBold.ttf');
+    font-weight: 800;
+    font-style: normal;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/modern/theme-triton/sass/etc/all.scss:67 */
+@font-face {
+    font-family: 'Open Sans';
+    src: url('fonts/OpenSans-ExtraBoldItalic.ttf');
+    font-weight: 800;
+    font-style: italic;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/calendar/sass/src/calendar/Event.scss:5 */
+.x-calendar-event {
+    /**
+ * @class Ext.calendar.Event
+ */
+    position: absolute;
+    overflow: hidden;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/calendar/sass/src/calendar/Event.scss:9 */
+.x-calendar-event.x-calendar-event-static {
+    position: static;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/calendar/sass/src/calendar/Event.scss:14 */
+.x-calendar-event-inner {
+    user-select: none;
+    -o-user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: -moz-none;
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-user-drag: none;
+    cursor: default;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/calendar/sass/src/calendar/Event.scss:24 */
+.x-calendar-event-inline-title .x-calendar-event-time {
+    display: inline;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/calendar/sass/src/calendar/Event.scss:28 */
+.x-calendar-event-inline-title .x-calendar-event-time-separator,
+.x-calendar-event-inline-title .x-calendar-event-time-end {
+    display: none;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/calendar/sass/src/calendar/Event.scss:33 */
+.x-calendar-event-inline-title .x-calendar-event-inner {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/calendar/sass/src/calendar/Event.scss:41 */
+.x-calendar-compact .x-calendar-event-time {
+    display: none;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/calendar/sass/src/calendar/Event.scss:45 */
+.x-calendar-compact .x-calendar-event-inner {
+    overflow: hidden;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/calendar/sass/src/calendar/Event.scss:50 */
+.x-calendar-event-resizer {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    cursor: s-resize;
+    display: none;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/calendar/sass/src/calendar/Event.scss:57 */
+.x-calendar-event-resizable:hover .x-calendar-event-resizer,
+.x-calendar-event-resizing .x-calendar-event-resizer {
+    display: block;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/core/sass/var/calendar/Event.scss:131 */
+.x-calendar-event .x-calendar-event-inner {
+    font-family: 'Open Sans', 'Helvetica Neue', helvetica, arial, sans-serif;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/core/sass/var/calendar/Event.scss:137 */
+.x-calendar-event .x-calendar-event-time {
+    padding: 0 4px 0 0;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/core/sass/var/calendar/Event.scss:141 */
+.x-calendar-event .x-calendar-event-resizer:after {
+    font-size: 16px;
+    font-family: monospace;
+    content: "=";
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/core/sass/var/calendar/Event.scss:148 */
+.x-calendar-event.x-calendar-event-dragging {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+    opacity: 0.8;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/core/sass/var/calendar/Event.scss:154 */
+.x-calendar-event.x-calendar-event-resizing {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+    opacity: 0.8;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/core/sass/var/calendar/Event.scss:175 */
+.x-calendar-event-week-span .x-calendar-event-time {
+    display: none;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/core/sass/var/calendar/Event.scss:125 */
+.x-calendar-event-week-span {
+    margin: 3px;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/core/sass/var/calendar/Event.scss:131 */
+.x-calendar-event-week-span .x-calendar-event-inner {
+    padding: 1px 1px 1px 3px;
+    font-size: 13px;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/core/sass/var/calendar/Event.scss:190 */
+.x-calendar-event-week-inline .x-calendar-event-time-separator,
+.x-calendar-event-week-inline .x-calendar-event-time-end {
+    display: none;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/core/sass/var/calendar/Event.scss:125 */
+.x-calendar-event-week-inline {
+    margin: 3px;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/core/sass/var/calendar/Event.scss:131 */
+.x-calendar-event-week-inline .x-calendar-event-inner {
+    padding: 0 0 0 3px;
+    font-size: 13px;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/core/sass/var/calendar/Event.scss:125 */
+.x-calendar-event-day {
+    margin: 1px 0;
+    border-width: 1px;
+    border-style: solid;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/core/sass/var/calendar/Event.scss:131 */
+.x-calendar-event-day .x-calendar-event-inner {
+    padding: 2px 4px;
+    font-size: 11px;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/calendar/sass/src/calendar/List.scss:1 */
+.x-calendar-list-item {
+    position: relative;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/calendar/sass/src/calendar/List.scss:5 */
+.x-calendar-list-icon {
+    position: absolute;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/calendar/sass/src/calendar/List.scss:9 */
+.x-calendar-list-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/calendar/sass/src/calendar/header/Base.scss:5 */
+.x-calendar-header-table {
+    /**
+ * @class Ext.calendar.header.Base
+ */
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/calendar/sass/src/calendar/header/Base.scss:11 */
+.x-calendar-base .x-calendar-header-table {
+    width: 100%;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/calendar/sass/src/calendar/header/Base.scss:16 */
+.x-calendar-header-cell {
+    user-select: none;
+    -o-user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: -moz-none;
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-user-drag: none;
+    cursor: default;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/calendar/sass/src/calendar/header/Base.scss:20 */
+.x-calendar-header-hidden-cell {
+    display: none;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/core/sass/var/calendar/header/Base.scss:161 */
+.x-calendar-header {
+    background-color: #fff;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/core/sass/var/calendar/header/Base.scss:164 */
+.x-calendar-header .x-calendar-header-cell {
+    font-weight: normal;
+    line-height: 1.25;
+    font-family: 'Open Sans', 'Helvetica Neue', helvetica, arial, sans-serif;
+    border: 1px solid #ddd;
+    border-bottom-width: 0;
+    text-align: center;
+    color: #404040;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/core/sass/var/calendar/header/Base.scss:173 */
+.x-calendar-header .x-calendar-header-gutter {
+    background-color: #f7f9fd;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/core/sass/var/calendar/header/Base.scss:164 */
+.x-calendar-header-large .x-calendar-header-cell {
+    font-size: 13px;
+    line-height: 1.25;
+    border-bottom-width: 0;
+    padding: 8px 2px;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/core/sass/var/calendar/header/Base.scss:173 */
+.x-calendar-header-large .x-calendar-header-gutter {
+    width: 48px;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/core/sass/var/calendar/header/Base.scss:164 */
+.x-calendar-header-compact .x-calendar-header-cell {
+    font-size: 13px;
+    line-height: 1.25;
+    border-bottom-width: 0;
+    padding: 3px 2px;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/core/sass/var/calendar/header/Base.scss:173 */
+.x-calendar-header-compact .x-calendar-header-gutter {
+    width: 24px;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/calendar/sass/src/calendar/view/Base.scss:1 */
+.x-calendar-table {
+    table-layout: fixed;
+    border-collapse: collapse;
+    width: 100%;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/calendar/sass/src/calendar/view/Days.scss:5 */
+.x-calendar-days-table-wrap {
+    /**
+ * @class Ext.calendar.view.Days
+ */
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/calendar/sass/src/calendar/view/Days.scss:11 */
+.x-calendar-days-header-wrap {
+    width: 100%;
+    display: table-cell;
+    position: relative;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/calendar/sass/src/calendar/view/Days.scss:17 */
+.x-calendar-days-body-row {
+    display: table-row;
+    width: 100%;
+    height: 100%;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/calendar/sass/src/calendar/view/Days.scss:23 */
+.x-calendar-days-body-cell {
+    display: table-cell;
+    position: relative;
+    width: 100%;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/calendar/sass/src/calendar/view/Days.scss:28 */
+.x-gecko .x-calendar-days-body-cell {
+    position: static;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/calendar/sass/src/calendar/view/Days.scss:33 */
+.x-calendar-days-body-wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/calendar/sass/src/calendar/view/Days.scss:39 */
+.x-calendar-days-table {
+    border-collapse: collapse;
+    table-layout: fixed;
+    width: 100%;
+    height: 100%;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/calendar/sass/src/calendar/view/Days.scss:46 */
+.x-calendar-days-allday-events {
+    position: relative;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/calendar/sass/src/calendar/view/Days.scss:49 */
+.x-calendar-days-allday-events td {
+    padding: 0;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/calendar/sass/src/calendar/view/Days.scss:54 */
+.x-calendar-days-allday-background-wrap {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/calendar/sass/src/calendar/view/Days.scss:62 */
+.x-calendar-days-body-table {
+    position: absolute;
+    height: auto;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/calendar/sass/src/calendar/view/Days.scss:66 */
+.x-calendar-days-body-table td {
+    padding: 0;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/calendar/sass/src/calendar/view/Days.scss:71 */
+.x-calendar-days-time,
+.x-calendar-days-allday-empty-cell {
+    user-select: none;
+    -o-user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: -moz-none;
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-user-drag: none;
+    cursor: default;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/calendar/sass/src/calendar/view/Days.scss:76 */
+.x-calendar-days-day-column {
+    position: relative;
+    z-index: 0;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/calendar/sass/src/calendar/view/Days.scss:82 */
+.x-calendar-days-day-event-container {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/calendar/sass/src/calendar/view/Days.scss:90 */
+.x-calendar-days-now-marker {
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/core/sass/var/calendar/view/Days.scss:347 */
+.x-calendar-days {
+    background-color: #fff;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/core/sass/var/calendar/view/Days.scss:356 */
+.x-calendar-days .x-calendar-days-header-gutter {
+    background-color: #f7f9fd;
+    border: 1px solid #ddd;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/core/sass/var/calendar/view/Days.scss:362 */
+.x-calendar-days .x-calendar-days-allday-background-cell {
+    border-right: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/core/sass/var/calendar/view/Days.scss:369 */
+.x-calendar-days .x-calendar-days-time-ct {
+    background-color: #f7f9fd;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/core/sass/var/calendar/view/Days.scss:378 */
+.x-calendar-days .x-calendar-days-time {
+    height: 42px;
+    color: #666;
+    text-align: right;
+    font-family: 'Open Sans', 'Helvetica Neue', helvetica, arial, sans-serif;
+    border-bottom: 1px solid #ddd;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/core/sass/var/calendar/view/Days.scss:390 */
+.x-calendar-days .x-calendar-days-time-ampm {
+    line-height: 12px;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/core/sass/var/calendar/view/Days.scss:394 */
+.x-calendar-days .x-calendar-days-day-column {
+    border-right: 1px solid #ddd;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/core/sass/var/calendar/view/Days.scss:400 */
+.x-calendar-days .x-calendar-days-marker {
+    height: 42px;
+    border-bottom: 1px solid #ddd;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/core/sass/var/calendar/view/Days.scss:407 */
+.x-calendar-days .x-calendar-days-marker-alt {
+    height: 21px;
+    border-bottom: 1px dotted #ddd;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/core/sass/var/calendar/view/Days.scss:414 */
+.x-calendar-days .x-calendar-days-now-marker {
+    margin: 0 5px;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+    opacity: 0.7;
+    border-width: 2px 0 0 0;
+    border-style: solid;
+    border-color: #a94442;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/core/sass/var/calendar/view/Days.scss:422 */
+.x-calendar-days .x-calendar-days-allday-empty-cell {
+    line-height: 10px;
+    border-bottom: 1px solid #ddd;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/core/sass/var/calendar/view/Days.scss:429 */
+.x-calendar-days .x-calendar-days-selection {
+    background-color: #cff;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+    opacity: 0.3;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/core/sass/var/calendar/view/Days.scss:351 */
+.x-calendar-days-large .x-calendar-days-day-event-container {
+    margin-right: 15px;
+    margin-left: 5px;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/core/sass/var/calendar/view/Days.scss:356 */
+.x-calendar-days-large .x-calendar-days-header-gutter {
+    width: 48px;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/core/sass/var/calendar/view/Days.scss:369 */
+.x-calendar-days-large .x-calendar-days-time-ct {
+    width: 48px;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/core/sass/var/calendar/view/Days.scss:378 */
+.x-calendar-days-large .x-calendar-days-time {
+    padding: 2px 2px 0 0;
+    font-size: 13px;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/core/sass/var/calendar/view/Days.scss:422 */
+.x-calendar-days-large .x-calendar-days-allday-empty-cell {
+    line-height: 10px;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/core/sass/var/calendar/view/Days.scss:351 */
+.x-calendar-days-compact .x-calendar-days-day-event-container {
+    margin-right: 0;
+    margin-left: 0;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/core/sass/var/calendar/view/Days.scss:356 */
+.x-calendar-days-compact .x-calendar-days-header-gutter {
+    width: 24px;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/core/sass/var/calendar/view/Days.scss:369 */
+.x-calendar-days-compact .x-calendar-days-time-ct {
+    width: 24px;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/core/sass/var/calendar/view/Days.scss:378 */
+.x-calendar-days-compact .x-calendar-days-time {
+    padding: 2px 2px 0 0;
+    font-size: 11px;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/core/sass/var/calendar/view/Days.scss:422 */
+.x-calendar-days-compact .x-calendar-days-allday-empty-cell {
+    line-height: 10px;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/calendar/sass/src/calendar/view/Weeks.scss:5 */
+.x-calendar-weeks {
+    /**
+ * @class Ext.calendar.view.Weeks
+ */
+    position: relative;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/calendar/sass/src/calendar/view/Weeks.scss:9 */
+.x-calendar-weeks-week-rows {
+    width: 100%;
+    height: 100%;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/calendar/sass/src/calendar/view/Weeks.scss:14 */
+.x-calendar-weeks-cell {
+    user-select: none;
+    -o-user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: -moz-none;
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-user-drag: none;
+    cursor: default;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/calendar/sass/src/calendar/view/Weeks.scss:18 */
+.x-calendar-weeks-cell-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/calendar/sass/src/calendar/view/Weeks.scss:24 */
+.x-calendar-weeks-hidden-cell {
+    display: none;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/calendar/sass/src/calendar/view/Weeks.scss:28 */
+.x-calendar-weeks-overflow {
+    position: absolute;
+    display: none;
+    text-align: center;
+    cursor: pointer;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/calendar/sass/src/calendar/view/Weeks.scss:34 */
+.x-calendar-weeks-with-overflow-bottom .x-calendar-weeks-overflow {
+    text-align: center;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/calendar/sass/src/calendar/view/Weeks.scss:41 */
+.x-calendar-weeks-with-overflow-top .x-calendar-weeks-overflow {
+    top: 5px;
+    right: 5px;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/calendar/sass/src/calendar/view/Weeks.scss:46 */
+.x-calendar-weeks-overflow-cell .x-calendar-weeks-overflow {
+    display: block;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/core/sass/var/calendar/view/Weeks.scss:231 */
+.x-calendar-weeks {
+    background-color: #fff;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/core/sass/var/calendar/view/Weeks.scss:235 */
+.x-calendar-weeks .x-calendar-weeks-cell {
+    border-style: solid;
+    border-color: #ddd;
+    border-width: 1px;
+    vertical-align: top;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/core/sass/var/calendar/view/Weeks.scss:243 */
+.x-calendar-weeks .x-calendar-weeks-cell-inner {
+    padding: 2px 0 4px 4px;
+    text-align: left;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/core/sass/var/calendar/view/Weeks.scss:248 */
+.x-calendar-weeks .x-calendar-weeks-day-text {
+    font-family: 'Open Sans', 'Helvetica Neue', helvetica, arial, sans-serif;
+    color: #000;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/core/sass/var/calendar/view/Weeks.scss:257 */
+.x-calendar-weeks .x-calendar-weeks-outside-cell .x-calendar-weeks-day-text {
+    color: #aaa;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/core/sass/var/calendar/view/Weeks.scss:270 */
+.x-calendar-weeks .x-calendar-weeks-selection {
+    background-color: #cff;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+    opacity: 0.3;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/core/sass/var/calendar/view/Weeks.scss:277 */
+.x-calendar-weeks .x-calendar-weeks-overflow {
+    color: #15c;
+    font-family: 'Open Sans', 'Helvetica Neue', helvetica, arial, sans-serif;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/core/sass/var/calendar/view/Weeks.scss:248 */
+.x-calendar-weeks-large .x-calendar-weeks-day-text {
+    font-size: 13px;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/core/sass/var/calendar/view/Weeks.scss:277 */
+.x-calendar-weeks-large .x-calendar-weeks-overflow {
+    font-size: 11px;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/core/sass/var/calendar/view/Weeks.scss:248 */
+.x-calendar-weeks-compact .x-calendar-weeks-day-text {
+    font-size: 13px;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/core/sass/var/calendar/view/Weeks.scss:277 */
+.x-calendar-weeks-compact .x-calendar-weeks-overflow {
+    font-size: 11px;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/calendar/sass/src/calendar/view/Month.scss:6 */
+.x-calendar-month-4weeks .x-calendar-weeks-row {
+    /**
+ * @class Ext.calendar.view.Month
+ */
+    height: 25%;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/calendar/sass/src/calendar/view/Month.scss:9 */
+.x-calendar-month-4weeks .x-calendar-weeks-row[data-week="4"],
+.x-calendar-month-4weeks .x-calendar-weeks-row[data-week="5"] {
+    display: none;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/calendar/sass/src/calendar/view/Month.scss:16 */
+.x-calendar-month-5weeks .x-calendar-weeks-row {
+    height: 20%;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/calendar/sass/src/calendar/view/Month.scss:19 */
+.x-calendar-month-5weeks .x-calendar-weeks-row[data-week="5"] {
+    display: none;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/calendar/sass/src/calendar/view/Month.scss:26 */
+.x-calendar-month-6weeks .x-calendar-weeks-row {
+    height: 16.66%;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/modern/theme-neptune/sass/var/calendar/List.scss:30 */
+.x-calendar-list .x-calendar-list-item {
+    margin: 0 0 6px 0;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/modern/theme-neptune/sass/var/calendar/List.scss:35 */
+.x-calendar-list .x-calendar-list-item-hidden {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    opacity: 0.5;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/modern/theme-neptune/sass/var/calendar/List.scss:41 */
+.x-calendar-list .x-calendar-list-icon {
+    width: 16px;
+    height: 16px;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/modern/theme-neptune/sass/var/calendar/List.scss:48 */
+.x-calendar-list .x-calendar-list-text {
+    padding-left: 20px;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/calendar/modern/sass/src/calendar/form/CalendarPicker.scss:5 */
+.x-calendar-picker-list-icon,
+.x-calendar-picker-field-icon {
+    /**
+ * @class Ext.calendar.form.CalendarPicker
+ */
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/calendar/modern/sass/src/calendar/form/CalendarPicker.scss:12 */
+.x-calendar-picker-list .x-picker-item {
+    position: relative;
+    width: 100%;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/modern/theme-neptune/sass/var/calendar/form/CalendarPicker.scss:24 */
+.x-calendar-picker-list .x-calendar-picker-list-icon {
+    width: 24px;
+    height: 24px;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/modern/theme-neptune/sass/var/calendar/form/CalendarPicker.scss:29 */
+.x-calendar-picker-list .x-calendar-picker-list-text {
+    padding-left: 32px;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/modern/theme-neptune/sass/var/calendar/form/CalendarPicker.scss:39 */
+.x-calendar-picker-field .x-calendar-picker-field-icon {
+    width: 24px;
+    height: 24px;
+    left: 10px;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/modern/theme-neptune/sass/var/calendar/form/CalendarPicker.scss:44 */
+.x-big .x-calendar-picker-field .x-calendar-picker-field-icon {
+    left: 10px;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/modern/theme-neptune/sass/var/calendar/form/CalendarPicker.scss:49 */
+.x-calendar-picker-field .x-input-el {
+    padding-left: 42px;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/modern/theme-neptune/sass/var/calendar/form/CalendarPicker.scss:52 */
+.x-big .x-calendar-picker-field .x-input-el {
+    padding-left: 42px;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/modern/theme-neptune/sass/var/Panel.scss:907 */
+.x-panel-calendar-overflow > .x-anchor-el .x-pointer-el {
+    fill: #fff;
+    stroke: #5fa2dd;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/modern/theme-neptune/sass/var/Panel.scss:951 */
+.x-panel-calendar-overflow-body-el {
+    background-color: #fff;
+    border-color: #5fa2dd;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/modern/theme-neptune/sass/var/Panel.scss:969 */
+.x-panel-calendar-overflow-boxscroller {
+    border-color: #5fa2dd;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/modern/theme-neptune/sass/var/Panel.scss:972 */
+.x-panel-calendar-overflow-boxscroller > .x-boxscroller-body > .x-body-el {
+    border: 0;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/modern/theme-neptune/sass/etc/mixins/border-management.scss:2 */
+.x-panel-calendar-overflow-outer-border-l {
+    border-left-color: #5fa2dd !important;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/modern/theme-neptune/sass/etc/mixins/border-management.scss:7 */
+.x-panel-calendar-overflow-outer-border-b {
+    border-bottom-color: #5fa2dd !important;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/modern/theme-neptune/sass/etc/mixins/border-management.scss:12 */
+.x-panel-calendar-overflow-outer-border-bl {
+    border-bottom-color: #5fa2dd !important;
+    border-left-color: #5fa2dd !important;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/modern/theme-neptune/sass/etc/mixins/border-management.scss:27 */
+.x-panel-calendar-overflow-outer-border-r {
+    border-right-color: #5fa2dd !important;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/modern/theme-neptune/sass/etc/mixins/border-management.scss:32 */
+.x-panel-calendar-overflow-outer-border-rl {
+    border-right-color: #5fa2dd !important;
+    border-left-color: #5fa2dd !important;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/modern/theme-neptune/sass/etc/mixins/border-management.scss:39 */
+.x-panel-calendar-overflow-outer-border-rb {
+    border-right-color: #5fa2dd !important;
+    border-bottom-color: #5fa2dd !important;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/modern/theme-neptune/sass/etc/mixins/border-management.scss:54 */
+.x-panel-calendar-overflow-outer-border-rbl {
+    border-right-color: #5fa2dd !important;
+    border-bottom-color: #5fa2dd !important;
+    border-left-color: #5fa2dd !important;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/modern/theme-neptune/sass/etc/mixins/border-management.scss:71 */
+.x-panel-calendar-overflow-outer-border-t {
+    border-top-color: #5fa2dd !important;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/modern/theme-neptune/sass/etc/mixins/border-management.scss:76 */
+.x-panel-calendar-overflow-outer-border-tl {
+    border-top-color: #5fa2dd !important;
+    border-left-color: #5fa2dd !important;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/modern/theme-neptune/sass/etc/mixins/border-management.scss:91 */
+.x-panel-calendar-overflow-outer-border-tb {
+    border-top-color: #5fa2dd !important;
+    border-bottom-color: #5fa2dd !important;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/modern/theme-neptune/sass/etc/mixins/border-management.scss:98 */
+.x-panel-calendar-overflow-outer-border-tbl {
+    border-top-color: #5fa2dd !important;
+    border-bottom-color: #5fa2dd !important;
+    border-left-color: #5fa2dd !important;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/modern/theme-neptune/sass/etc/mixins/border-management.scss:115 */
+.x-panel-calendar-overflow-outer-border-tr {
+    border-top-color: #5fa2dd !important;
+    border-right-color: #5fa2dd !important;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/modern/theme-neptune/sass/etc/mixins/border-management.scss:130 */
+.x-panel-calendar-overflow-outer-border-trl {
+    border-top-color: #5fa2dd !important;
+    border-right-color: #5fa2dd !important;
+    border-left-color: #5fa2dd !important;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/modern/theme-neptune/sass/etc/mixins/border-management.scss:147 */
+.x-panel-calendar-overflow-outer-border-trb {
+    border-top-color: #5fa2dd !important;
+    border-right-color: #5fa2dd !important;
+    border-bottom-color: #5fa2dd !important;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/modern/theme-neptune/sass/etc/mixins/border-management.scss:164 */
+.x-panel-calendar-overflow-outer-border-trbl {
+    border-color: #5fa2dd !important;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/modern/theme-neptune/sass/var/panel/Header.scss:68 */
+.x-panelheader-calendar-overflow {
+    background-color: #fff;
+    background-image: none;
+    border-color: #5fa2dd;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/modern/theme-neptune/sass/var/panel/Header.scss:104 */
+.x-panelheader-calendar-overflow.x-docked-right {
+    border-color: #5fa2dd;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/modern/theme-neptune/sass/var/panel/Header.scss:118 */
+.x-panelheader-calendar-overflow.x-docked-left {
+    border-color: #5fa2dd;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/modern/theme-neptune/sass/var/panel/Header.scss:132 */
+.x-panelheader-calendar-overflow.x-docked-bottom {
+    border-color: #5fa2dd;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/modern/theme-neptune/sass/var/calendar/panel/Panel.scss:33 */
+.x-calendar-panel .x-calendar-panel-create-button {
+    padding-left: 39px;
+    padding-right: 39px;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/modern/theme-neptune/sass/var/calendar/panel/Panel.scss:38 */
+.x-calendar-panel .x-calendar-sidebar {
+    max-width: 20%;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/modern/theme-neptune/sass/var/calendar/panel/Panel.scss:40 */
+.x-calendar-panel .x-calendar-sidebar .x-panel-body-el {
+    padding: 13px;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/modern/theme-neptune/sass/var/calendar/panel/Panel.scss:46 */
+.x-calendar-panel-sheet {
+    padding: 0;
+    max-width: 80vw;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/modern/theme-neptune/sass/var/calendar/panel/Panel.scss:50 */
+.x-calendar-panel-sheet .x-sheet-body-el {
+    padding: 13px;
+}
+/* /home/teamcity/buildAgent/work/8cc7421dd8da164c/staging/packages/calendar/modern/sass/src/calendar/panel/Panel.scss:14 */
+.x-compact .x-calendar-panel-title {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}

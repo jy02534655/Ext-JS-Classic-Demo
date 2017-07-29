@@ -1,0 +1,26 @@
+/**
+ * @class Ext.calendar.header.Base
+ */
+
+.#{$prefix}calendar-header-table {
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+.#{$prefix}calendar-base {
+    .#{$prefix}calendar-header-table {
+        width: 100%;
+    }
+}
+
+.#{$prefix}calendar-header-cell {
+    @include no-select;
+}
+
+.#{$prefix}calendar-header-hidden-cell {
+    display: none;
+}
+
+@include calendar-header-default-ui;
+@include calendar-header-large-ui;
+@include calendar-header-compact-ui;
