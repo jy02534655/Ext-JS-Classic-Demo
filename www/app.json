@@ -24,15 +24,19 @@
 
     /**
      * 需要的扩展包 ( 默认是最新的).
-     *
+     * ext-locale 引入语言包
+     * font-awesome 字体图标
      * 例如,
      *
      *      "requires": [
      *          "charts"
      *      ]
      */
-    "requires": ["font-awesome"],
-
+    "requires": ["font-awesome", "ext-locale"],
+    /**
+     * 中文
+     */
+    "locale": "zh_CN",
     /**
      * 起始页面名称（后缀可以是HTML，JSP，ASP等）。
      */
@@ -190,13 +194,15 @@
      *      }
      *
      */
-    "js": [{
-        "path": "${framework.dir}/build/ext-all-rtl-debug.js"
-    },
+  "js": [
+    //{
+    //  "path": "${framework.dir}/build/ext-all-rtl-debug.js"
+    //},
     {
-        "path": "app.js",
-        "bundle": true
-    }],
+      "path": "app.js",
+      "bundle": true
+    }
+  ],
 
     /**
      * 所需引用css文件
@@ -235,7 +241,7 @@
     "loader": {
         // 缓存配置
         //
-        //   - true: 允许缓存 
+        //   - true: 允许缓存
         //   - false: 禁用缓存
         //   - other:不明白
         //

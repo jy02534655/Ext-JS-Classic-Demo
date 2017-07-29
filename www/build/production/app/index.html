@@ -6,8 +6,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=10, user-scalable=yes">
 
     <title>app</title>
+    <!--加载动画css-->
+    <style type="text/css">
+        #loading-mask {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 20000;
+            background-color: white;
+        }
 
+        #appLoadingIndicator {
+            position: absolute;
+            top: 50%;
+            margin-top: -15px;
+            text-align: center;
+            width: 100%;
+            height: 30px;
+            -webkit-animation-name: appLoadingIndicator;
+            -webkit-animation-duration: 0.5s;
+            -webkit-animation-iteration-count: infinite;
+            -webkit-animation-direction: linear;
+        }
+
+            #appLoadingIndicator > * {
+                background-color: #1985D0;
+                display: inline-block;
+                height: 30px;
+                -webkit-border-radius: 15px;
+                margin: 0 5px;
+                width: 30px;
+                opacity: 0.8;
+            }
+
+        @-webkit-keyframes appLoadingIndicator {
+            0% {
+                opacity: 0.8;
+            }
+
+            50% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 0.8;
+            }
+        }
+    </style>
     <!-- The line below must be kept intact for Sencha Cmd to build your application -->
+    <!--data-app的�?�与app.json中的id值需保持�?致，不要随便就复制了-->
     <script id="microloader" data-app="1900dd7d-7922-4a63-a091-ff81f79d5617" type="text/javascript">var Ext=Ext||{};Ext.manifest=Ext.manifest||'app.json';Ext=Ext||{};
 Ext.Boot=Ext.Boot||function(emptyFn){function Request(cfg){if(cfg.$isRequest)return cfg;cfg=cfg.url?cfg:{url:cfg};var url=cfg.url,url=url.charAt?[url]:url,charset=cfg.charset||Boot.config.charset;_apply(this,cfg);delete this.url;this.urls=url;this.charset=charset}function Entry(cfg){if(cfg.$isEntry)return cfg;var charset=cfg.charset||Boot.config.charset,manifest=Ext.manifest,manifest=manifest&&manifest.loader,cache=void 0!==cfg.cache?cfg.cache:manifest&&manifest.cache,buster;Boot.config.disableCaching&&
 (void 0===cache&&(cache=!Boot.config.disableCaching),!1===cache?buster=+new Date:!0!==cache&&(buster=cache),buster&&(manifest=manifest&&manifest.cacheParam||Boot.config.disableCachingParam,buster=manifest+'\x3d'+buster));_apply(this,cfg);this.charset=charset;this.buster=buster;this.requests=[]}var doc=document,_emptyArray=[],_config={disableCaching:/[?&](?:cache|disableCacheBuster)\b/i.test(location.search)||!/http[s]?\:/i.test(location.href)||/(^|[ ;])ext-cache=1/.test(doc.cookie)?!1:!0,disableCachingParam:'_dc',
@@ -84,5 +133,14 @@ Microloader.appUpdate)},1E3)},checksum:function(content,hash){if(!content||!hash
 304===result.status||Boot.env.phantom||0===result.status&&0<result.content.length?rst.content=result.content:rst.error=!0:rst.error=!0;return rst}};return Microloader}();Ext.manifest=Ext.manifest||'bootstrap';Ext.Microloader.run();</script>
 
 </head>
-<body></body>
+<body>
+    <!--加载动画html-->
+    <div id="loading-mask">
+        <div id="appLoadingIndicator">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</body>
 </html>
