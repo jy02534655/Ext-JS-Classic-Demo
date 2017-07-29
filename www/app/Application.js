@@ -11,6 +11,11 @@ Ext.define('app.Application', {
             quickTips: true
         }
     },
+    //应用启动
+    launch: function () {
+        //移除加载动画
+        Ext.fly('loading-mask').destroy();
+    },
     //应用有更新就会触发
     onAppUpdate: function () {
         Ext.Msg.confirm('提示', '当前应用程序有新版本，是否更新？',

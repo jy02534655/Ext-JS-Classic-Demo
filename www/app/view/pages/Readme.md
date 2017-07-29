@@ -2,6 +2,8 @@
 状态页视图目录
 ### Blank.js
 空白页
+### Base.js
+404与500页的父类
 ### Error404.js
 404页
 ### Error500.js
