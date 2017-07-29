@@ -3,7 +3,8 @@
 Ext.define('app.view.pages.Base', {
     extend: 'Ext.window.Window',
     //引入类
-    requires: ['Ext.toolbar.Spacer'],
+    //同一项目中只需引入一次即可
+    requires: ['Ext.toolbar.Spacer', 'Ext.form.Label'],
     //自动显示
     autoShow: true,
     //cls
