@@ -1,8 +1,0 @@
-/**
- * ui: 'calendar' tips look the same as a panel.
- */
-@include extjs-tip-ui(
-    $ui: 'calendar-overflow',
-    $ui-border-color: $calendar-tooltip-border-color,
-    $ui-background-color: $calendar-tooltip-background-color
-);

@@ -1,9 +1,0 @@
-@include panel-ui(
-    $ui: 'calendar-overflow',
-    $header-background-color: $calendar-tooltip-background-color,
-    $border-color: $calendar-tooltip-border-color,
-    $header-border-color: $calendar-tooltip-border-color,
-    $body-border-color: $calendar-tooltip-border-color,
-
-    $body-background-color: $calendar-tooltip-background-color
-);
