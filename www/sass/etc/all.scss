@@ -59,3 +59,20 @@ body.x-ios.x-webview.x-portrait {
     font: normal normal normal 14px/1 $font-family;
 }
 /*#endregion*/
+/*#region 样式重写*/
+/*#region 重写遮罩*/
+body > .x-mask {
+    background-color: transparent !important;
+
+    .x-mask-msg {
+        opacity: 0.8;
+
+        .x-mask-msg-text {
+            background-size: 20%;
+            color: white;
+        }
+    }
+}
+
+/*#endregion*/
+/*#endregion*/

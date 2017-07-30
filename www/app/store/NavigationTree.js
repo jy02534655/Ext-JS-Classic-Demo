@@ -2,52 +2,15 @@
 //导航菜单
 Ext.define('app.store.NavigationTree', {
     extend: 'Ext.data.TreeStore',
+    //对应的模型
+    //如果store没有指定代理,会自动继承模型的代理
+    //如果多个store继承同一个模型，并且模型指定了代理，store没有指定代理
+    //那么这些store会出现数据共享的情况，请根据实际使用场景决定代理如何配置
+    model: 'app.model.Navigation',
     //全局id可以通过Ext.getStore('navigationTree')找到这个对象
     storeId: 'navigationTree',
-    fields: [{
-        name: 'text'
-    }],
-    //导航菜单
-    root: {
-        expanded: true,
-        children: [
-            {
-                //标题
-                text: '首页',
-                //图标
-                iconCls: 'x-fa fa-desktop',
-                //指向视图
-                viewType: 'home',
-                //是否有子节点
-                leaf: true
-            },
-            {
-                text: '页面',
-                iconCls: 'x-fa fa-leanpub',
-                expanded: false,
-                selectable: false,
-                children: [
-                    {
-                        text: '空白页',
-                        iconCls: 'x-fa fa-file-o',
-                        viewType: 'pageblank',
-                        leaf: true
-                    },
-
-                    {
-                        text: '404页',
-                        iconCls: 'x-fa fa-exclamation-triangle',
-                        viewType: 'page404',
-                        leaf: true
-                    },
-                    {
-                        text: '500页',
-                        iconCls: 'x-fa fa-times-circle',
-                        viewType: 'page500',
-                        leaf: true
-                    }
-                ]
-            }
-        ]
+    data: {
+        name: '根节点',
+        expanded: false
     }
 });

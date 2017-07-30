@@ -1,3 +1,8 @@
+//指定ux起调目录
+Ext.Loader.setPath({
+    'ux': 'app/ux'
+});
+
 /**
  * 项目入口文件
  */

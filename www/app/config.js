@@ -8,6 +8,11 @@ Ext.define('app.config', {
         //临时配置参数
         tmpConfig:null,
         //版本号
-        ver:'1.0.0'
+        ver: '1.0.0',
+        //用户
+        user: {
+            //导航菜单
+            navigation: '~api/user/navigation'
+        }
     }
 });

@@ -1,16 +1,18 @@
-//默认基础配置
+/*#region 默认基础配置*/
 $base-color: dynamic(#35baf6);
 $base-border-color: dynamic(#ddd);
 $font-weight: dynamic(400);
 $font-weight-bold: dynamic(500);
-//导航菜单样式配置
+/*#endregion*/
+
+/*#region 导航菜单样式配置*/
 $panel-navigation-background-color: dynamic(#32404e);
 $panel-navigation-item-line-height: dynamic(64px);
 $panel-navigation-item-text-color: dynamic(#ADB3B8);
-
+/*#endregion*/
 $progress-bar-background-color: dynamic(#458fd2);
 
-//颜色 主要用与按钮
+/*#region 颜色 主要用与按钮*/
 $color-blue: dynamic(#167abc);
 $color-soft-cyan: dynamic(#03b4d5);
 $color-soft-blue: dynamic(#2eadf5);
@@ -20,6 +22,21 @@ $color-soft-red: dynamic(#e44959);
 $color-soft-purple: dynamic(#925e8b);
 $color-gray: dynamic(#949495);
 $color-green: dynamic(#16b603);
+/*#endregion*/
 
 $lightest-color: dynamic(#fff);
 
+/*#region 遮罩*/
+$loadmask-opacity: dynamic(0.3);
+//遮罩背景色
+$loadmask-background-color: transparent;
+//内容背景色
+$loadmask-msg-background-color: #000;
+//内容圆角
+$loadmask-msg-border-radius: 4px;
+//文字颜色
+$loadmask-msg-inner-color: #fff;
+//ico地址
+$loadmask-msg-inner-icon:'loading';
+$loadmask-msg-text-padding :35px 0 0 0;
+/*#endregion*/

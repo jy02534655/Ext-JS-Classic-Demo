@@ -1,75 +1,76 @@
 {
-    /**
+  /**
      * 应用程序命名
      */
-    "name": "app",
-    /**
+  "name": "app",
+  /**
      * 应用程序的命名空间
      */
-    "namespace": "app",
-    /**
+  "namespace": "app",
+  /**
      * 应用程序的版本
      */
-    "version": "1.0.0.0",
-    "framework": "ext",
+  "version": "1.0.0.0",
+  "framework": "ext",
 
-    /**
+  /**
      * 可以指定打包模式 "classic" or "modern".
      */
-    "toolkit": "classic",
-    /**
+  "toolkit": "classic",
+  /**
      * 应用的主题名称，不要随便乱写
      */
-    "theme": "theme-triton",
+  "theme": "theme-triton",
 
-    /**
+  /**
      * 需要的扩展包 ( 默认是最新的).
      * ext-locale 引入语言包
      * font-awesome 字体图标
+     * ux ext扩展包
      * 例如,
      *
      *      "requires": [
      *          "charts"
      *      ]
      */
-    "requires": ["font-awesome", "ext-locale"],
-    /**
+  "requires": [ "font-awesome", "ext-locale", "ux" ],
+  /**
      * 中文
      */
-    "locale": "zh_CN",
-    /**
+  "locale": "zh_CN",
+  /**
      * 起始页面名称（后缀可以是HTML，JSP，ASP等）。
      */
-    "indexHtmlPath": "index.html",
+  "indexHtmlPath": "index.html",
 
-    /**
+  /**
      * 项目文件路径
      */
-    "classpath": ["app"],
+  "classpath": [ "app" ],
 
-    /**
+  /**
      * 重写类文件目录路径
      */
-    "overrides": ["overrides"],
+  "overrides": [ "overrides" ],
 
-    /**
+  /**
      * Fashion build configuration properties.
      */
-    "fashion": {
-        "missingParameters": "error",
-        "inliner": {
-            /**
+  "fashion": {
+    "missingParameters": "error",
+    "inliner": {
+      /**
              * Disable resource inliner. Production builds enable this by default.
              */
-            "enable": false
-        }
-    },
+      "enable": false
+    }
+  },
 
-    /**
+  /**
      * Sass 相关配置.
      */
-    "sass": {
-        /**
+  "sass": {
+    /**
          * The root namespace to use when mapping *.scss files to classes in the
          * sass/src and sass/var directories. For example, "app.view.Foo" would
          * map to "sass/src/view/Foo.scss". If we changed this to "app.view" then
@@ -77,9 +78,9 @@
          * root namespace, change this to "". Doing so would change the mapping of
          * "app.view.Foo" to "sass/src/app/view/Foo.scss".
          */
-        "namespace": "app",
+    "namespace": "app",
 
-        /**
+    /**
          * Generated sass source settings
          *
          *      "generated": {
@@ -94,12 +95,12 @@
          *
          */
 
-        "generated": {
-            "var": "sass/save.scss",
-            "src": "sass/save"
-        },
+    "generated": {
+      "var": "sass/save.scss",
+      "src": "sass/save"
+    },
 
-        /**
+    /**
          * Comma-separated list of files or folders containing extra Sass. These
          * files are automatically included in the Sass compilation. By default this
          * is just "etc/all.scss" to allow import directives to control the order
@@ -118,9 +119,9 @@
          *      | application     |
          *      +-----------------+
          */
-        "etc": ["sass/etc/all.scss"],
+    "etc": [ "sass/etc/all.scss" ],
 
-        /**
+    /**
          * Comma-separated list of folders containing Sass variable definitions
          * files. These file can also define Sass mixins for use by components.
          *
@@ -140,9 +141,9 @@
          * The "sass/var/all.scss" file is always included at the start of the var
          * block before any files associated with JavaScript classes.
          */
-        "var": ["sass/var/all.scss", "sass/var"],
+    "var": [ "sass/var/all.scss", "sass/var" ],
 
-        /**
+    /**
          * Comma-separated list of folders containing Sass rule files.
          *
          * All "src" files are included after "var" files in the Sass compilation in
@@ -158,10 +159,10 @@
          *      | application     |
          *      +-----------------+
          */
-        "src": ["sass/src"]
-    },
+    "src": [ "sass/src" ]
+  },
 
-    /**
+  /**
      * 所需引用js文件
      * 单个格式如下
      *
@@ -204,7 +205,7 @@
     }
   ],
 
-    /**
+  /**
      * 所需引用css文件
      * 单个格式如下
      *
@@ -225,68 +226,70 @@
      *          "update": ""      // OPTIONAL
      *      }
      */
-    "css": [{
-        // this entry uses an ant variable that is the calculated
-        // value of the generated output css file for the app,
-        // defined in .sencha/app/defaults.properties
-        "path": "${build.out.css.path}",
-        "bundle": true,
-        "exclude": ["fashion"]
-    }],
+  "css": [
+    {
+      // this entry uses an ant variable that is the calculated
+      // value of the generated output css file for the app,
+      // defined in .sencha/app/defaults.properties
+      "path": "${build.out.css.path}",
+      "bundle": true,
+      "exclude": [ "fashion" ]
+    }
+  ],
 
-    /**
+  /**
      * 应用加载配置
      *
      */
-    "loader": {
-        // 缓存配置
-        //
-        //   - true: 允许缓存
-        //   - false: 禁用缓存
-        //   - other:不明白
-        //
-        "cache": false,
+  "loader": {
+    // 缓存配置
+    //
+    //   - true: 允许缓存
+    //   - false: 禁用缓存
+    //   - other:不明白
+    //
+    "cache": false,
 
-        // 缓存没有启用时传递的参数
-        "cacheParam": "_dc"
-    },
+    // 缓存没有启用时传递的参数
+    "cacheParam": "_dc"
+  },
 
-    /**
+  /**
      * 打包命令相关配置
      */
-    "production": {
-        "output": {
-            "appCache": {
-                "enable": true,
-                "path": "cache.appcache"
-            }
-        },
-        "loader": {
-            "cache": "${build.timestamp}"
-        },
-        "cache": {
-            "enable": true
-        },
-        "compressor": {
-            "type": "yui"
-        }
+  "production": {
+    "output": {
+      "appCache": {
+        "enable": true,
+        "path": "cache.appcache"
+      }
     },
+    "loader": {
+      "cache": "${build.timestamp}"
+    },
+    "cache": {
+      "enable": true
+    },
+    "compressor": {
+      "type": "yui"
+    }
+  },
 
-    /**
+  /**
      * Settings specific to testing builds.
      */
-    "testing": {},
+  "testing": { },
 
-    /**
+  /**
      * Settings specific to development builds.
      */
-    "development": {
-        "watch": {
-            "delay": 250
-        }
-    },
+  "development": {
+    "watch": {
+      "delay": 250
+    }
+  },
 
-    /**
+  /**
      * Controls the output structure of development-mode (bootstrap) artifacts. May
      * be specified by a string:
      *
@@ -313,14 +316,14 @@
      *      }
      *
      */
-    "bootstrap": {
-        "base": "${app.dir}",
+  "bootstrap": {
+    "base": "${app.dir}",
 
-        "microloader": "bootstrap.js",
-        "css": "bootstrap.css"
-    },
+    "microloader": "bootstrap.js",
+    "css": "bootstrap.css"
+  },
 
-    /**
+  /**
      * Controls the output directory for build resources.  May be set with
      * either a string:
      *
@@ -366,14 +369,14 @@
      *
      */
 
-    "output": {
-        "base": "../docs",
-        "appCache": {
-            "enable": false
-        }
-    },
+  "output": {
+    "base": "../docs",
+    "appCache": {
+      "enable": false
+    }
+  },
 
-    /**
+  /**
     *  缓存配置
     *   "cache": {
     *       // 是否禁用缓存，为true将全局禁用
@@ -386,64 +389,68 @@
     *   }
     */
 
-    "cache": {
-        "enable": false,
-        "deltas": true
-    },
+  "cache": {
+    "enable": false,
+    "deltas": true
+  },
 
-    /**
+  /**
      * 自动生成的缓存文件配置
      */
-    "appCache": {
-        /**
+  "appCache": {
+    /**
          * 缓存目标
          */
-        "cache": ["index.html"],
-        /**
+    "cache": [ "index.html" ],
+    /**
          * 作用目录
          */
-        "network": ["*"],
-        /**
+    "network": [ "*" ],
+    /**
          * List of items in the FALLBACK section
          */
-        "fallback": []
-    },
+    "fallback": [ ]
+  },
 
-    /**
+  /**
      * 项目生成时需要复制的资源文件
      */
-    "resources": [{
-        "path": "resources",
-        "output": "shared"
-    }],
+  "resources": [
+    {
+      "path": "resources",
+      "output": "shared"
+    }
+  ],
 
-    /**
+  /**
      * Directory path to store all previous production builds. Note that the content
      * generated inside this directory must be kept intact for proper generation of
      * deltas between updates.
      */
 
-    "archivePath": "archive",
+  "archivePath": "archive",
 
-    /**
+  /**
      * Additional resources used during theme slicing operations
      */
-    "slicer": {
-        "js": [{
-            "path": "sass/example/custom.js",
-            "isWidgetManifest": true
-        }],
-        "output": {
-            "appCache": {
-                "enable": false
-            }
-        },
-        "cache": {
-            "enable": false
-        }
+  "slicer": {
+    "js": [
+      {
+        "path": "sass/example/custom.js",
+        "isWidgetManifest": true
+      }
+    ],
+    "output": {
+      "appCache": {
+        "enable": false
+      }
     },
+    "cache": {
+      "enable": false
+    }
+  },
 
-    /**
+  /**
      * Build Profiles. This object's properties are each a "build profile". You can
      * add as many as you need to produce optimized builds for devices, themes, locales
      * or other criteria. Your "Ext.beforeLoad" hook (see index.html) is responsible for
@@ -452,14 +459,14 @@
      *
      */
 
-    /**
+  /**
      * 打包时忽略对象的正则表达式
      */
-    "ignore": ["(^|/)CVS(/?$|/.*?$)"],
+  "ignore": [ "(^|/)CVS(/?$|/.*?$)" ],
 
-    /**
+  /**
      * 唯一ID，作为localStorage前缀。
      * 通常情况下，你不应该改变这个值。
      */
-    "id": "1900dd7d-7922-4a63-a091-ff81f79d5617"
+  "id": "1900dd7d-7922-4a63-a091-ff81f79d5617"
 }

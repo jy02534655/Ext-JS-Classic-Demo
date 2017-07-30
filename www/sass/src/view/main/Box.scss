@@ -1,4 +1,4 @@
-//µ¼º½À¸×Ô¶¨Òåui
+//å¯¼èˆªæ è‡ªå®šä¹‰ui
 $treelist-nav-ui: (
     padding: 0 10px,
     background-color: $panel-navigation-background-color,
@@ -29,7 +29,7 @@ $treelist-nav-ui: (
     row-indicator-over-color: transparent
 );
 
-//×óÉÏ½ÇÍ¼±êÓëÎÄ×ÖÑùÊ½
+//å·¦ä¸Šè§’å›¾æ ‡ä¸æ–‡å­—æ ·å¼
 .sencha-logo {
     background-color: $base-color;
     height: 65px;
@@ -37,7 +37,7 @@ $treelist-nav-ui: (
     font-size: 16px;
     color: $lightest-color;
     margin-left: 17px;
-    //Í¼±êÑùÊ½
+    //å›¾æ ‡æ ·å¼
     .main-logo {
         line-height: 65px;
 
@@ -50,14 +50,14 @@ $treelist-nav-ui: (
     }
 }
 
-//È«¾Ö±³¾°
+//å…¨å±€èƒŒæ™¯
 .navigationContainer {
     background-color: $panel-navigation-background-color;
-        //ÃÀ»¯¹ö¶¯ÌõĞ§¹û
+        //ç¾åŒ–æ»šåŠ¨æ¡æ•ˆæœ
     &::-webkit-scrollbar {
         width: 1px;
     }
-    //¹ö¶¯Ìõ¹ìµÀ
+    //æ»šåŠ¨æ¡è½¨é“
     &::-webkit-scrollbar-track {
         background-color: $panel-navigation-background-color;
     }
@@ -67,7 +67,7 @@ $treelist-nav-ui: (
     }
 }
 
-//¶¥²¿µ¼º½À¸ÑùÊ½
+//é¡¶éƒ¨å¯¼èˆªæ æ ·å¼
 .sencha-dash-dash-headerbar {
     padding: 0 30px 0 0;
     position: fixed;
@@ -80,7 +80,7 @@ $treelist-nav-ui: (
     }
 }
 
-//µ¼º½À¸ÕÛµşÑùÊ½
+//å¯¼èˆªæ æŠ˜å æ ·å¼
 .collapsed {
     .x-tree-elbow-img {
         display: none;
@@ -90,17 +90,17 @@ $treelist-nav-ui: (
         display: none;
     }
 }
-//µ¼º½À¸ÕÛµşÊ±ÑùÊ½
+//å¯¼èˆªæ æŠ˜å æ—¶æ ·å¼
 .x-treelist-item-tool {
     height: $panel-navigation-item-line-height;
 }
 
-//ÁĞ±íÑùÊ½ÖØĞ´
+//åˆ—è¡¨æ ·å¼é‡å†™
 .x-grid-cell{
     position: relative;
 }
 
-/*#region °´Å¥×Ô¶¨ÒåuiÀ©Õ¹*/
+/*#region æŒ‰é’®è‡ªå®šä¹‰uiæ‰©å±•*/
 @include extjs-button-small-ui(
     $ui: 'soft-blue',
     $background-color: $color-soft-blue,

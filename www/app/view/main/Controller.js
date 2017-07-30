@@ -12,9 +12,18 @@ Ext.define('app.view.main.Controller', {
     },
 
     lastView: null,
+    //当前请求总数，起始值为0
+    messageTotal: 0,
     //菜单被选中时
     onNavigationTreeSelectionChange: function (tree, node) {
-        var to = node.get('viewType');
+        if (node) {
+            this.redirectToView(node.getData());
+        }
+    },
+    //跳转到指定页面
+    redirectToView: function (data) {
+        //获取目标页面
+        var to = data.viewType;
         if (to) {
             //触发路由
             this.redirectTo('view.' + to);
@@ -194,9 +203,109 @@ Ext.define('app.view.main.Controller', {
     },
     //容器初始化时
     onMainViewRender: function () {
-        if (!window.location.hash) {
-            //如果没有指定路由，给一个默认值
-            this.redirectTo("view.home");
+        var me = this;
+        me.onAjaxInit();
+        me.loadNavigation();
+    },
+    //监听ajax，增加自动遮罩效果
+    //ajax请求自动遮罩
+    onAjaxInit: function () {
+        console.log('监听ajax，增加自动遮罩功能');
+        //如果500毫秒类再次触发，之前触发的会自动取消
+        var me = this;
+        //监听ajax事件，开始请求时显示遮罩
+        Ext.Ajax.on('beforerequest',
+        function (connection, options) {
+            var params = options.params;
+            //某些情况下不需要遮罩
+            if (!(params && params.isNoMask)) {
+                me.messageTotal++;
+                console.log('开始请求，请求总数：', me.messageTotal);
+                var window = Ext.WindowManager.getActive();
+                //window弹窗才有遮罩
+                if (window && (window.isWindow || window.isMask) && !window.isToast) {
+                    me.maskWindow = window;
+                    window.mask('正在请求数据，请等待...');
+                } else {
+                    Ext.getBody().mask('正在请求数据，请等待...');
+                }
+            }
+            else {
+                console.log('开始请求，无须遮罩，请求总数：', me.messageTotal);
+            }
+        });
+        //ajax请求成功
+        Ext.Ajax.on('requestcomplete',
+        function (connection, response, options) {
+            var params = options.params;
+            //某些情况下不需要遮罩
+            if (!(params && params.isNoMask)) {
+                me.hideMessage();
+                console.log('请求成功，请求总数：', me.messageTotal);
+            }
+        });
+        //ajax请求失败
+        Ext.Ajax.on('requestexception',
+        function (connection, response, options) {
+            var params = options.params;
+            //某些情况下不需要遮罩
+            if (!(params && params.isNoMask)) {
+                me.hideMessage();
+                console.log('请求失败，请求总数：', me.messageTotal);
+            }
+            Ext.toast('请求失败，服务端无法连接或出错！');
+        });
+    },
+    //重写ajax，在请求数据时自动加入请求动画遮罩
+    //隐藏遮罩
+    hideMessage: function () {
+        var me = this;
+        //console.log('加载完成，请求总数：', me.messageTotal);
+        if (me.messageTotal > 1) {
+            me.messageTotal--;
+        } else {
+            if (me.maskWindow && !me.maskWindow.isDestroyed) {
+                //console.log('window弹窗关闭：');
+                me.maskWindow.unmask();
+                me.maskWindow = null;
+            }
+            Ext.getBody().unmask();
+            //请求总数归0
+            me.messageTotal = 0;
         }
-    }
+    },
+    //加载导航树
+    loadNavigation: function () {
+        console.log('正在加载导航树');
+        var me = this,
+        store = Ext.getStore('navigationTree');
+        //重置地址栏
+        me.redirectTo('home');
+        store.on({
+            //仅监听一次
+            single: true,
+            //监听菜单请求完成事件
+            load: function (t, records) {
+                //console.log('用户菜单请求完成');
+                var data, rec;
+                if (records.length > 0) {
+                    //获取第一个菜单
+                    rec = records[0];
+                    //默认菜单为自身
+                    data = rec.getData();
+                    //检查第一个菜单是否有子菜单
+                    if (!rec.get('leaf')) {
+                        //如果有子菜单则获取第一个子菜单
+                        data = rec.get('data')[0];
+                    }
+                    //loadNavigation方法触发时导航菜单还没有完成布局，直接绑定store的话会出现布局错误
+                    //在这里我们等数据加载出来再去绑定数据，这样就不会出错了
+                    me.lookup('navigationTreeList').setStore(store);
+                    //跳转到第一个菜单
+                    me.redirectToView(data);
+                }
+            }
+        });
+        util.storeLoad(store);
+    },
 });
