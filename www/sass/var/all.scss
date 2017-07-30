@@ -27,6 +27,7 @@ $color-green: dynamic(#16b603);
 $lightest-color: dynamic(#fff);
 
 /*#region 遮罩*/
+//遮罩透明度
 $loadmask-opacity: dynamic(0.3);
 //遮罩背景色
 $loadmask-background-color: transparent;
@@ -36,7 +37,9 @@ $loadmask-msg-background-color: #000;
 $loadmask-msg-border-radius: 4px;
 //文字颜色
 $loadmask-msg-inner-color: #fff;
-//ico地址
+//ico地址对应的路径为resources/images/loading.gif
+//自己找一个加载gif吧
 $loadmask-msg-inner-icon:'loading';
+//遮罩文本内边距
 $loadmask-msg-text-padding :35px 0 0 0;
 /*#endregion*/

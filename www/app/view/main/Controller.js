@@ -218,6 +218,7 @@ Ext.define('app.view.main.Controller', {
         function (connection, options) {
             var params = options.params;
             //某些情况下不需要遮罩
+            //在参数里面增加isNoMask:true即可不显示遮罩
             if (!(params && params.isNoMask)) {
                 me.messageTotal++;
                 console.log('开始请求，请求总数：', me.messageTotal);
@@ -265,7 +266,6 @@ Ext.define('app.view.main.Controller', {
             me.messageTotal--;
         } else {
             if (me.maskWindow && !me.maskWindow.isDestroyed) {
-                //console.log('window弹窗关闭：');
                 me.maskWindow.unmask();
                 me.maskWindow = null;
             }
@@ -307,5 +307,5 @@ Ext.define('app.view.main.Controller', {
             }
         });
         util.storeLoad(store);
-    },
+    }
 });

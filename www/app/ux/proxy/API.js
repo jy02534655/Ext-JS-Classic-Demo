@@ -25,10 +25,10 @@ Ext.define('ux.proxy.API', {
         successProperty: 'success',
         //如果服务端满足的数据不是标准的数据
         //例如没有给success字段，但是给了状态码，可以在里面写一些逻辑处理成代理想要的数据
-        //transform: function (data) {
-        //    console.log('服务端返回数据:', data);
-        //    return data;
-        //}
+        transform: function (data) {
+            console.log('服务端返回数据:', data);
+            return data;
+        }
     },
     //请求时
     writer: {
