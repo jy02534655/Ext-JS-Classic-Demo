@@ -13,6 +13,20 @@ Ext.define('app.config', {
         user: {
             //导航菜单
             navigation: '~api/user/navigation'
+        },
+        //基础配置
+        basis: {
+            //会员卡类型
+            card: {
+                //新增
+                add: '~api/add',
+                //列表
+                list: '~api/basis/card',
+                //删除
+                del: '~api/delete',
+                //更新
+                update: '~api/update'
+            }
         }
     }
 });

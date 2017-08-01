@@ -58,10 +58,23 @@ body.x-ios.x-webview.x-portrait {
     display: inline-block;
     font: normal normal normal 14px/1 $font-family;
 }
+/*#region 超链接*/
+a {
+    color: #4372E2;
+
+    &.x-btn {
+        color: #404040;
+    }
+    /*未访问：无下划线*/
+    &:link, &:visited, &:hover {
+        text-decoration: none;
+    }
+}
+/*#endregion*/
 /*#endregion*/
 /*#region 样式重写*/
 /*#region 重写遮罩*/
-body > .x-mask {
+.x-mask {
     background-color: transparent !important;
 
     .x-mask-msg {

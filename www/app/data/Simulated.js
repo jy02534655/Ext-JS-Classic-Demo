@@ -4,10 +4,11 @@ Ext.define('app.data.Simulated', {
         'Ext.ux.ajax.JsonSimlet',
         'Ext.ux.ajax.SimManager'
     ],
-    //项目初始化时
-    //遍历data文件夹中的模拟数据源
+    //当js文件被加载时？
     onClassExtended: function (cls, data) {
-        //为每个数据源都创建模拟接口
+        //其他模拟数据源都继承这个类
+        //所以我们在这里写注册代码
+        //为当前类注册模拟接口
         var url = data.$className.toLowerCase().replace(/\./g, '/').
                     replace(/^app\/data/, '~api'),
             simlet = {

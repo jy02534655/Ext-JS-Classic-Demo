@@ -18,6 +18,34 @@ Ext.define('app.data.user.Navigation', {
             leaf: true
         },
         {
+            text: '基础资料',
+            iconCls: 'x-fa fa-book',
+            data: [{
+                text: '会员卡类型',
+                iconCls: 'x-fa fa-github-square',
+                viewType: 'basisCard',
+                leaf: true
+            },
+            {
+                text: '会员级别',
+                iconCls: 'x-fa fa-street-view',
+                viewType: 'pageblank',
+                leaf: true
+            },
+            {
+                text: '课程类别',
+                iconCls: 'x-fa fa-calendar-plus-o',
+                viewType: 'pageblank',
+                leaf: true
+            },
+            {
+                text: '员工类别',
+                iconCls: 'x-fa  fa-child ',
+                viewType: 'pageblank',
+                leaf: true
+            }]
+        },
+        {
             text: '页面',
             iconCls: 'x-fa fa-leanpub',
             //注意
