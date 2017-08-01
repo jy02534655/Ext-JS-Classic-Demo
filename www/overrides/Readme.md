@@ -6,3 +6,5 @@
 重写Ext.form相关类扩展目录
 ### grid 目录
 重写Ext.grid相关类扩展目录
+### window目录
+重写Ext.window相关类扩展目录
