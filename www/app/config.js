@@ -27,6 +27,10 @@ Ext.define('app.config', {
                 //更新
                 update: '~api/update'
             }
+        },
+        //帮助
+        faq: {
+            list:'~api/faq/faq'
         }
     }
 });

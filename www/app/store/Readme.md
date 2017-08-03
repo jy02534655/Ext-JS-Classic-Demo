@@ -1,7 +1,8 @@
 # app/store 目录
 ### basis 目录
 基础数据相关数据仓库
-数据仓库目录
+### faq目录
+帮助列表数据仓库
 ### NavigationTree.js
 导航菜单
 ### Views.js

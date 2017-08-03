@@ -1,0 +1,38 @@
+@mixin list-item-title() {
+    font-weight: 600;
+    line-height: 20px;
+}
+
+.faq-item {
+    margin: 10px;
+}
+
+.fire {
+    @include list-item-title();
+    cursor: pointer;
+
+    .faq-question {
+        width: 1em;
+
+        &:before {
+            content: $fa-var-caret-right;
+        }
+
+        &.question-expanded:before {
+            content: $fa-var-caret-down;
+        }
+    }
+}
+
+.faq-body {
+    > div {
+        padding: 6px 0 10px 10px;
+    }
+
+    height: 0;
+    overflow: hidden;
+
+    .faq-expanded & {
+        height: auto;
+    }
+}

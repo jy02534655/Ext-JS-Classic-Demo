@@ -143,6 +143,7 @@ Ext.define('app.util', {
             return true;
         },
 
+        //链式
         //model.saveModel方式
         //使用方式util.saveModel(model).then(function(record, b){执行方法})
         //model model
@@ -363,7 +364,6 @@ Ext.define('app.util', {
                     }
                 }
             }
-
-        },
+        }
     }
 });

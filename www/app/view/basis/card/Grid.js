@@ -98,6 +98,7 @@ Ext.define('app.view.basis.Card', {
                 text: '查询',
                 //点击按钮触发的事件
                 //searchGrid是一个通用查询方法
+                //只要在toolbar定义了name的输入框的值都会传递到服务端以便服务端用来实现查询功能
                 handler: 'searchGrid'
             },
             {

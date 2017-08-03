@@ -1,8 +1,8 @@
 //扩展
 //扩展ViewController
+//除了核心控制器，所有的控制器都继承这个扩展控制器
 Ext.define('ux.app.ViewController', {
     extend: 'Ext.app.ViewController',
-
     //返回
     //非弹窗类子页面通过浏览器按钮点击返回不会触发此方法
     //所以在这里只有一个回退方法

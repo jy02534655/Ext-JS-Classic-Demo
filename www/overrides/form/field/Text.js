@@ -5,10 +5,6 @@
 //修改必填项错误提示，提示更直观
 Ext.define("override.form.field.Text", {
     override: "Ext.form.field.Text",
-    invalidText: '输入内容无效',
-    minLengthText: '最少输入{0}个字',
-    maxLengthText: '最多输入{0}个字',
-    blankText: '此项为必填项',
     //设置提示信息在文本框下方显示
     msgTarget: 'under',
     //默认最大长度限制
@@ -33,7 +29,7 @@ Ext.define("override.form.field.Text", {
                 //自动设置空值提示
                 me.emptyText = '请输入' + label;
             }
-            if (me.blankText == '此项为必填项') {
+            if (me.blankText == '该输入项为必输项') {
                 //自动设置必填提示
                 me.blankText = label + '为必填项';
             }

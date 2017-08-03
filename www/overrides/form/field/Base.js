@@ -8,7 +8,8 @@ Ext.define("override.form.field.Base", {
     setAllowBlank: function (value) {
         var me = this,
             label = me.fieldLabel;
-        me.allowBlank = value; //过滤掉空格字符
+        me.allowBlank = value;
+        //过滤掉空格字符
         if (label) {
             label = label.replace('<font color=red>*</font>', '');
         }

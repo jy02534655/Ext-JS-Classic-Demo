@@ -19,7 +19,7 @@ Ext.define('app.view.basis.Edit', {
             //编辑时需要
             xtype: 'hidden',
             name: 'id',
-            //绑定数据
+            //绑定数据，用于编辑时显示编辑数据
             bind: '{data.id}'
         },
         {
