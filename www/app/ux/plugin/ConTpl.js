@@ -1,5 +1,5 @@
 ﻿/*
-*tpl模版加入按钮
+*tpl模版加入监听
 *<div class="x-button-normal x-button x-iconalign-center x-layout-box-item x-stretched btn" style="visibility:{visibility}" fire="TasteUp" ><span class="x-button-icon x-shown lower"></span></div>
 *fire="tasteUp" 表示添加tasteUp事件和激活dotasteUp方法
 *有两个参数cmp:视图本身以及doit
