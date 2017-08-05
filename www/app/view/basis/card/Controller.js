@@ -1,11 +1,11 @@
 //视图控制器
 //会员卡类型
 //注意这个视图控制器不是唯一的
-//在多视图中通过  controller: 'basis', 会创建多个视图控制器
+//在多视图中通过  controller: 'basisCard', 会创建多个视图控制器
 //每个视图控制器都依赖与创建它的视图，视图销毁这个视图控制器也就随之销毁了
-Ext.define('app.view.basis.Controller', {
+Ext.define('app.view.basis.card.Controller', {
     extend: 'ux.app.ViewController',
-    alias: 'controller.basis',
+    alias: 'controller.basisCard',
     //点击文字进行编辑
     onEditClick: function (t,rec) {
         this.createView(rec);

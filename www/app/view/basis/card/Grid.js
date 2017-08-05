@@ -1,17 +1,17 @@
 //视图
 //会员卡类型
-Ext.define('app.view.basis.Card', {
+Ext.define('app.view.basis.card.Grid', {
     extend: 'Ext.grid.Panel',
-    xtype: 'basisCard',
+    xtype: 'basisCardGrid',
     //引入自适应布局
     //引入自定义控制器类
     //引入消息提示类
     requires: ['Ext.layout.container.Column', 'ux.app.ViewController', 'Ext.window.Toast'],
     //指定视图控制器
-    controller: 'basis',
+    controller: 'basisCard',
     //指定视图数据源
     viewModel: {
-        type: 'basis'
+        type: 'basisCard'
     },
     selModel: {
         selType: 'checkboxmodel',
@@ -21,9 +21,9 @@ Ext.define('app.view.basis.Card', {
     //绑定数据源
     bind: '{basisCardStore}',
     //引用名称
-    //可以在控制层通过this.lookup('basisCard')获取到该视图
+    //可以在控制层通过this.lookup('basisCardGrid')获取到该视图
     //也可以通过bind来做一些数据绑定操作
-    reference: 'basisCard',
+    reference: 'basisCardGrid',
     //标题
     title: '会员卡类型',
     dockedItems: [{
@@ -61,7 +61,7 @@ Ext.define('app.view.basis.Card', {
                 disabled: true,
                 bind: {
                     //列表有行被选中时启用
-                    disabled: '{!basisCard.selection}'
+                    disabled: '{!basisCardGrid.selection}'
                 }
             }]
         }, {
