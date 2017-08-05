@@ -26,6 +26,13 @@ Ext.define('app.config', {
                 del: '~api/delete',
                 //更新
                 update: '~api/update'
+            },
+            //会员卡类型
+            course: {
+                add: '~api/add',
+                list: '~api/basis/course',
+                del: '~api/delete',
+                update: '~api/update'
             }
         },
         //帮助

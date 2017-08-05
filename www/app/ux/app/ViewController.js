@@ -3,6 +3,12 @@
 //除了核心控制器，所有的控制器都继承这个扩展控制器
 Ext.define('ux.app.ViewController', {
     extend: 'Ext.app.ViewController',
+    //显示返回页面
+    showBackView: function (view, tmpConfig) {
+        config.tmpConfig = tmpConfig;
+        this.redirectTo(view);
+    },
+
     //返回
     //非弹窗类子页面通过浏览器按钮点击返回不会触发此方法
     //所以在这里只有一个回退方法
@@ -18,6 +24,26 @@ Ext.define('ux.app.ViewController', {
         Ext.util.History.back();
     },
 
+    //重新加载store
+    reloadStore: function () {
+        //这个store是列表的store
+        var store = this.getStore('store');
+        if (store) {
+            store.reload();
+        }
+    },
+
+    //win窗口提交成功执行
+    //多用于非模型提交，提交后直接刷新列表数据
+    winSuccess: function () {
+        this.reloadStore();
+        this.onClose();
+    },
+    //view窗口提交成功执行
+    viewSuccess: function () {
+        this.reloadStore();
+        this.onBack();
+    },
     //弹出窗口取消
     //重置模型数据后关闭窗口
     //多用于修改场景
@@ -28,6 +54,57 @@ Ext.define('ux.app.ViewController', {
     //关闭弹窗
     onClose: function () {
         this.getView().close();
+    },
+
+    //form表单保存
+    //默认post传值
+    //isGet是否使用get方式传值
+    formSave: function (url, isGet) {
+        var form = this.getView(),
+        deferred,
+        values;
+        //如果不是表单，向下查找表单控件
+        if (!form.isXType('form')) {
+            form = form.down('form');
+        }
+        if (form.isValid()) {
+            values = form.getValues();
+            return util.ajax(url, values, false, !isGet ? 'POST' : false);
+        }
+        deferred = new Ext.Deferred();
+        return deferred.promise;
+    },
+    //返回页保存数据 链式
+    viewSave: function (url) {
+        var me = this;
+        return me.formSave(url).then(function () {
+            me.viewSuccess();
+        });
+    },
+    //弹窗保存
+    winSave: function (url) {
+        var me = this;
+        me.formSave(url).then(function () {
+            me.winSuccess();
+        });
+    },
+    //弹窗保存 带消息提示
+    winSaveByMes: function (url, mes) {
+        var me = this,
+        win = me.getView(),
+        form = win.down('form'),
+        values;
+        if (form.isValid()) {
+            Ext.Msg.confirm('提示', mes,
+            function (btn) {
+                if (btn == 'yes') {
+                    values = form.getValues();
+                    util.ajaxP(url, values).then(function () {
+                        me.winSuccess();
+                    });
+                }
+            });
+        }
     },
 
     //重置当前页模型

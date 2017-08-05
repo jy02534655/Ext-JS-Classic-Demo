@@ -117,6 +117,8 @@ Ext.define('app.view.main.Box', {
             flex: 1,
             reference: 'mainCardPanel',
             itemId: 'contentPanel',
+            //返回页面集合，自定义属性
+            backView: [],
             layout: {
                 //跑马灯布局
                 type: 'card',

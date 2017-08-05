@@ -23,7 +23,7 @@ Ext.define('app.data.user.Navigation', {
             data: [{
                 text: '会员卡类型',
                 iconCls: 'x-fa fa-github-square',
-                viewType: 'basisCard',
+                viewType: 'basisCardGrid',
                 leaf: true
             },
             {
@@ -33,9 +33,9 @@ Ext.define('app.data.user.Navigation', {
                 leaf: true
             },
             {
-                text: '课程类别',
+                text: '课程管理',
                 iconCls: 'x-fa fa-calendar-plus-o',
-                viewType: 'pageblank',
+                viewType: 'basisCourseGrid',
                 leaf: true
             },
             {

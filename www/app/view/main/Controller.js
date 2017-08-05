@@ -9,6 +9,9 @@ Ext.define('app.view.main.Controller', {
         //这样写是为了方便扩展其他路由
         //类似view.hone的路由会触发onRouteChange方法
         'view.:node': 'onRouteChange',
+        //显示返回后会销毁的视图
+        //这个视图可以不在导航菜单和视图白名单中
+        'back.:panel.:node': 'pushNavigationView'
     },
 
     lastView: null,
@@ -127,6 +130,8 @@ Ext.define('app.view.main.Controller', {
         //}
         //将当前视图保存到lastView
         me.lastView = newView;
+        //移除额外的返回页面
+        me.pop(mainCard, mainCard.backView.length);
     },
 
     //折叠或展开导航树
@@ -216,12 +221,21 @@ Ext.define('app.view.main.Controller', {
         //监听ajax事件，开始请求时显示遮罩
         Ext.Ajax.on('beforerequest',
         function (connection, options) {
+            console.log('正在请求数据...');
+            console.log('请求地址：', options.url);
+            console.log('请求方式：', options.method);
             var params = options.params;
+            if (params) {
+                console.log('参数：', params);
+            }
+            if (options.jsonData) {
+                console.log('json参数：', options.jsonData);
+            }
             //某些情况下不需要遮罩
             //在参数里面增加isNoMask:true即可不显示遮罩
             if (!(params && params.isNoMask)) {
                 me.messageTotal++;
-                console.log('开始请求，请求总数：', me.messageTotal);
+                //console.log('开始请求，请求总数：', me.messageTotal);
                 var window = Ext.WindowManager.getActive();
                 //window弹窗才有遮罩
                 if (window && (window.isWindow || window.isMask) && !window.isToast) {
@@ -231,18 +245,19 @@ Ext.define('app.view.main.Controller', {
                     Ext.getBody().mask('正在请求数据，请等待...');
                 }
             }
-            else {
-                console.log('开始请求，无须遮罩，请求总数：', me.messageTotal);
-            }
+            //else {
+            //    console.log('开始请求，无须遮罩，请求总数：', me.messageTotal);
+            //}
         });
         //ajax请求成功
         Ext.Ajax.on('requestcomplete',
         function (connection, response, options) {
+            console.log('请求成功,服务端返回数据(已转为json对象)：', Ext.decode(response.responseText));
             var params = options.params;
             //某些情况下不需要遮罩
             if (!(params && params.isNoMask)) {
                 me.hideMessage();
-                console.log('请求成功，请求总数：', me.messageTotal);
+                //console.log('请求成功，请求总数：', me.messageTotal);
             }
         });
         //ajax请求失败
@@ -252,7 +267,7 @@ Ext.define('app.view.main.Controller', {
             //某些情况下不需要遮罩
             if (!(params && params.isNoMask)) {
                 me.hideMessage();
-                console.log('请求失败，请求总数：', me.messageTotal);
+                //console.log('请求失败，请求总数：', me.messageTotal);
             }
             Ext.toast('请求失败，服务端无法连接或出错！');
         });
@@ -307,5 +322,64 @@ Ext.define('app.view.main.Controller', {
             }
         });
         util.storeLoad(store);
+    },
+
+    //显示一个不在左侧菜单栏中的视图
+    pushNavigationView: function (card, xtype) {
+        //console.log('显示额外页面：', xtype);
+        var me = this,
+        refs = me.getReferences(),
+        //获取容器视图
+        mainCard = refs[card],
+        //获取布局
+        mainLayout = mainCard.getLayout(),
+        view = me.pop(mainCard, xtype);
+        if (!view) {
+            //console.log('目标返回页面不存在，新建：', xtype);
+            view = Ext.widget(xtype, config.tmpConfig);
+            // 整个框架停止布局，避免出错
+            Ext.suspendLayouts();
+            //容器中加入视图
+            mainLayout.setActiveItem(mainCard.add(view));
+            //加入返回页面集合中
+            mainCard.backView.push(view);
+            // 整个框架恢复布局，避免出错
+            Ext.resumeLayouts(true);
+        } else {
+            //console.log('目标返回页面存在，切换：', xtype);
+            mainLayout.setActiveItem(view);
+        }
+        //console.log(config.tmpConfig);
+        config.tmpConfig = null;
+        //console.log('当前容器内视图：', mainCard.items.keys.toString());
+    },
+    //检查指定返回页面是否已经存在
+    //如果存在则删除它之后的返回页面,并且返回该页面
+    //如果不存在返回false
+    pop: function (mainCard, count) {
+        var innerItems = mainCard.backView,
+        last = innerItems.length - 1,
+        i, item;
+        for (i = last; i >= 0; i--) {
+            //查找目标页面是否在返回集合中
+            if ((Ext.isString(count) && Ext.ComponentQuery.is(innerItems[i], count))) {
+                //获取到后面还有几个页面
+                count = last - i;
+                item = innerItems[i];
+                break;
+            }
+        }
+        //不在返回集合中
+        if (!Ext.isNumber(count)) {
+            return false;
+        }
+        var delItem;
+        //在返回集合中则移除后面的返回界面
+        for (i = 0; i < count; i++) {
+            delItem = innerItems.pop();
+            //console.log('删除额外页面', delItem.xtype);
+            mainCard.remove(delItem, true);
+        }
+        return item;
     }
 });
