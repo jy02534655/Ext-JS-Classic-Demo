@@ -21,6 +21,10 @@ Ext.define('app.data.faq.FAQ', {
         {
             question: "为什么示例中有些地方我进行刷新/新增/修改后数据没有发生变化?",
             answer: "因为在示例里面我使用了模拟接口，所有的数据都是固定的数据，有些示例没有做无刷新处理，所以数据不会刷新，这并不会影响实际开发。"
+        },
+        {
+            question: "为什么我用谷歌浏览器调试时看不到请求的数据?",
+            answer: '<div>因为在示例里面我使用了模拟接口，所以谷歌浏览器调试模式看不到，不过我用console.log()做了输出，可以直接在console中查看。</div><div>如图：</div><img src="resources/images/console.jpg">'
         }]
     },
     {

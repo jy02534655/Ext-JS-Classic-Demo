@@ -154,6 +154,7 @@ Ext.define('app.util', {
             //console.log(phantom, model.dirty);
             //修改状态并且未做修改
             if (!phantom && !model.dirty) {
+                console.log('模型数据无变化，直接返回消息!');
                 Ext.toast('编辑成功！');
                 //直接返回数据
                 deferred.resolve({
