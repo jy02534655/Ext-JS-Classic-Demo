@@ -2,7 +2,7 @@
 //会员卡类型编辑
 Ext.define('app.view.basis.card.Edit', {
     extend: 'Ext.window.Window',
-    xtype: 'basisEdit',
+    xtype: 'basisCardEdit',
     controller: 'basisCard',
     //动态绑定标题
     bind: '{title}',

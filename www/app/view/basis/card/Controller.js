@@ -16,7 +16,7 @@ Ext.define('app.view.basis.card.Controller', {
     },
     //创建视图
     createView: function (rec) {
-        Ext.widget('basisEdit', {
+        Ext.widget('basisCardEdit', {
             viewModel: {
                 data: {
                     //根据rec判断是新增还是修改
