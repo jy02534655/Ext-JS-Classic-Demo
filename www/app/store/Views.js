@@ -16,5 +16,13 @@ Ext.define('app.store.Views', {
     }],
     data: [{
         viewType: 'faq'
+    }, {
+        viewType:'login'
+    }, {
+        viewType: 'register'
+    }, {
+        viewType: 'passwordreset'
+    }, {
+        viewType: 'userlock'
     }]
 });

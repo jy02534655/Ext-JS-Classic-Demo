@@ -42,7 +42,7 @@ Ext.define('app.view.main.Box', {
             handler: 'onToggleNavigationSize'
         },
         '->', {
-            //版主按钮
+            //帮助按钮
             iconCls: 'x-fa fa-question',
             ui: 'header',
             //触发路由
@@ -52,9 +52,17 @@ Ext.define('app.view.main.Box', {
             tooltip: '帮助'
         },
         {
+            iconCls: 'x-fa fa-lock',
+            ui: 'header',
+            href: '#view.userlock',
+            hrefTarget: '_self',
+            tooltip: '锁定'
+        },
+        {
             //相当于一个label
             xtype: 'tbtext',
-            text: '戈夫·史密斯'
+            text: '戈夫·史密斯',
+            bind: '{fullName}'
         },
         {
             //图片

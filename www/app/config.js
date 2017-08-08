@@ -11,6 +11,7 @@ Ext.define('app.config', {
         ver: '1.0.1',
         //用户
         user: {
+            login: '~api/user/login',
             //导航菜单
             navigation: '~api/user/navigation'
         },

@@ -8,10 +8,17 @@ Ext.define('app.view.main.Controller', {
         //监听路由实现视图切换
         //这样写是为了方便扩展其他路由
         //类似view.hone的路由会触发onRouteChange方法
-        'view.:node': 'onRouteChange',
+        'view.:node': {
+            before: 'onLogonCheck',
+            action: 'onRouteChange'
+        },
         //显示返回后会销毁的视图
         //这个视图可以不在导航菜单和视图白名单中
-        'back.:panel.:node': 'pushNavigationView'
+        'back.:panel.:node': {
+            before: 'onBoxLogonCheck',
+            action: 'pushNavigationView'
+        },
+        'user.:node': 'loadNavigation'
     },
 
     lastView: null,
@@ -206,6 +213,22 @@ Ext.define('app.view.main.Controller', {
             }
         }
     },
+
+    //登录检测
+    onBoxLogonCheck: function (box, id, action) {
+        this.onLogonCheck(id, action);
+    },
+    //登录检测
+    onLogonCheck: function (id, action) {
+        console.log('登录检测，userData', config.userData);
+        if (config.userData || id in {
+            passwordreset: true,
+            login: true,
+            register: true
+        }) {
+            action.resume();
+        }
+    },
     //容器初始化时
     onMainViewRender: function () {
         var me = this;
@@ -291,6 +314,10 @@ Ext.define('app.view.main.Controller', {
     },
     //加载导航树
     loadNavigation: function () {
+        if (!config.userData) {
+            this.redirectTo('view.login', true);
+            return;
+        }
         console.log('正在加载导航树');
         var me = this,
         store = Ext.getStore('navigationTree');

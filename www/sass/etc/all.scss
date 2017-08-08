@@ -35,6 +35,15 @@
     -ms-box-shadow: $value;
     box-shadow: $value;
 }
+
+@mixin bg($size,$position: center) {
+    -moz-background-size: $size;
+    -o-background-size: $size;
+    -webkit-background-size: $size;
+    background-size: $size;
+    background-repeat: no-repeat;
+    background-position: $position;
+}
 /*#endregion*/
 /*#region 默认样式*/
 // 兼容ico配置
