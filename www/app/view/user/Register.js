@@ -3,6 +3,7 @@
 Ext.define('app.view.user.Register', {
     extend: 'app.view.widget.LockingWindow',
     xtype: 'register',
+    controller: 'user',
     title: '注册',
     items: [{
         cls: 'auth-dialog',
