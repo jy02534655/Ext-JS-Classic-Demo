@@ -6,3 +6,5 @@
 帮助模块相关模型
 ### NavigationTree.js
 导航菜单模型
+### User.js
+用户模型

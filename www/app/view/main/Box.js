@@ -54,15 +54,20 @@ Ext.define('app.view.main.Box', {
         {
             iconCls: 'x-fa fa-lock',
             ui: 'header',
-            href: '#view.userlock',
-            hrefTarget: '_self',
-            tooltip: '锁定'
+            tooltip: '锁定',
+            handler: 'onLock'
+        },
+        {
+            iconCls: 'x-fa fa-sign-out',
+            ui: 'header',
+            tooltip: '退出登录',
+            handler: 'onLoginOut'
         },
         {
             //相当于一个label
             xtype: 'tbtext',
-            text: '戈夫·史密斯',
-            bind: '{fullName}'
+            //动态绑定名称
+            bind: '{userData.fullName}'
         },
         {
             //图片
@@ -71,7 +76,10 @@ Ext.define('app.view.main.Box', {
             height: 35,
             width: 35,
             alt: '当前用户图像',
-            src: 'resources/images/user-profile/2.png'
+            //动态绑定头像
+            bind: {
+                src: '{userData.img}'
+            }
         }]
     },
     {

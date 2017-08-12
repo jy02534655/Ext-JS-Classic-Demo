@@ -1,28 +1,24 @@
 /**
- * This is the base class for all Authentication related Form dialogs. It optionally
- * enables autoComplete support to any child textfield so that browsers or their plugins
- * may restore/persist username, password and other attributes to/from such forms.
+  *支持表单自动填充功能
  */
 Ext.define('app.view.widget.Dialog', {
     extend: 'Ext.form.Panel',
     xtype: 'authdialog',
     /*
-     * Seek out the first enabled, focusable, empty textfield when the form is focused
+     * 自动设置焦点到可用的、显示的、无值的文本框中
      */
     defaultFocus: 'textfield:focusable:not([hidden]):not([disabled]):not([value])',
 
     /**
-     * @cfg {Boolean} [autoComplete=false]
-     * Enables browser (or Password Managers) support for autoCompletion of User Id and
-     * password.
-     */
+        * @cfg {Boolean} [autoComplete = false]
+        * 是否启用自动填充功能
+       */
     autoComplete : false,
 
     initComponent: function () {
         var me = this, listen;
 
         if (me.autoComplete) {
-            // Use standard FORM tag for detection by browser or password tools
             me.autoEl = Ext.applyIf(
                 me.autoEl || {},
                 {

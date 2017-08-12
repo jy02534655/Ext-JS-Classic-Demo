@@ -18,7 +18,10 @@ Ext.define('app.view.main.Controller', {
             before: 'onBoxLogonCheck',
             action: 'pushNavigationView'
         },
-        'user.:node': 'loadNavigation'
+        'user.:node': {
+            before: 'onLogonCheck',
+            action: 'loginSuccess'
+        }
     },
 
     lastView: null,
@@ -51,7 +54,6 @@ Ext.define('app.view.main.Controller', {
         }
         //将大些字母转换为小写
         hashTag = hashTag.toLowerCase();
-
         var me = this,
         //获取所有引用对象
         refs = me.getReferences(),
@@ -81,14 +83,8 @@ Ext.define('app.view.main.Controller', {
         }
         //如果上个视图存在，并且是Window视图
         if (lastView && lastView.isWindow) {
-            //如果这个视图是激活的，终止执行
-            if (lastView.routeId == hashTag) {
-                return;
-            } else {
-                //销毁他
-                //console.log('销毁视图:', view);
-                lastView.destroy();
-            }
+            //销毁它
+            lastView.destroy();
         }
         //将当前视图保存到lastView中
         lastView = mainLayout.getActiveItem();
@@ -221,11 +217,7 @@ Ext.define('app.view.main.Controller', {
     //登录检测
     onLogonCheck: function (id, action) {
         console.log('登录检测，userData', config.userData);
-        if (config.userData || id in {
-            passwordreset: true,
-            login: true,
-            register: true
-        }) {
+        if (config.userData || id in config.unCheck) {
             action.resume();
         }
     },
@@ -233,7 +225,9 @@ Ext.define('app.view.main.Controller', {
     onMainViewRender: function () {
         var me = this;
         me.onAjaxInit();
-        me.loadNavigation();
+        if (!config.userData) {
+            me.redirectTo('view.login', true);
+        }
     },
     //监听ajax，增加自动遮罩效果
     //ajax请求自动遮罩
@@ -312,24 +306,27 @@ Ext.define('app.view.main.Controller', {
             me.messageTotal = 0;
         }
     },
+
+    //登录成功
+    loginSuccess: function () {
+        var me = this;
+        me.loadNavigation();
+        //绑定用户信息到数据源中
+        me.getViewModel().setData({ userData: config.userData });
+    },
     //加载导航树
     loadNavigation: function () {
-        if (!config.userData) {
-            this.redirectTo('view.login', true);
-            return;
-        }
         console.log('正在加载导航树');
         var me = this,
         store = Ext.getStore('navigationTree');
-        //重置地址栏
-        me.redirectTo('home');
+
         store.on({
             //仅监听一次
             single: true,
             //监听菜单请求完成事件
             load: function (t, records) {
                 //console.log('用户菜单请求完成');
-                var data, rec;
+                var data, rec, tree;
                 if (records.length > 0) {
                     //获取第一个菜单
                     rec = records[0];
@@ -340,15 +337,18 @@ Ext.define('app.view.main.Controller', {
                         //如果有子菜单则获取第一个子菜单
                         data = rec.get('data')[0];
                     }
+                    tree = me.lookup('navigationTreeList');
+                    //如果导航菜单已经加载了，先置空store然再加载数据，这样不会出错
+                    tree.setStore(null);
                     //loadNavigation方法触发时导航菜单还没有完成布局，直接绑定store的话会出现布局错误
                     //在这里我们等数据加载出来再去绑定数据，这样就不会出错了
-                    me.lookup('navigationTreeList').setStore(store);
+                    tree.setStore(store);
                     //跳转到第一个菜单
                     me.redirectToView(data);
                 }
             }
         });
-        util.storeLoad(store);
+        util.storeLoad(store, config.userData, true);
     },
 
     //显示一个不在左侧菜单栏中的视图
@@ -408,5 +408,16 @@ Ext.define('app.view.main.Controller', {
             mainCard.remove(delItem, true);
         }
         return item;
+    },
+
+    //退出登录
+    onLoginOut: function () {
+        config.userData = null;
+        window.location.reload();
+    },
+    //锁定
+    onLock: function () {
+        config.userData = null;
+        this.redirectTo('view.userlock', true);
     }
 });

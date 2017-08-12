@@ -17,6 +17,7 @@ Ext.define('app.model.User', {
         defaultValue: false
     }],
     proxy: {
+        //本地储存
         type: 'localstorage',
         id: 'demo-login-user'
     }

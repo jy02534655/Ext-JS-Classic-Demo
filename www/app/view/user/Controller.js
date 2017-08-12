@@ -1,7 +1,7 @@
 //视图控制器
 //用户控制器
 Ext.define('app.view.user.Controller', {
-    extend: 'Ext.app.ViewController',
+    extend: 'ux.app.ViewController',
     alias: 'controller.user',
     //登录页面启动时
     onLoginRender: function () {
@@ -54,4 +54,24 @@ Ext.define('app.view.user.Controller', {
         //储存到本地
         logUser.save();
     },
+    //取消解锁
+    onUnLock: function () {
+        var me = this;
+        me.formSave(config.user.unLock).then(function () {
+            me.onClose();
+        });
+    },
+    //找回密码
+    onReset: function () {
+        var me = this;
+        me.formSave(config.user.reset);
+    },
+    //注册
+    onRegister: function () {
+        var me = this;
+        me.formSave(config.user.register).then(function (response) {
+            //注册成功后自动登录
+            me.loginSuccess(response.data);
+        });
+    }
 });

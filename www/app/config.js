@@ -5,12 +5,28 @@ Ext.define('app.config', {
     //如config.ver
     alternateClassName: 'config',
     statics: {
+        //无须登陆检测就可以访问的页面
+        //例如登录页的xtype为login，就配置为login:true
+        //注意xtype只能小写
+        unCheck: {
+            userlock: true,
+            userreset: true,
+            login: true,
+            register: true
+        },
         //临时配置参数
         tmpConfig:null,
         //版本号
         ver: '1.0.1',
         //用户
         user: {
+            //注册
+            register: '~api/user/login',
+            //重置密码
+            reset: '~api/user/reset',
+            //解除绑定
+            unLock: '~api/user/login',
+            //登录
             login: '~api/user/login',
             //导航菜单
             navigation: '~api/user/navigation'
