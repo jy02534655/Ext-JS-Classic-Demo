@@ -18,6 +18,7 @@ Ext.define('app.view.main.Controller', {
             before: 'onBoxLogonCheck',
             action: 'pushNavigationView'
         },
+        //登录成功后触发
         'user.:node': {
             before: 'onLogonCheck',
             action: 'loginSuccess'
@@ -217,14 +218,17 @@ Ext.define('app.view.main.Controller', {
     //登录检测
     onLogonCheck: function (id, action) {
         console.log('登录检测，userData', config.userData);
+        //登录成功或者要跳转的页面在全局配置中已经配置才能继续
         if (config.userData || id in config.unCheck) {
             action.resume();
         }
     },
+
     //容器初始化时
     onMainViewRender: function () {
         var me = this;
         me.onAjaxInit();
+        //检查是否登录，没有就跳转到登录页
         if (!config.userData) {
             me.redirectTo('view.login', true);
         }
@@ -413,6 +417,7 @@ Ext.define('app.view.main.Controller', {
     //退出登录
     onLoginOut: function () {
         config.userData = null;
+        //直接刷新页面，避免出错
         window.location.reload();
     },
     //锁定

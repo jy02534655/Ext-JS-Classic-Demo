@@ -8,6 +8,7 @@ Ext.define('app.view.user.Controller', {
         var me = this;
         app.model.User.load('app.model.User-1', {
             success: function (user) {
+                //如果读取到本地用户信息，自动填充到表单
                 me.getViewModel().setData(user.getData());
             }
         });
@@ -15,14 +16,16 @@ Ext.define('app.view.user.Controller', {
     onSpecialkey: function (f, e) {
         var me = this;
         if (e.getKey() == e.ENTER) {
+            //按回车时自动提交数据
             me.onLoginClick();
         }
     },
     //点击登录
     onLoginClick: function (button) {
         var me = this,
-         view = me.getView(),
-         form = view.down('form'), values = form.getValues();
+        view = me.getView(),
+        form = view.down('form'),
+        values = form.getValues();
         //请求登录接口
         util.ajaxB(config.user.login, values, 'POST').then(function (response) {
             if (response.success) {
@@ -39,9 +42,14 @@ Ext.define('app.view.user.Controller', {
             Ext.toast(response.message);
         });
     },
+    //登录成功
     loginSuccess: function (data) {
+        //全局变量写入用户信息
         config.userData = data;
+        //关闭弹窗
         this.getView().close();
+        //触发路由
+        //由核心控制器接收路由，处理登录成功流程
         this.redirectTo('user.home');
     },
     //保存用户信息
@@ -54,7 +62,7 @@ Ext.define('app.view.user.Controller', {
         //储存到本地
         logUser.save();
     },
-    //取消解锁
+    //取消锁定
     onUnLock: function () {
         var me = this;
         me.formSave(config.user.unLock).then(function () {

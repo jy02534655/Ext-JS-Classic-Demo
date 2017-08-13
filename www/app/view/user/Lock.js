@@ -35,6 +35,7 @@ Ext.define('app.view.user.Lock', {
             },
             {
                 xtype: 'box',
+                //因为视图没有指定数据源，默认使用核心数据源中的数据
                 bind: {
                     html: '<div class=\'user-name-text\'> {userData.fullName} </div><div class=\'user-post-text\'> {userData.position} </div>'
                 }

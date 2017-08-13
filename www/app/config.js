@@ -5,6 +5,10 @@ Ext.define('app.config', {
     //如config.ver
     alternateClassName: 'config',
     statics: {
+        //临时配置参数
+        tmpConfig:null,
+        //版本号
+        ver: '1.0.1',
         //无须登陆检测就可以访问的页面
         //例如登录页的xtype为login，就配置为login:true
         //注意xtype只能小写
@@ -14,10 +18,6 @@ Ext.define('app.config', {
             login: true,
             register: true
         },
-        //临时配置参数
-        tmpConfig:null,
-        //版本号
-        ver: '1.0.1',
         //用户
         user: {
             //注册

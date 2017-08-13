@@ -11,12 +11,10 @@ Ext.define('app.view.main.Box', {
         //子视图铺满容器
         align: 'stretch'
     },
-
     listeners: {
         //监听页面初始化事件
         render: 'onMainViewRender'
     },
-
     items: [{
         //顶部导航栏
         xtype: 'toolbar',
@@ -52,12 +50,14 @@ Ext.define('app.view.main.Box', {
             tooltip: '帮助'
         },
         {
+            //锁定按钮
             iconCls: 'x-fa fa-lock',
             ui: 'header',
             tooltip: '锁定',
             handler: 'onLock'
         },
         {
+            //退出登录按钮
             iconCls: 'x-fa fa-sign-out',
             ui: 'header',
             tooltip: '退出登录',
