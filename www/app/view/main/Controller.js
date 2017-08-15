@@ -12,6 +12,10 @@ Ext.define('app.view.main.Controller', {
             before: 'onLogonCheck',
             action: 'onRouteChange'
         },
+        'box.:panel.:node': {
+            before: 'onBoxLogonCheck',
+            action: 'onRouteBoxChange'
+        },
         //显示返回后会销毁的视图
         //这个视图可以不在导航菜单和视图白名单中
         'back.:panel.:node': {
@@ -36,20 +40,33 @@ Ext.define('app.view.main.Controller', {
     },
     //跳转到指定页面
     redirectToView: function (data) {
-        //获取目标页面
-        var to = data.viewType;
+        var to = data.viewType,
+            type = data.pageType;
         if (to) {
-            //触发路由
-            this.redirectTo('view.' + to);
+            //如果type有值表示在子容器中切换视图
+            //没有值则在父容器中切换
+            if (!type) {
+                this.redirectTo('view.' + to);
+            } else {
+                this.redirectTo('box.' + type + '.' + to);
+            }
         }
     },
     //由view.:node路由触发
     onRouteChange: function (id) {
         //切换视图
-        this.setCurrentView(id);
+        this.setCurrentView('mainCardPanel', id);
+    },
+    //切换容器类页面
+    onRouteBoxChange: function (panel, view) {
+        //console.log('切换容器，当前容器：', panel);
+        //先切换到子容器页面中
+        this.setCurrentView('mainCardPanel', panel);
+        //在子容器中切换页面
+        this.setCurrentView(panel, view);
     },
     //切换视图
-    setCurrentView: function (hashTag) {
+    setCurrentView: function (card,hashTag) {
         if (!hashTag) {
             return;
         }
@@ -59,7 +76,7 @@ Ext.define('app.view.main.Controller', {
         //获取所有引用对象
         refs = me.getReferences(),
         //获取容器视图
-        mainCard = refs.mainCardPanel,
+        mainCard = refs[card],
         //获取布局
         mainLayout = mainCard.getLayout(),
         //获取左侧菜单
@@ -76,6 +93,8 @@ Ext.define('app.view.main.Controller', {
         lastView = me.lastView,
         //检查目标视图是否已经存在
         existingItem = mainCard.child('component[routeId=' + hashTag + ']'),
+        //获取当前已经存在的window窗口
+        window = Ext.WindowManager.getActive(),
         newView;
         //如果上一个视图存在则触发这个视图的自定义事件viewHide
         //扩展监听，有些时候可能会用到
@@ -86,6 +105,13 @@ Ext.define('app.view.main.Controller', {
         if (lastView && lastView.isWindow) {
             //销毁它
             lastView.destroy();
+        } else {
+            //上个视图不是Window视图窗口,当前页面有则关闭它
+            if (window && window.isWindow && !window.isToast) {
+                //console.log('关闭Window视图', window.title);
+                window.close();
+            }
+
         }
         //将当前视图保存到lastView中
         lastView = mainLayout.getActiveItem();
@@ -134,6 +160,7 @@ Ext.define('app.view.main.Controller', {
         //}
         //将当前视图保存到lastView
         me.lastView = newView;
+        console.log(mainCard.backView.length);
         //移除额外的返回页面
         me.pop(mainCard, mainCard.backView.length);
     },
@@ -217,7 +244,7 @@ Ext.define('app.view.main.Controller', {
     },
     //登录检测
     onLogonCheck: function (id, action) {
-        console.log('登录检测，userData', config.userData);
+        //console.log('登录检测，userData', config.userData);
         //登录成功或者要跳转的页面在全局配置中已经配置才能继续
         if (config.userData || id in config.unCheck) {
             action.resume();
@@ -408,7 +435,7 @@ Ext.define('app.view.main.Controller', {
         //在返回集合中则移除后面的返回界面
         for (i = 0; i < count; i++) {
             delItem = innerItems.pop();
-            //console.log('删除额外页面', delItem.xtype);
+            console.log('删除额外页面', delItem.xtype);
             mainCard.remove(delItem, true);
         }
         return item;
@@ -424,5 +451,35 @@ Ext.define('app.view.main.Controller', {
     onLock: function () {
         config.userData = null;
         this.redirectTo('view.userlock', true);
-    }
+    },
+
+    //树被选中时
+    onTreeSelection: function (t, rec) {
+        this.viewLoad(t, this.lookup(t.view.activityPanel), rec);
+    },
+    //左侧菜单发生变化时 内部容器切换时 触发
+    viewLoad: function (tree,panel, record) {
+        var layout = panel.getLayout(),
+        //获取当前显示页面
+        view = layout.getActiveItem();
+        //容器记录已选中的树
+        panel.treeRecord = record;
+        //视图存在才能继续
+        //原来是不必判断的，不过在做了左侧树的数据优化后需要判断
+        if (view) {
+            //激活视图记录已选中的树
+            view.treeRecord = record;
+            //console.log('请求数据');
+            //console.log('当前容器：', panel.reference, '当前视图', view.xtype, '当前树名称', record ? record.get('text') : '');
+            //如果不是列表
+            //isManualLoad 是否手动加载数据
+            if (view.isXType('grid') &&!view.isManualLoad) {
+                //根节点不请求数据
+                //消息中心进来时不请求数据
+                util.listLoad(view, record.getData());
+            }
+            //触发自定义事件，以便处理相应业务逻辑
+            view.fireEvent('treeSelect', tree, view, record);
+        }
+    },
 });

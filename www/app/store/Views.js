@@ -24,5 +24,7 @@ Ext.define('app.store.Views', {
         viewType: 'userreset'
     }, {
         viewType: 'userlock'
+    }, {
+        viewType: 'basisPanel'
     }]
 });

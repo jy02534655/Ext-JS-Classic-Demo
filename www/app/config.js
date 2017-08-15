@@ -33,6 +33,13 @@ Ext.define('app.config', {
         },
         //基础配置
         basis: {
+            //员工类别
+            category: {
+                add: '~api/add',
+                list: '~api/basis/category',
+                del: '~api/delete',
+                update: '~api/update'
+            },
             //会员卡类型
             card: {
                 //新增

@@ -15,6 +15,9 @@ Ext.define('app.model.Navigation', {
     },
     {
         name: 'leaf'
+    },
+    {
+        name: 'pageType'
     }],
     //代理
     proxy: {

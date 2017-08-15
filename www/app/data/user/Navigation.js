@@ -41,7 +41,8 @@ Ext.define('app.data.user.Navigation', {
             {
                 text: '员工类别',
                 iconCls: 'x-fa  fa-child ',
-                viewType: 'pageblank',
+                viewType: 'basisCategoryEdit',
+                pageType: 'basisPanel',
                 leaf: true
             }]
         },
