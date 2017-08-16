@@ -42,6 +42,7 @@ Ext.define('app.data.user.Navigation', {
                 text: '员工类别',
                 iconCls: 'x-fa  fa-child ',
                 viewType: 'basisCategoryEdit',
+                //容器的xtype
                 pageType: 'basisPanel',
                 leaf: true
             }]

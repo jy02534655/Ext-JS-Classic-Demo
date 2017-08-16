@@ -1,16 +1,21 @@
+//视图
+//编辑员工类别
 Ext.define('app.view.basis.category.Edit', {
     extend: 'Ext.form.Panel',
     xtype: 'basisCategoryEdit',
     controller: 'basisCategory',
+    //创建一个空白视图数据源，方便绑定数据
     viewModel: {},
     listeners: {
+        //树形菜单数据被选中时
         treeSelect: 'onTreeSelect',
+        //页面激活时
         activate: 'onActivate'
     },
     title: '员工类别',
-    cls: 'panelInfo',
     bodyPadding: '0 10 10 10',
     border: true,
+    //动态标题
     bind: '{data.text}',
     fieldDefaults: {
         labelWidth: 90

@@ -1,3 +1,5 @@
+//视图
+//新增员工类型
 Ext.define('app.view.basis.category.Add', {
     extend: 'Ext.form.Panel',
     xtype: 'basisCategoryAdd',

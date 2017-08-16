@@ -63,6 +63,8 @@ Ext.define('app.view.main.Controller', {
         //先切换到子容器页面中
         this.setCurrentView('mainCardPanel', panel);
         //在子容器中切换页面
+        //注意从返回页面返回时，如果js出错，ext有可能不会抛出错误
+        //想要排除错误的话可以用setTimeout延迟执行，这样会抛出错误
         this.setCurrentView(panel, view);
     },
     //切换视图
@@ -160,7 +162,6 @@ Ext.define('app.view.main.Controller', {
         //}
         //将当前视图保存到lastView
         me.lastView = newView;
-        console.log(mainCard.backView.length);
         //移除额外的返回页面
         me.pop(mainCard, mainCard.backView.length);
     },
@@ -471,11 +472,9 @@ Ext.define('app.view.main.Controller', {
             view.treeRecord = record;
             //console.log('请求数据');
             //console.log('当前容器：', panel.reference, '当前视图', view.xtype, '当前树名称', record ? record.get('text') : '');
-            //如果不是列表
+            //如果不是列表则不加载数据
             //isManualLoad 是否手动加载数据
             if (view.isXType('grid') &&!view.isManualLoad) {
-                //根节点不请求数据
-                //消息中心进来时不请求数据
                 util.listLoad(view, record.getData());
             }
             //触发自定义事件，以便处理相应业务逻辑

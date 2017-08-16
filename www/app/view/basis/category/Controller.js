@@ -5,6 +5,7 @@ Ext.define('app.view.basis.category.Controller', {
     alias: 'controller.basisCategory',
     //详情页面被激活时
     onActivate: function () {
+        //获取左侧选中项
         rec = config.categoryRecord;
         if (rec) {
             var view = this.getView();
@@ -14,7 +15,8 @@ Ext.define('app.view.basis.category.Controller', {
                 view.oldRec = null;
                 config.isCategoryAddBack = false;
             }
-            this.onTreeSelect(this.tissueTree,view, rec);
+            //触发onTreeSelect方法
+            this.onTreeSelect(this.tissueTree, view, rec);
         }
     },
     //详情页面左侧树员工类别选择改变时
@@ -30,16 +32,21 @@ Ext.define('app.view.basis.category.Controller', {
         this.tissueTree = tree;
         //设置上级节点名称
         rec.set('parentName', parentNode.get('text'), {
+            //标识为未修改
             dirty: false
         });
+        //绑定数据
         t.getViewModel().setData({
             data: rec
         });
     },
     //删除
     onDel: function () {
+        //获取选中项
         var rec = config.categoryRecord,
+        //获取选中项的父级
         parentNode = rec.parentNode,
+        //获取树形菜单视图
         tree = this.tissueTree;
         Ext.MessageBox.confirm('删除确认', '确认删除' + rec.get('text') + '?',
         function (btnText) {
@@ -72,7 +79,7 @@ Ext.define('app.view.basis.category.Controller', {
         }
         //设置上级节点名称
         rec.set({
-            parentId:parentNode.getId(),
+            parentId: parentNode.getId(),
             parentName: parentNode.get('text'),
             leaf: true
         });
@@ -97,7 +104,15 @@ Ext.define('app.view.basis.category.Controller', {
     },
     //新增
     onAddSave: function () {
-        var me = this,node;
+        var me = this,
+        node;
+        //注意新增的数据需要服务端返回主键id字段数据，数据格式如：
+        //{
+        // message:"新增成功！",
+        // success:true,
+        // data:{id:999}
+        //}
+        //否则不能实现树形菜单无刷新功能
         me.modelSave().then(function (data) {
             node = config.categoryRecord;
             node.insertChild(0, data.rec);

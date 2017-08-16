@@ -8,6 +8,7 @@ Ext.define('app.store.basis.Category', {
     filterer: 'bottomup',
     root: {
         text: '员工',
+        remark:'除了老板都是员工',
         expanded: false
     }
 });

@@ -1,3 +1,5 @@
+//视图
+//左侧是员工类型的容器视图
 Ext.define('app.view.basis.Panel', {
     extend: 'Ext.container.Container',
     requires: ['ux.form.field.SearchField'],
@@ -17,10 +19,11 @@ Ext.define('app.view.basis.Panel', {
         xtype: 'categoryTree',
         reference: 'categoryTree',
         viewConfig: {
-            //loadMask: false,
+            //自定义配置，用于onTreeSelection方法中
             activityPanel: 'basisPanel'
         },
         listeners: {
+            //监听选中事件
             select: 'onTreeSelection'
         }
     }, {

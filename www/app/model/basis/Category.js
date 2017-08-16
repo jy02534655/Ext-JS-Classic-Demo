@@ -5,6 +5,9 @@ Ext.define('app.model.basis.Category', {
     fields: [{
         type: 'string',
         name: 'text'
+    }, {
+        type: 'string',
+        name: 'remark'
     }],
     proxy: {
         type: 'api',
