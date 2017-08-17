@@ -27,15 +27,15 @@ Ext.define('app.data.user.Navigation', {
                 leaf: true
             },
             {
-                text: '会员级别',
-                iconCls: 'x-fa fa-street-view',
-                viewType: 'pageblank',
-                leaf: true
-            },
-            {
                 text: '课程管理',
                 iconCls: 'x-fa fa-calendar-plus-o',
                 viewType: 'basisCourseGrid',
+                leaf: true
+            },
+            {
+                text: '员工级别',
+                iconCls: 'x-fa fa-street-view',
+                viewType: 'pageblank',
                 leaf: true
             },
             {

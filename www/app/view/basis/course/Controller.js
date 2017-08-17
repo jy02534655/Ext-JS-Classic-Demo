@@ -18,7 +18,7 @@ Ext.define('app.view.basis.course.Controller', {
                 data: {
                     //是否编辑
                     isEdit:!!rec,
-                    title: rec ? '修改课程: ' + rec.get('type') : '新增课程',
+                    title: rec ? '修改课程: ' + rec.get('name') : '新增课程',
                     data: rec ? rec : Ext.create('app.model.basis.Course')
                 },
                 stores: {

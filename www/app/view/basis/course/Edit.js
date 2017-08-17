@@ -13,6 +13,10 @@ Ext.define('app.view.basis.course.Edit', {
     scrollable: 'y',
     items: [{
         xtype: 'form',
+        //给一个默认标题
+        //避免默认无标题栏导致视图切换效果过于生硬
+        title: '新增',
+        border: true,
         bind: '{title}',
         bodyPadding: '10 10 0 10',
         fieldDefaults: {
