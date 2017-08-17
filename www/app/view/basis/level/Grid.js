@@ -4,7 +4,7 @@ Ext.define('app.view.basis.level.Grid', {
     extend: 'Ext.grid.Panel',
     xtype: 'basisLevelGrid',
     controller: 'basisLevel',
-    rrequires: ['ux.button.Search'],
+    requires: ['ux.button.Search'],
     viewModel: {
         type: 'basisLevel'
     },
