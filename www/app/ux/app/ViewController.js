@@ -207,6 +207,10 @@ Ext.define('ux.app.ViewController', {
         this);
     },
 
+    //筛选弹窗搜索
+    onGridSearchByBtn: function (t, form, values) {
+        util.viewLoad(t.up('grid'), values);
+    },
     //Grid查询
     //用于grid中条件查询
     searchGrid: function (btn) {

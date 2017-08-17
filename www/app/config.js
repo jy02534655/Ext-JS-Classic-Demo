@@ -33,6 +33,13 @@ Ext.define('app.config', {
         },
         //基础配置
         basis: {
+            //员工级别
+            level: {
+                add: '~api/add',
+                list: '~api/basis/level',
+                del: '~api/delete',
+                update: '~api/update'
+            },
             //员工类别
             category: {
                 add: '~api/add',

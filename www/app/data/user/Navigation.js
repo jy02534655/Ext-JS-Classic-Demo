@@ -35,7 +35,8 @@ Ext.define('app.data.user.Navigation', {
             {
                 text: '员工级别',
                 iconCls: 'x-fa fa-street-view',
-                viewType: 'pageblank',
+                viewType: 'basisLevelGrid',
+                pageType: 'basisPanel',
                 leaf: true
             },
             {

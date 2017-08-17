@@ -475,7 +475,7 @@ Ext.define('app.view.main.Controller', {
             //如果不是列表则不加载数据
             //isManualLoad 是否手动加载数据
             if (view.isXType('grid') &&!view.isManualLoad) {
-                util.listLoad(view, record.getData());
+                util.viewLoad(view, record.getData());
             }
             //触发自定义事件，以便处理相应业务逻辑
             view.fireEvent('treeSelect', tree, view, record);
