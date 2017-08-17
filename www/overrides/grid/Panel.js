@@ -13,5 +13,5 @@ Ext.define("override.grid.Panel", {
     //有边框
     border: true,
     //cls
-    cls: 'shadow user-grid'
+    cls: 'user-grid'
 });

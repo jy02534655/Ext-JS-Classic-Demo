@@ -60,7 +60,11 @@ Ext.define('app.view.basis.level.Grid', {
                 fieldLabel: '名称',
                 xtype: 'textfield',
                 name: 'type'
-            }]
+            }],
+            disabled: true,
+            bind: {
+                disabled: '{!categoryTree.selection}'
+            }
         }]
     }],
     columns: [{
