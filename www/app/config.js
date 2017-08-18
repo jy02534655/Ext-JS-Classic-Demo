@@ -35,6 +35,11 @@ Ext.define('app.config', {
         basis: {
             //员工级别
             level: {
+                //员工待遇
+                pay:{
+                    tree: '~api/basis/pay',
+                    edit: '~api/update'
+                },
                 add: '~api/add',
                 list: '~api/basis/level',
                 del: '~api/delete',

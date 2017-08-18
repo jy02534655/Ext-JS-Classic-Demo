@@ -7,6 +7,10 @@ Ext.define('app.view.basis.level.Model', {
         //卡类型
         basisLevelStore: {
             type: 'basisLevel'
+        },
+        //员工待遇
+        payStore: {
+            type: 'basisPay'
         }
     }
 });

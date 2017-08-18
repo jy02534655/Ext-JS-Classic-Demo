@@ -19,10 +19,14 @@ Ext.define('app.view.basis.level.Grid', {
     dockedItems: [{
         xtype: 'toolbar',
         dock: 'top',
+        defaults: {
+            xtype: 'button',
+            disabled: true,
+            ui: 'soft-blue'
+        },
         items: [{
             text: '新增',
             handler: 'onAddClick',
-            disabled: true,
             bind: {
                 disabled: '{!categoryTree.selection}'
             }
@@ -30,7 +34,13 @@ Ext.define('app.view.basis.level.Grid', {
         {
             text: '删除',
             handler: 'onDeleteClick',
-            disabled: true,
+            bind: {
+                disabled: '{!basisLevelGrid.selection}'
+            }
+        },
+        {
+            text: '设置待遇',
+            handler: 'onPlayClick',
             bind: {
                 disabled: '{!basisLevelGrid.selection}'
             }
