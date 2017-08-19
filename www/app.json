@@ -27,13 +27,14 @@
      * ext-locale 引入语言包
      * font-awesome 字体图标
      * ux ext扩展包
+     * charts 图表扩展包
      * 例如,
      *
      *      "requires": [
      *          "charts"
      *      ]
      */
-  "requires": [ "font-awesome", "ext-locale", "ux" ],
+  "requires": [ "font-awesome", "ext-locale", "ux", "charts" ],
   /**
      * 中文
      */
