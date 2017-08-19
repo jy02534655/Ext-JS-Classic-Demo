@@ -133,6 +133,9 @@ Ext.define('app.view.main.Controller', {
                 // 直接激活目标视图
                 if (existingItem !== lastView) {
                     mainLayout.setActiveItem(existingItem);
+                    //触发容器的自定义事件activeitemchange
+                    //扩展监听，有些时候可能会用到
+                    mainCard.fireEvent('activeitemchange', mainCard, newView, lastView);
                 }
                 newView = existingItem;
                 //触发这个视图的自定义事件viewShow
@@ -457,6 +460,16 @@ Ext.define('app.view.main.Controller', {
     //树被选中时
     onTreeSelection: function (t, rec) {
         this.viewLoad(t, this.lookup(t.view.activityPanel), rec);
+    },
+    //面板容器内部进行视图切换时
+    onPanelActiveitemChange: function (t) {
+        var record = t.treeRecord;
+        //返回模式不做操作
+        if (record && !config.isBack) {
+            //console.log('容器内部视图切换');
+            this.viewLoad(this.lookup(t.relatedTree), t, record);
+        }
+        config.isBack = false;
     },
     //左侧菜单发生变化时 内部容器切换时 触发
     viewLoad: function (tree,panel, record) {

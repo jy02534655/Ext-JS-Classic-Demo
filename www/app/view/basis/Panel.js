@@ -36,6 +36,11 @@ Ext.define('app.view.basis.Panel', {
             type: 'card',
             anchor: '100%'
         },
-        margin: '0 0 0 20'
+        margin: '0 0 0 20',
+        //关联tree，用于onPanelActiveitemChange方法中
+        relatedTree: 'categoryTree',
+        listeners: {
+            activeitemchange: 'onPanelActiveitemChange'
+        }
     }]
 });
