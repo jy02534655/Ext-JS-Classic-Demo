@@ -18,6 +18,15 @@ Ext.define('app.config', {
             login: true,
             register: true
         },
+        //统计报表
+        report: {
+            //员工统计
+            employee: '~api/report/employee',
+            //销量
+            sales: '~api/report/sales',
+            //市场占有率
+            share: '~api/report/share'
+        },
         //用户
         user: {
             //注册

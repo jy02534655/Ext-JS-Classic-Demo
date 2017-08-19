@@ -81,6 +81,32 @@ a {
 }
 /*#endregion*/
 /*#endregion*/
+/*#region 布局*/
+//鼠标移动上去显示手型
+.fire {
+    cursor: pointer;
+}
+
+.b {
+    border: 1px solid #e7e6ea !important;
+}
+
+.bt {
+    border-top: 1px solid #e7e6ea !important;
+}
+
+.bb {
+    border-bottom: 1px solid #e7e6ea !important;
+}
+
+.br {
+    border-right: 1px solid #e7e6ea !important;
+}
+
+.bl {
+    border-left: 1px solid #e7e6ea !important;
+}
+/*#endregion*/
 /*#region 样式重写*/
 /*#region 重写遮罩*/
 .x-mask {

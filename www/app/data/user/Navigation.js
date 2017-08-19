@@ -18,6 +18,12 @@ Ext.define('app.data.user.Navigation', {
             leaf: true
         },
         {
+            text: '统计报表',
+            iconCls: 'x-fa fa-pie-chart',
+            viewType: 'reportHome',
+            leaf: true
+        },
+        {
             text: '基础资料',
             iconCls: 'x-fa fa-book',
             data: [{
