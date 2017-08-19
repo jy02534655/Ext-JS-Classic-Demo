@@ -16,15 +16,10 @@ Ext.define('app.view.basis.level.Controller', {
         Ext.widget('basisLevelEdit', {
             viewModel: {
                 data: {
-                    //根据rec判断是新增还是修改
                     title: rec ? '修改会员级别: ' + rec.get('type') : '新增会员级别',
-                    //新增则创建一个模型对象
-                    //编辑则直接赋值
-                    //用于新增编辑时操作数据，名称固定为data
                     data: rec ? rec : Ext.create('app.model.basis.Level')
                 },
                 stores: {
-                    //用于新增编辑成功后保存数据，名称固定为store
                     store: this.getStore('basisLevelStore')
                 }
             }
@@ -65,7 +60,7 @@ Ext.define('app.view.basis.level.Controller', {
         },
         true);
     },
-    //保存权限
+    //保存待遇
     onSavePay: function () {
         var me = this,
         view = this.getView(),
@@ -85,5 +80,5 @@ Ext.define('app.view.basis.level.Controller', {
         }).then(function () {
             me.closeView();
         });
-    },
+    }
 });

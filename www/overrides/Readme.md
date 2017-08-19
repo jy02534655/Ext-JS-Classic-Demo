@@ -4,9 +4,11 @@
 重写Ext.data相关类
 ### form 目录
 重写Ext.form相关类扩展目录
-### view 目录
-重写Ext.view相关类扩展目录
 ### grid 目录
 重写Ext.grid相关类扩展目录
+### tree 目录
+重写Ext.tree相关类扩展目录
+### view 目录
+重写Ext.view相关类扩展目录
 ### window目录
 重写Ext.window相关类扩展目录

@@ -4,6 +4,7 @@ Ext.define('app.view.basis.level.Grid', {
     extend: 'Ext.grid.Panel',
     xtype: 'basisLevelGrid',
     controller: 'basisLevel',
+    //引入扩展
     requires: ['ux.button.Search'],
     viewModel: {
         type: 'basisLevel'
@@ -48,11 +49,14 @@ Ext.define('app.view.basis.level.Grid', {
         '->', {
             xtype: 'buttonSearch',
             text: '筛选',
+            //浮动位置
             pickerAlign: 'tr-b',
+            //浮动偏移量
             pickerOffset: [35, 5],
             listeners: {
                 okclick: 'onGridSearchByBtn'
             },
+            //弹窗配置
             pickerConfig: {
                 fieldDefaults: {
                     labelWidth: 40
@@ -61,6 +65,12 @@ Ext.define('app.view.basis.level.Grid', {
             //筛选项
             //和form表单中items配置一样
             pickerItems: [{
+                //隐藏域
+                xtype: 'hidden',
+                name: 'categoryId',
+                //左侧树形菜单选中项的id
+                bind: '{categoryTree.selection.id}'
+            }, {
                 fieldLabel: '编码',
                 xtype: 'textfield',
                 allowBlank: false,
