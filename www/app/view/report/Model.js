@@ -1,5 +1,5 @@
 ﻿//数据源
-//员工类型容器数据源
+//统计报表数据源
 Ext.define('app.view.report.Model', {
     extend: 'Ext.app.ViewModel',
     alias: 'viewmodel.report',
@@ -15,6 +15,6 @@ Ext.define('app.view.report.Model', {
         //市场占有率
         reportShareStore: {
             type: 'reportShare'
-        },
+        }
     }
 });

@@ -1,3 +1,5 @@
+//重写类
+//饼状图功能增强
 Ext.define("override.chart.series.Pie", {
     override: "Ext.chart.series.Pie",
     provideLegendInfo: function (target) {
@@ -19,8 +21,6 @@ Ext.define("override.chart.series.Pie", {
                 if (Ext.isObject(fill)) {
                     fill = fill.stops && fill.stops[0].color;
                 }
-                console.log(items[i].get(angleField));
-
                 target.push({
                     name: labelField ? String(items[i].get(labelField)) : xField + ' ' + i,
                     //扩展支持

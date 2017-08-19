@@ -1,5 +1,5 @@
 //模拟数据源
-//销量
+//销量统计
 Ext.define('app.data.report.Sales', {
     extend: 'app.data.Simulated',
     data: {

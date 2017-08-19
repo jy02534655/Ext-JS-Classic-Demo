@@ -1,5 +1,5 @@
 ﻿//数据仓库
-//销量
+//销量统计
 Ext.define('app.store.report.Sales', {
     extend: 'Ext.data.Store',
     alias: 'store.reportSales',

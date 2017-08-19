@@ -3,6 +3,7 @@
 Ext.define('app.view.report.Controller', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.report',
+    //折线图移动到点上处理
     onShareRenderer: function (tooltip, record, item) {
         if (record) {
             var title = item.series.getTitle();

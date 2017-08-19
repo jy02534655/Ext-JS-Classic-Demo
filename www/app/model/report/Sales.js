@@ -1,5 +1,5 @@
 //模型
-//销量
+//销量统计
 Ext.define('app.model.report.Sales', {
     extend: 'Ext.data.Model',
     fields: [{

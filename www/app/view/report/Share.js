@@ -28,11 +28,13 @@ Ext.define('app.view.report.Share', {
         fields: 'date',
         position: 'bottom'
     }],
+    //多个折线配置
     series: [{
         type: 'area',
         title: '普拉提',
         xField: 'date',
         yField: 'plt',
+        //移动到点上显示处理
         tooltip: {
             renderer: 'onShareRenderer'
         }
