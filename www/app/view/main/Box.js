@@ -113,6 +113,8 @@ Ext.define('app.view.main.Box', {
                 reference: 'navigationTreeList',
                 itemId: 'navigationTreeList',
                 ui: 'nav',
+                //注意第四章的时候这里需要去掉注释
+                //store: 'navigationTree',
                 width: 250,
                 //展开按钮显示在右侧
                 expanderFirst: false,
