@@ -58,6 +58,7 @@ Ext.define('app.view.user.Controller', {
             user.password = '';
         }
         //id必须为int类型，否则localstorage代理不能正确存储ids
+        //感谢@纳新 提醒
         user.id = 1;
         var logUser = Ext.create('app.model.User', user);
         //储存到本地
