@@ -1,6 +1,6 @@
 //重写类 模型
 //每次新增提交数据时使主键为空
-Ext.define('app.override.data.Model', {
+Ext.define('override.data.Model', {
     override: 'Ext.data.Model',
     save: function () {
         var me = this;

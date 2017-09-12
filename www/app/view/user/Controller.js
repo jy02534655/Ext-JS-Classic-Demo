@@ -6,7 +6,7 @@ Ext.define('app.view.user.Controller', {
     //登录页面启动时
     onLoginRender: function () {
         var me = this;
-        app.model.User.load('app.model.User-1', {
+        app.model.User.load(1, {
             success: function (user) {
                 //如果读取到本地用户信息，自动填充到表单
                 me.getViewModel().setData(user.getData());
@@ -57,7 +57,8 @@ Ext.define('app.view.user.Controller', {
         if (!user.persist) {
             user.password = '';
         }
-        user.id = 'app.model.User-1';
+        //id必须为int类型，否则localstorage代理不能正确存储ids
+        user.id = 1;
         var logUser = Ext.create('app.model.User', user);
         //储存到本地
         logUser.save();
