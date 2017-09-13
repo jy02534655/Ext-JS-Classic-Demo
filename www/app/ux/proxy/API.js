@@ -36,5 +36,10 @@ Ext.define('ux.proxy.API', {
         writeAllFields: true,
         //所有请求的数据会用data包起来，仅限于post
         rootProperty: 'data'
+        //纳新的需求重写参数
+        //,transform: function (data, t) {
+        //    var proxy = t.getProxy();
+        //    return Ext.applyIf(data, util.neuropathyData(proxy.ajaxName, 1, 1, data, proxy.paramsName));;
+        //}
     }
 });

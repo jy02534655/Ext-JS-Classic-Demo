@@ -16,6 +16,9 @@ Ext.define('app.model.basis.Card', {
     //代理，用于增加和修改
     proxy: {
         type: 'api',
+        //纳新的需求重写参数
+        //ajaxName:'name',
+        //paramsName: ['coding', 'type'],
         api: {
             //列表
             read: config.basis.card.list,

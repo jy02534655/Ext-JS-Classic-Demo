@@ -63,15 +63,26 @@ Ext.define('app.util', {
             });
             return deferred.promise;
         },
-        //可以返回错误信息的ajax        ajaxB: function (url, params, method) {
-            var deferred = new Ext.Deferred();            Ext.Ajax.request({
-                url: url,                method: method || 'GET',                params: params,                success: function (response) {                    //处理返回值，转换为json对象                    response = Ext.decode(response.responseText);                    deferred.resolve(response);
-                },                failure: function () {
+        //可以返回错误信息的ajax
+        ajaxB: function (url, params, method) {
+            var deferred = new Ext.Deferred();
+            Ext.Ajax.request({
+                url: url,
+                method: method || 'GET',
+                params: params,
+                success: function (response) {
+                    //处理返回值，转换为json对象
+                    response = Ext.decode(response.responseText);
+                    deferred.resolve(response);
+                },
+                failure: function () {
                     deferred.resolve({
-                        success: false,                        message: '请求失败，服务端无法连接或出错！'
+                        success: false,
+                        message: '请求失败，服务端无法连接或出错！'
                     });
                 }
-            });            return deferred.promise;
+            });
+            return deferred.promise;
         },
 
         //视图请求store数据的方法，这个视图必须绑定了store
@@ -396,6 +407,27 @@ Ext.define('app.util', {
                     }
                 }
             }
+        },
+        //纳新的需求重写参数
+        neuropathyData: function (name, limit, page, params, paramsName) {
+            data = {
+                p0: name,
+                p1: this.getP1(limit, page, params, paramsName)
+            };
+            console.log(data);
+            return data;
+        },
+        //纳新的需求重写参数
+        getP1: function (limit, page, params, paramsName) {
+            var length = paramsName.length,
+            digital = {},
+            digitalName, p1, i;
+            for (i = 0; i < length; i++) {
+                digitalName = paramsName[i];
+                digital[digitalName] = params[digitalName];
+            }
+            p1 = [digital, limit, page];
+            return Ext.encode(p1);
         }
     }
 });
