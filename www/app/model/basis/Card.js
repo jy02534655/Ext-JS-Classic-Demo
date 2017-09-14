@@ -17,8 +17,8 @@ Ext.define('app.model.basis.Card', {
     proxy: {
         type: 'api',
         //纳新的需求重写参数
+        //对应p0的值
         //ajaxName:'name',
-        //paramsName: ['coding', 'type'],
         api: {
             //列表
             read: config.basis.card.list,

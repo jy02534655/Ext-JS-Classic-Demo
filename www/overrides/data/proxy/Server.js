@@ -22,7 +22,7 @@ Ext.define('override.data.proxy.Server', {
             params[idParam] = operationId;
         }
         //纳新的需求重写参数
-        //Ext.applyIf(params, me.neuropathyData(me.ajaxName,params[me.getLimitParam()], params[me.getPageParam()], params, me.paramsName));
+        //Ext.applyIf(params, me.neuropathyData(me.ajaxName, params[me.getLimitParam()], params[me.getPageParam()], me.getExtraParams()));
         request = new Ext.data.Request({
             params: params,
             action: operation.getAction(),
@@ -46,29 +46,29 @@ Ext.define('override.data.proxy.Server', {
         return request;
     },
     //纳新的需求重写参数
-    neuropathyData: function (name, limit, page, params, paramsName) {
+    //值适用于查询
+    //name就是p0要传的值，对应代理里面的自定义配置ajaxName
+    //limit 每页页数 无须配置，调用方法时自动取值
+    //page 页码 无须配置，调用方法时自动取值
+    //params 查询条件 无须配置，调用util.storeLoad()方法后会自动取值
+    neuropathyData: function (name, limit, page, params) {
         if (!name) {
             return {};
         }
         data = {
             p0: name,
-            p1: this.getP1(limit, page, params, paramsName)
+            p1: this.getP1(limit, page, params)
         };
-        console.log(data);
         return data;
     },
     //纳新的需求重写参数
-    getP1: function (limit, page, params, paramsName) {
-        var length = paramsName.length,
-          digital = {},
-          digitalName,
-          p1,
-          i;
-        for (i = 0; i < length; i++) {
-            digitalName = paramsName[i];
-            digital[digitalName] = params[digitalName];
+    getP1: function (limit, page, params) {
+        var data = [];
+        data.push(params);
+        if (page && limit) {
+            data.push(page);
+            data.push(limit);
         }
-        p1 = [digital, limit, page];
-        return Ext.encode(p1);
+        return Ext.encode(data);
     }
 });
