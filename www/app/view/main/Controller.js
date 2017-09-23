@@ -257,8 +257,16 @@ Ext.define('app.view.main.Controller', {
 
     //容器初始化时
     onMainViewRender: function () {
-        var me = this;
+        var me = this,
+            //获取默认路由
+            hash = window.location.hash.replace('#','');
         me.onAjaxInit();
+        //不能是登录页
+        if (hash == 'view.login') {
+            hash = '';
+        }
+        //记录默认路由
+        me.defHash = hash;
         //检查是否登录，没有就跳转到登录页
         if (!config.userData) {
             me.redirectTo('view.login', true);
@@ -378,8 +386,13 @@ Ext.define('app.view.main.Controller', {
                     //loadNavigation方法触发时导航菜单还没有完成布局，直接绑定store的话会出现布局错误
                     //在这里我们等数据加载出来再去绑定数据，这样就不会出错了
                     tree.setStore(store);
-                    //跳转到第一个菜单
-                    me.redirectToView(data);
+                    //如果默认路由存在，跳转到默认路由
+                    if (me.defHash) {
+                        me.redirectTo(me.defHash);
+                    } else {
+                        //跳转到第一个菜单
+                        me.redirectToView(data);
+                    }
                 }
             }
         });
