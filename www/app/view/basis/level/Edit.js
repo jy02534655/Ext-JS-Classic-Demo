@@ -1,5 +1,5 @@
 //视图
-//会员级别编辑
+//员工级别编辑
 Ext.define('app.view.basis.level.Edit', {
     extend: 'Ext.window.Window',
     xtype: 'basisLevelEdit',
@@ -16,6 +16,10 @@ Ext.define('app.view.basis.level.Edit', {
             xtype: 'hidden',
             name: 'id',
             bind: '{data.id}'
+        }, {
+            xtype: 'hidden',
+            name: 'categoryId',
+            bind: '{data.categoryId}'
         },
         {
             xtype: 'textfield',

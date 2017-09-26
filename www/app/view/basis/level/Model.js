@@ -1,5 +1,5 @@
 ﻿//数据源
-//会员级别
+//员工级别
 Ext.define('app.view.basis.level.Model', {
     extend: 'Ext.app.ViewModel',
     alias: 'viewmodel.basisLevel',

@@ -1,5 +1,5 @@
 //视图控制器
-//会员级别
+//员工级别
 Ext.define('app.view.basis.level.Controller', {
     extend: 'ux.app.ViewController',
     alias: 'controller.basisLevel',
@@ -9,15 +9,18 @@ Ext.define('app.view.basis.level.Controller', {
     },
     //点击添加按钮
     onAddClick: function () {
-        this.createView();
+        this.createView(null, config.categoryRecord);
     },
     //创建视图
-    createView: function (rec) {
+    createView: function (rec, categoryRecord) {
         Ext.widget('basisLevelEdit', {
             viewModel: {
                 data: {
-                    title: rec ? '修改会员级别: ' + rec.get('type') : '新增会员级别',
-                    data: rec ? rec : Ext.create('app.model.basis.Level')
+                    title: rec ? '修改员工级别: ' + rec.get('type') : '新增员工级别',
+                    //因为是在员工类别基础上新增员工级别，所以新增时需要给一个员工类别到服务端
+                    data: rec ? rec : Ext.create('app.model.basis.Level', {
+                        categoryId: categoryRecord.get('id')
+                    })
                 },
                 stores: {
                     store: this.getStore('basisLevelStore')

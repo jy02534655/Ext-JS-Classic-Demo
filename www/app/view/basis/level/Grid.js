@@ -1,5 +1,5 @@
 //视图
-//会员级别
+//员工级别
 Ext.define('app.view.basis.level.Grid', {
     extend: 'Ext.grid.Panel',
     xtype: 'basisLevelGrid',
@@ -16,7 +16,7 @@ Ext.define('app.view.basis.level.Grid', {
     },
     bind: '{basisLevelStore}',
     reference: 'basisLevelGrid',
-    title: '会员级别',
+    title: '员工级别',
     dockedItems: [{
         xtype: 'toolbar',
         dock: 'top',

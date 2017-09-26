@@ -1,5 +1,5 @@
 //模拟数据源
-//会员级别
+//员工级别
 Ext.define('app.data.basis.Level', {
     extend: 'app.data.Simulated',
     data: {

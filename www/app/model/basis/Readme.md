@@ -7,6 +7,6 @@
 ### Course.js
 课程管理
 ### Level.js
-会员级别
+员工级别
 ### Pay.js
 员工待遇

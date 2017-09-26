@@ -1,5 +1,5 @@
 //模型
-//会员级别
+//员工级别
 Ext.define('app.model.basis.Level', {
     extend: 'Ext.data.Model',
     fields: [{
@@ -9,6 +9,9 @@ Ext.define('app.model.basis.Level', {
     {
         type: 'string',
         name: 'type'
+    }, {
+        type: 'string',
+        name: 'categoryId'
     }],
     proxy: {
         type: 'api',
