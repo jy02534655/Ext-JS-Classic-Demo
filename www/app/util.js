@@ -63,27 +63,6 @@ Ext.define('app.util', {
             });
             return deferred.promise;
         },
-        //可以返回错误信息的ajax
-        ajaxB: function (url, params, method) {
-            var deferred = new Ext.Deferred();
-            Ext.Ajax.request({
-                url: url,
-                method: method || 'GET',
-                params: params,
-                success: function (response) {
-                    //处理返回值，转换为json对象
-                    response = Ext.decode(response.responseText);
-                    deferred.resolve(response);
-                },
-                failure: function () {
-                    deferred.resolve({
-                        success: false,
-                        message: '请求失败，服务端无法连接或出错！'
-                    });
-                }
-            });
-            return deferred.promise;
-        },
 
         //视图请求store数据的方法，这个视图必须绑定了store
         //view视图对象

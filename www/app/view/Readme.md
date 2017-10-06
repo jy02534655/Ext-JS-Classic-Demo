@@ -1,5 +1,4 @@
-# app/view 目录
-视图目录
+# app/view 视图目录
 ### basis 目录
 基础数据管理模块
 ### faq 目录
