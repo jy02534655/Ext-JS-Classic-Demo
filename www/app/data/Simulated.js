@@ -16,7 +16,10 @@ Ext.define('app.data.Simulated', {
                 data: data.data
             },
             registration = {};
-
+        //模拟接口需要在app.json里面引入ux扩展包，ux扩展包默认sdk里面没有，需要手动引入进去
+        //如果不知道模拟接口地址应该怎么写的，可以打印或者设置断点看下data.$className，url的值        
+        //url的值就是模拟接口请求地址        
+        //注册模拟接口
         registration[url] = simlet;
         Ext.ux.ajax.SimManager.register(registration);
     }
