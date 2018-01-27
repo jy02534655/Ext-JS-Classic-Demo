@@ -1,4 +1,4 @@
-# app/view/report 目录
+# app/view/echart 目录
 统计报表模块（基于百度图表）
 ### Controller.js
 统计报表视图控制器
@@ -12,3 +12,5 @@
 销量统计视图
 ### Share.js
 市场占有率视图
+### ShareHistogram.js
+市场占有率视图（柱状图）
