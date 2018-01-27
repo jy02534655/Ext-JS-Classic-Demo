@@ -4,6 +4,8 @@
 Ext.app相关类扩展目录
 ### button 目录
 Ext.buttonp相关类扩展目录
+### echart 目录
+百度图表相关类扩展目录
 ### form 目录
 Ext.form相关类扩展目录
 ### grid 目录
