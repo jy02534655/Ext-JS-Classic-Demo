@@ -1306,6 +1306,7 @@ $include-override-chart-series-line: dynamic(true);;
 $include-override-chart-series-pie: dynamic(true);;
 $include-override-data-model: dynamic(true);;
 $include-override-data-proxy-server: dynamic(true);;
+$include-override-dom-element: dynamic(true);;
 $include-override-form-fieldcontainer: dynamic(true);;
 $include-override-form-field-base: dynamic(true);;
 $include-override-form-field-text: dynamic(true);;
