@@ -20,7 +20,7 @@ Ext.define('ux.echart.Pie', {
         //legendIco配置，参考百度图表legend中data配置
         legendIco: 'rect',
         //颜色配置
-        colorList: ['#00aeff', '#0075d1', '#27d4ff', '#ffa800'],
+        colorList: ['#00aeff', '#0075d1', '#27d4ff', '#ffa800']
     },
     //初始化legend
     applyLegend: function (data) {

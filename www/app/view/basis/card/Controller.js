@@ -7,7 +7,7 @@ Ext.define('app.view.basis.card.Controller', {
     extend: 'ux.app.ViewController',
     alias: 'controller.basisCard',
     //点击文字进行编辑
-    onEditClick: function (t,rec) {
+    onEditClick: function (t, rec) {
         this.createView(rec);
     },
     //点击添加按钮

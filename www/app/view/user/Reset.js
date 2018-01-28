@@ -53,7 +53,7 @@ Ext.define('app.view.user.Reset', {
         },
         {
             xtype: 'component',
-            html: '<div style="text-align:right">' + '<a href="#view.login" class="link-forgot-password">' + '返回登录</a>' + '</div>'
+            html: '<div style="text-align:right"><a href="#view.login" class="link-forgot-password">返回登录</a></div>'
         }]
     }]
 });

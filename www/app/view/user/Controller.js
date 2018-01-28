@@ -21,11 +21,11 @@ Ext.define('app.view.user.Controller', {
         }
     },
     //点击登录
-    onLoginClick: function (button) {
+    onLoginClick: function () {
         var me = this,
-        view = me.getView(),
-        form = view.down('form'),
-        values = form.getValues();
+            view = me.getView(),
+            form = view.down('form'),
+            values = form.getValues();
         //请求登录接口
         util.ajaxB(config.user.login, values, 'POST').then(function (response) {
             if (response.success) {

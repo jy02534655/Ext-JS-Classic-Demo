@@ -34,7 +34,7 @@ Ext.define('ux.button.Search', {
             items: me.pickerItems,
             buttons: [{
                 text: '确定',
-                handler: function (t) {
+                handler: function () {
                     var form = me.getPicker();
                     if (form.isValid()) {
                         me.fireEvent('okclick', me, form, form.getValues());

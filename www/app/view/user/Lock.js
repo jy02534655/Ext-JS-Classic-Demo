@@ -83,7 +83,7 @@ Ext.define('app.view.user.Lock', {
             },
             {
                 xtype: 'component',
-                html: '<div style="text-align:right">' + '<a href="#view.login" class="link-forgot-password">' + '使用其他账号登录</a>' + '</div>'
+                html: '<div style="text-align:right"><a href="#view.login" class="link-forgot-password">使用其他账号登录</a></div>'
             }]
         }]
     }]

@@ -70,7 +70,7 @@ Ext.define('app.util', {
         //update是否强制重新请求数据
         viewLoad: function (view, params, update) {
             var store = view.getStore(),
-            storeId = store.storeId;
+                storeId = store.storeId;
             if (storeId == 'ext-empty-store') {
                 //在ext中，如果使用bind方式绑定store，在加载数据时可能出现store还未绑定到视图中就请求数据的情况
                 //这种情况我们就获取到ViewModel，根据ViewModel来加载数据
@@ -93,7 +93,7 @@ Ext.define('app.util', {
                 store.getProxy().setExtraParams(params);
                 store.removeAll();
             }
-                //如果有参数
+            //如果有参数
             else if (params) {
                 //获取旧的参数
                 var oldParams = store.getProxy().getExtraParams();
@@ -144,7 +144,7 @@ Ext.define('app.util', {
                     if (x[p] == y[p]) {
                         continue;
                     }
-                    if (typeof (x[p]) !== "object") {
+                    if (typeof (x[p]) !== 'object') {
                         return false;
                     }
                     if ((!x[p] && y[p]) || (x[p] && !y[p])) {
@@ -171,7 +171,7 @@ Ext.define('app.util', {
         //只有执行成功才执行then
         saveModel: function (model) {
             var deferred = new Ext.Deferred(),
-            phantom = model.phantom;
+                phantom = model.phantom;
             //console.log(phantom, model.dirty);
             //修改状态并且未做修改
             if (!phantom && !model.dirty) {
@@ -200,7 +200,7 @@ Ext.define('app.util', {
                         }
                         try {
                             Ext.toast(b.getResultSet().message);
-                        } catch (e) { }
+                        } catch (e) {}
                     }
                 });
             }
@@ -214,9 +214,8 @@ Ext.define('app.util', {
             //更新模型数据，讲表单中的数据赋给模型
             form.updateRecord(model);
             var errors = model.validate(),
-            //验证结果
-            valid = errors.isValid(),
-            message;
+                //验证结果
+                valid = errors.isValid();
             if (!valid) {
                 //遍历错误信息，弹出提示框
                 errors.each(function (err) {
@@ -233,7 +232,7 @@ Ext.define('app.util', {
         //获取视图中所有输入对象
         getViewFields: function (view, byName) {
             var fields = {},
-            itemName;
+                itemName;
 
             var getFieldsFrom = function (item) {
                 if (item.is('field')) {
@@ -264,22 +263,22 @@ Ext.define('app.util', {
         },
         //获取视图中所有值
         //view视图对象
-        getViewValues: function (view, enabled, all) {
+        getViewValues: function (view) {
             //获取到视图中所有的输入对象
             var fields = this.getViewFields(view),
-            values = {},
-            isArray = Ext.isArray,
-            //是否通过验证
-            isValid = true,
-            field,
-            val,
-            valid,
-            addValue,
-            bucket,
-            name,
-            data,
-            ln,
-            i;
+                values = {},
+                isArray = Ext.isArray,
+                //是否通过验证
+                isValid = true,
+                field,
+                val,
+                valid,
+                addValue,
+                bucket,
+                name,
+                data,
+                ln,
+                i;
             //取值方法
             addValue = function (field) {
                 //获取提交data
@@ -360,11 +359,11 @@ Ext.define('app.util', {
                 return;
             }
             var fields = this.getViewFields(view),
-            isArray = Ext.isArray,
-            field,
-            ln,
-            i,
-            name;
+                isArray = Ext.isArray,
+                field,
+                ln,
+                i,
+                name;
             //循环遍历，重置值
             for (name in fields) {
                 if (fields.hasOwnProperty(name)) {
@@ -389,7 +388,7 @@ Ext.define('app.util', {
         },
         //纳新的需求重写参数
         neuropathyData: function (name, limit, page, params, paramsName) {
-            data = {
+            var data = {
                 p0: name,
                 p1: this.getP1(limit, page, params, paramsName)
             };
@@ -399,8 +398,8 @@ Ext.define('app.util', {
         //纳新的需求重写参数
         getP1: function (limit, page, params, paramsName) {
             var length = paramsName.length,
-            digital = {},
-            digitalName, p1, i;
+                digital = {},
+                digitalName, p1, i;
             for (i = 0; i < length; i++) {
                 digitalName = paramsName[i];
                 digital[digitalName] = params[digitalName];

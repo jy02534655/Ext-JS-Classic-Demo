@@ -11,8 +11,7 @@ Ext.define('app.view.echart.ShareHistogram', {
                 bottom: '60',
                 top: '50',
                 right: '40'
-            },
-
+            }
         }],
         //配置项，参考百度图表对应配置
         legend: [{

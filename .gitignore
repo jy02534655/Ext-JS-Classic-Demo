@@ -2,3 +2,4 @@
 .vscode/settings.json
 /www/.vscode/
 /Demo.code-workspace
+/.eslintrc.json

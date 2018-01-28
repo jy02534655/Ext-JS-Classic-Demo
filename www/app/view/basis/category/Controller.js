@@ -6,7 +6,7 @@ Ext.define('app.view.basis.category.Controller', {
     //详情页面被激活时
     onActivate: function () {
         //获取左侧选中项
-        rec = config.categoryRecord;
+        var rec = config.categoryRecord;
         if (rec) {
             var view = this.getView();
             //如果是从新增页面返回
@@ -23,7 +23,7 @@ Ext.define('app.view.basis.category.Controller', {
     onTreeSelect: function (tree, t, rec) {
         //获取父节点
         var parentNode = rec.parentNode,
-        oldRec = t.oldRec;
+            oldRec = t.oldRec;
         if (oldRec && oldRec.dirty) {
             //重置未保存数据
             oldRec.reject();
@@ -44,26 +44,26 @@ Ext.define('app.view.basis.category.Controller', {
     onDel: function () {
         //获取选中项
         var rec = config.categoryRecord,
-        //获取选中项的父级
-        parentNode = rec.parentNode,
-        //获取树形菜单视图
-        tree = this.tissueTree;
+            //获取选中项的父级
+            parentNode = rec.parentNode,
+            //获取树形菜单视图
+            tree = this.tissueTree;
         Ext.MessageBox.confirm('删除确认', '确认删除' + rec.get('text') + '?',
-        function (btnText) {
-            if (btnText === 'yes') {
-                util.ajax(config.basis.category.del, {
-                    id: rec.getId()
-                }).then(function () {
-                    //移除节点
-                    parentNode.removeChild(rec);
-                    //清除选中旧节点避免数据重置出错
-                    tree.oldRec = null;
-                    //选中父节点
-                    tree.select(parentNode);
-                });
-            }
-        },
-        this);
+            function (btnText) {
+                if (btnText === 'yes') {
+                    util.ajax(config.basis.category.del, {
+                        id: rec.getId()
+                    }).then(function () {
+                        //移除节点
+                        parentNode.removeChild(rec);
+                        //清除选中旧节点避免数据重置出错
+                        tree.oldRec = null;
+                        //选中父节点
+                        tree.select(parentNode);
+                    });
+                }
+            },
+            this);
     },
     //保存
     onSave: function () {
@@ -72,7 +72,7 @@ Ext.define('app.view.basis.category.Controller', {
     //跳转到新增页面
     onAddClick: function () {
         var rec = Ext.create('app.model.basis.Category'),
-        parentNode = config.categoryRecord;
+            parentNode = config.categoryRecord;
         if (parentNode.dirty) {
             //重置未保存数据
             parentNode.reject();
@@ -95,7 +95,7 @@ Ext.define('app.view.basis.category.Controller', {
     onAddSelection: function (tree, t, rec) {
         //获取同级选择树
         var viewModel = t.getViewModel(),
-        model = viewModel.get('data');
+            model = viewModel.get('data');
         //设置上级节点
         model.set({
             parentId: rec.getId(),
@@ -105,7 +105,7 @@ Ext.define('app.view.basis.category.Controller', {
     //新增
     onAddSave: function () {
         var me = this,
-        node;
+            node;
         //注意新增的数据需要服务端返回主键id字段数据，数据格式如：
         //{
         // message:"新增成功！",

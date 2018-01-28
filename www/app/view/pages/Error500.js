@@ -13,18 +13,19 @@ Ext.define('app.view.pages.Error500', {
             pack: 'center'
         },
         items: [{
-            xtype: 'label',
-            cls: 'base-page-top-text',
-            text: '500'
-        },
-        {
-            xtype: 'label',
-            cls: 'base-page-desc',
-            html: '<div>出错啦！</div>' + '<div>返回 <a href="#view.home"> 首页 </a></div>'
-        },
-        {
-            xtype: 'tbspacer',
-            flex: 1
-        }]
+                xtype: 'label',
+                cls: 'base-page-top-text',
+                text: '500'
+            },
+            {
+                xtype: 'label',
+                cls: 'base-page-desc',
+                html: '<div>出错啦！</div><div>返回 <a href="#view.home"> 首页 </a></div>'
+            },
+            {
+                xtype: 'tbspacer',
+                flex: 1
+            }
+        ]
     }]
 });

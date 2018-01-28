@@ -40,7 +40,7 @@ Ext.define('ux.form.field.SearchField', {
     isDepth: false,
     initComponent: function () {
         var me = this,
-        store = me.store;
+            store = me.store;
         me.on({
             //添加监听，监听回车键
             specialkey: function (f, e) {
@@ -80,7 +80,9 @@ Ext.define('ux.form.field.SearchField', {
         if (store && store != 'ext-empty-store') {
             me.store = store;
             store.on({
-                refreshStore: function () { me.refreshStore();}
+                refreshStore: function () {
+                    me.refreshStore();
+                }
             });
             me.treepanel = me.up('treepanel');
         }
@@ -94,8 +96,8 @@ Ext.define('ux.form.field.SearchField', {
     onClearClick: function () {
         //console.log('清除过滤');
         var me = this,
-        activeFilter = me.activeFilter,
-        store = me.store;
+            activeFilter = me.activeFilter,
+            store = me.store;
         if (activeFilter) {
             store.getFilters().remove(activeFilter);
             me.activeFilter = null;
@@ -111,8 +113,8 @@ Ext.define('ux.form.field.SearchField', {
     //展开已知节点
     expandedNode: function (rec) {
         var nodes = rec.childNodes,
-        length = nodes.length,
-        i;
+            length = nodes.length,
+            i;
         if (length) {
             //如果存在子节点，展开子节点，并尝试展开子节点的子节点，递归
             rec.set('expanded', true);
@@ -124,10 +126,10 @@ Ext.define('ux.form.field.SearchField', {
     //本地过滤
     localFilter: function (value) {
         var me = this,
-        store = me.store,
-        paramName = me.paramName,
-        search = new RegExp(Ext.String.escapeRegex(value), 'i'),
-        isTreeStore;
+            store = me.store,
+            paramName = me.paramName,
+            search = new RegExp(Ext.String.escapeRegex(value), 'i'),
+            isTreeStore;
         //关键词改变时重置列表和搜索关键词
         me.value = value;
         me.list = [];
@@ -157,7 +159,7 @@ Ext.define('ux.form.field.SearchField', {
                 if (isTreeStore && rec.get('depth') != 1) {
                     return true;
                 }
-                return search.test(rec.get(paramName));;
+                return search.test(rec.get(paramName));
             });
         }
     },
@@ -171,9 +173,9 @@ Ext.define('ux.form.field.SearchField', {
     //过滤
     onSearchClick: function () {
         var me = this,
-        value = me.getValue(),
-        store,
-        proxy;
+            value = me.getValue(),
+            store,
+            proxy;
         //通过验证才能过滤
         if (me.isValid() && value.length > 0) {
             //本地还是远程过滤
@@ -185,7 +187,7 @@ Ext.define('ux.form.field.SearchField', {
                 proxy.setFilterParam(me.paramName);
                 proxy.encodeFilters = function (filters) {
                     return filters[0].getValue();
-                }
+                };
                 // Param name is ignored here since we use custom encoding in the proxy.
                 // id is used by the Store to replace any previous filter
                 me.activeFilter = new Ext.util.Filter({
@@ -201,7 +203,7 @@ Ext.define('ux.form.field.SearchField', {
     onDestroy: function () {
         //清除过滤条件
         var me = this,
-        store = me.store;
+            store = me.store;
         if (store) {
             me.onClearClick();
             me.store = null;

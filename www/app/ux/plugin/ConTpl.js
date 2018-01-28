@@ -25,7 +25,7 @@ Ext.define('ux.plugin.ConTpl', {
         this.setCmp(cmp);
     },
     //更新配置
-    updateCmp: function (newCmp, oldCmp) {
+    updateCmp: function (newCmp) {
         if (newCmp) {
             newCmp.on({
                 //只有创建完成后才能监听事件
@@ -35,7 +35,7 @@ Ext.define('ux.plugin.ConTpl', {
         }
     },
     //创建完成
-    onRender: function (t, eOpts) {
+    onRender: function (t) {
         t.el.on({
             click: 'onTap',
             delegate: this.getDelegate(),
