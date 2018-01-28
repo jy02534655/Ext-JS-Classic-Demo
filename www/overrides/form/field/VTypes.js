@@ -1,7 +1,7 @@
 //重写类 验证类
 //自定义验证
-Ext.define("override.form.field.VTypes", {
-    override: "Ext.form.field.VTypes",
+Ext.define('override.form.field.VTypes', {
+    override: 'Ext.form.field.VTypes',
     //验证方法
     serial: function (value) {
         return this.serialRe.test(value);

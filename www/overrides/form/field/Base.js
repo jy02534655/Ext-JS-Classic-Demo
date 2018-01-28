@@ -1,8 +1,8 @@
 //重写类 表单父类
 //支持allowBlank动态绑定
 //支持vtype动态绑定
-Ext.define("override.form.field.Base", {
-    override: "Ext.form.field.Base",
+Ext.define('override.form.field.Base', {
+    override: 'Ext.form.field.Base',
     //标签文字右对齐
     labelAlign: 'right',
     setAllowBlank: function (value) {

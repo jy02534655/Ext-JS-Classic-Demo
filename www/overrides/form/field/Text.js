@@ -3,8 +3,8 @@
 //必填项自动标红加*
 //如果是string类型则清除前后空格
 //修改必填项错误提示，提示更直观
-Ext.define("override.form.field.Text", {
-    override: "Ext.form.field.Text",
+Ext.define('override.form.field.Text', {
+    override: 'Ext.form.field.Text',
     //设置提示信息在文本框下方显示
     msgTarget: 'under',
     //默认最大长度限制

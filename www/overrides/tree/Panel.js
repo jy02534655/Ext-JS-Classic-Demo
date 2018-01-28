@@ -1,10 +1,10 @@
 //重写类 树形面板
 //勾选子节点时自动勾选父节点
 //勾选父节点时自动勾选子节点
-Ext.define("override.tree.Panel", {
-    override: "Ext.tree.Panel",
+Ext.define('override.tree.Panel', {
+    override: 'Ext.tree.Panel',
     listeners: {
-        "checkchange": function (node, checked) {
+        'checkchange': function (node, checked) {
             if (checked) {
                 this.checkParentNode(node.parentNode);
                 this.checkChildNode(node);

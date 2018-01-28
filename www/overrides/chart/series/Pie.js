@@ -1,20 +1,20 @@
 //重写类
 //饼状图功能增强
-Ext.define("override.chart.series.Pie", {
-    override: "Ext.chart.series.Pie",
+Ext.define('override.chart.series.Pie', {
+    override: 'Ext.chart.series.Pie',
     provideLegendInfo: function (target) {
         var me = this,
-        store = me.getStore();
+            store = me.getStore();
 
         if (store) {
             var items = store.getData().items,
-            labelField = me.getLabel().getTemplate().getField(),
-            angleField = me.getAngleField(),
-            xField = me.getXField(),
-            hidden = me.getHidden(),
-            i,
-            style,
-            fill;
+                labelField = me.getLabel().getTemplate().getField(),
+                angleField = me.getAngleField(),
+                xField = me.getXField(),
+                hidden = me.getHidden(),
+                i,
+                style,
+                fill;
             for (i = 0; i < items.length; i++) {
                 style = me.getStyleByIndex(i);
                 fill = style.fillStyle;

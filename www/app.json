@@ -209,7 +209,7 @@
             "bundle": true
         },
         {
-            "path": "resources/js/echarts.js",
+            "path": "resources/js/echarts.min.js",
             "remote": true
         }
     ],

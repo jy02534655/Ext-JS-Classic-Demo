@@ -1,6 +1,6 @@
 //重写类 折线图 Line
-Ext.define("override.chart.series.Line", {
-    override: "Ext.chart.series.Line",
+Ext.define('override.chart.series.Line', {
+    override: 'Ext.chart.series.Line',
     //标记点
     marker: {
         opacity: 1,

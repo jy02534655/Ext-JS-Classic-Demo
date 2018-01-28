@@ -12,7 +12,7 @@ Ext.define('override.data.proxy.Server', {
 
         //copy any sorters, filters etc into the params so they can be sent over the wire 
         Ext.applyIf(params, me.getParams(operation));
-        
+
         // Set up the entity id parameter according to the configured name. 
         // This defaults to "id". But TreeStore has a "nodeParam" configuration which 
         // specifies the id parameter name of the node being loaded. 
@@ -55,7 +55,7 @@ Ext.define('override.data.proxy.Server', {
         if (!name) {
             return {};
         }
-        data = {
+        var data = {
             p0: name,
             p1: this.getP1(limit, page, params)
         };

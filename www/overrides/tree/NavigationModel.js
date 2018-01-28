@@ -4,16 +4,16 @@
 //为了避免频繁切换导致数据请求出错，禁用此快捷效果
 //修复树形菜单有横向滚动条时，子节点太多无法正常使用
 //6.5.1是否存在此bug待测试
-Ext.define("override.tree.NavigationModel", {
-    override: "Ext.tree.NavigationModel",
+Ext.define('override.tree.NavigationModel', {
+    override: 'Ext.tree.NavigationModel',
     onKeyDown: Ext.emptyFn,
     onKeyUp: Ext.emptyFn,
     /**
-    * @private
-    * Focuses the currently active position.
-    * This is used on view refresh and on replace.
-    * @return {undefined}
-    */
+     * @private
+     * Focuses the currently active position.
+     * This is used on view refresh and on replace.
+     * @return {undefined}
+     */
     focusPosition: function (position) {
         var me = this,
             view,
@@ -55,19 +55,19 @@ Ext.define("override.tree.NavigationModel", {
                         //原代码scroller.scrollIntoView(me.cell);
                         //在树形菜单中需要禁止水平滚动，以防子节点太多、宽度不够形成横向滚动条时无法展开子节点
                         //暂未发现副作用
-                        scroller.scrollIntoView(me.cell,false);
+                        scroller.scrollIntoView(me.cell, false);
                     }
                     me.focusItem(me.cell);
                     view.focusEl = me.cell;
                 }
-                    // Cell no longer in view. Clear current position.
+                // Cell no longer in view. Clear current position.
                 else {
                     me.position.setAll();
                     me.record = me.column = me.recordIndex = me.columnIndex = null;
                 }
             }
-                // View node no longer in view. Clear current position.
-                // Attempt to scroll to the record if it is in the store, but out of rendered range.
+            // View node no longer in view. Clear current position.
+            // Attempt to scroll to the record if it is in the store, but out of rendered range.
             else {
                 row = view.dataSource.indexOf(position.record);
                 me.position.setAll();

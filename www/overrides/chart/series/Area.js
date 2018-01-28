@@ -1,6 +1,6 @@
 //重写类 折线图 area
-Ext.define("override.chart.series.Area", {
-    override: "Ext.chart.series.Area",
+Ext.define('override.chart.series.Area', {
+    override: 'Ext.chart.series.Area',
     //样式
     style: {
         opacity: 0.4

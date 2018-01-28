@@ -4,7 +4,7 @@
 //初始化了option配置
 //支持data，store直接赋值
 //支持bind:{store:'{store}'}动态绑定数据
-//细节配置参考百度图表api http://echarts.baidu.com/option3.html
+//细节配置参考百度图表api http://echarts.baidu.com/option.html
 //需要在app.json中引入对应的js，css
 //这里写法还有些问题，在频繁切换视图时可能会引起布局出错
 //重写Ext.dom.Element解决具体方案参考override.dom.Element
