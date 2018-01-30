@@ -15,11 +15,11 @@ Ext.define('ux.echart.Base', {
         'Ext.data.Store',
         'Ext.data.StoreManager'
     ],
-    //默认铺满容器
-    width: '100%',
-    height: '100%',
     //配置项
     config: {
+        //默认铺满容器
+        width: '100%',
+        height: '100%',
         //数据仓库
         store: null,
         //数据源
@@ -201,7 +201,7 @@ Ext.define('ux.echart.Base', {
         }
         if (oldStore) {
             //移除监听
-            newStore.un(events);
+            oldStore.un(events);
         }
     },
 
