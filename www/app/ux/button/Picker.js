@@ -1,4 +1,6 @@
-//自定义按钮
+//扩展
+//按钮扩展
+//按钮弹窗基类
 //点击按钮显示一个弹出
 //注：需要实现createPicker方法
 Ext.define('ux.button.Picker', {
@@ -6,7 +8,7 @@ Ext.define('ux.button.Picker', {
     xtype: 'buttonPicker',
     /**
      * @cfg {String} pickerAlign
-     * The {@link Ext.util.Positionable#alignTo alignment position} with which to align the picker. Defaults to "t-b?"
+     * The {@link Ext.util.Positionable#alignTo alignment position} with which to align the picker. Defaults to "tl-bl?"
      */
     pickerAlign: 't-b?',
 
@@ -52,7 +54,7 @@ Ext.define('ux.button.Picker', {
      */
     expand: function () {
         var me = this,
-        ariaDom, picker, doc;
+            ariaDom, picker, doc;
         if (me.rendered && !me.isExpanded && !me.destroyed) {
             picker = me.getPicker();
             doc = Ext.getDoc();
@@ -122,12 +124,12 @@ Ext.define('ux.button.Picker', {
      */
     doAlign: function () {
         var me = this,
-        picker = me.picker,
-        aboveSfx = '-above',
-        isAbove;
+            picker = me.picker,
+            aboveSfx = '-above',
+            isAbove;
 
         // 对齐弹窗防止偏移
-        me.picker.el.alignTo(me, me.pickerAlign, me.pickerOffset);
+        picker.el.alignTo(me, me.pickerAlign, me.pickerOffset);
         // add the {openCls}-above class if the picker was aligned above
         // the field due to hitting the bottom of the viewport
         isAbove = picker.el.getY() < me.getY();
@@ -142,8 +144,8 @@ Ext.define('ux.button.Picker', {
         var me = this;
         if (me.isExpanded && !me.destroyed && !me.destroying) {
             var openCls = me.openCls,
-            picker = me.picker,
-            aboveSfx = '-above';
+                picker = me.picker,
+                aboveSfx = '-above';
 
             // hide the picker and set isExpanded flag
             picker.hide();
@@ -189,7 +191,7 @@ Ext.define('ux.button.Picker', {
      */
     getPicker: function () {
         var me = this,
-        picker = me.picker;
+            picker = me.picker;
 
         if (!picker) {
             me.creatingPicker = true;
@@ -217,7 +219,7 @@ Ext.define('ux.button.Picker', {
      * Handles the trigger click; by default toggles between expanding and collapsing the picker component.
      * @protected
      */
-    onTriggerClick: function (e) {
+    onTriggerClick: function () {
         var me = this;
         if (!me.readOnly && !me.disabled) {
             if (me.isExpanded) {
@@ -228,16 +230,16 @@ Ext.define('ux.button.Picker', {
         }
     },
 
-    beforeDestroy: function () {
+    doDestroy: function () {
         var me = this,
-        picker = me.picker;
+            picker = me.picker;
 
-        me.callParent();
         Ext.un('resize', me.alignPicker, me);
         Ext.destroy(me.keyNav, picker);
         if (picker) {
             me.picker = picker.pickerField = null;
         }
+        me.callParent();
     },
 
     privates: {
