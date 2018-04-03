@@ -159,7 +159,7 @@ Ext.define('app.view.main.Controller', {
         if (node && !node.get('isOther')) {
             navigationList.setSelection(node);
         }
-        //获取焦点
+        //此段代码会造成异常bug，注释掉
         //if (newView.isFocusable(true)) {
         //    newView.focus();
         //}
