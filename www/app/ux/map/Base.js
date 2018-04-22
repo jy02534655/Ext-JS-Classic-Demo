@@ -3,9 +3,9 @@ Ext.define('ux.map.Base', {
     mixins: ['ux.mixin.Loader'],
     extend: 'Ext.Container',
     xtype: 'bMapBase',
-    // git不支持https，尝试在index.html中加入
-    //<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
-    jsUrl: 'https://api.map.baidu.com/getscript?v=3.0&ak=jgFF0lzutU2VK9mAx4p9pzB7A8EMZC2h&services',
+    // git不支持https
+    jsUrl: 'http://api.map.baidu.com/getscript?v=3.0&ak=jgFF0lzutU2VK9mAx4p9pzB7A8EMZC2h&services',
+    html:'git强制https访问，百度js无法加载。不能在线预览，请下载到本地运行...',
     config: {
         width: '100%',
         height: '100%',
