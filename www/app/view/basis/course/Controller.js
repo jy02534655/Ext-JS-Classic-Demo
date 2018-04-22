@@ -4,7 +4,7 @@ Ext.define('app.view.basis.course.Controller', {
     extend: 'ux.app.ViewController',
     alias: 'controller.basisCourse',
     //点击文字进行编辑
-    onEditClick: function (t,rec) {
+    onEditClick: function (t, rec) {
         this.createView(rec);
     },
     //点击添加按钮
@@ -17,7 +17,7 @@ Ext.define('app.view.basis.course.Controller', {
             viewModel: {
                 data: {
                     //是否编辑
-                    isEdit:!!rec,
+                    isEdit: !!rec,
                     title: rec ? '修改课程: ' + rec.get('name') : '新增课程',
                     data: rec ? rec : Ext.create('app.model.basis.Course')
                 },

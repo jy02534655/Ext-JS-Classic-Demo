@@ -196,7 +196,7 @@ Ext.define('ux.button.Picker', {
         if (!picker) {
             me.creatingPicker = true;
             me.picker = picker = me.createPicker();
-            // For upward component searches.
+            // 这样写可以共用按钮的控制器
             picker.ownerCmp = me;
             delete me.creatingPicker;
         }
