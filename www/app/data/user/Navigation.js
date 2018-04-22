@@ -30,6 +30,12 @@ Ext.define('app.data.user.Navigation', {
             leaf: true
         },
         {
+            text: '百度地图',
+            iconCls: 'x-fa fa-map',
+            viewType: 'mapHome',
+            leaf: true
+        },
+        {
             text: '基础资料',
             iconCls: 'x-fa fa-book',
             data: [{

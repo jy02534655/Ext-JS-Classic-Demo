@@ -21,6 +21,11 @@ Ext.define('app.config', {
             login: true,
             register: true
         },
+        //地图相关
+        map:{
+            //百度地图
+            home:'~api/map/home'
+        },
         //统计报表
         report: {
             //员工统计
@@ -86,6 +91,6 @@ Ext.define('app.config', {
         //帮助
         faq: {
             list:'~api/faq/faq'
-        }
+        }        
     }
 });

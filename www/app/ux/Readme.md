@@ -10,6 +10,8 @@ Ext.buttonp相关类扩展目录
 Ext.form相关类扩展目录
 ### grid 目录
 Ext.grid相关类扩展目录
+### map 目录
+百度地图相关类扩展目录
 ### plugin 目录
 自定义插件目录
 ### proxy 目录
