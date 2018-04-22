@@ -184,7 +184,7 @@ Ext.define('ux.map.Base', {
         marker.options = data;
         marker.addEventListener('click',
             function (t) {
-                console.log('click', t.currentTarget.options);
+                // console.log('click', t.currentTarget.options);
                 me.onClickDep(this, t.currentTarget.options);
             });
         marker.addEventListener('mouseover',
