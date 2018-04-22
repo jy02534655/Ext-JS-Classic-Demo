@@ -3,6 +3,7 @@ Ext.define('ux.map.Base', {
     mixins: ['ux.mixin.Loader'],
     extend: 'Ext.Container',
     xtype: 'bMapBase',
+    //git演示不支持http改成https
     jsUrl: 'https://api.map.baidu.com/getscript?v=3.0&ak=jgFF0lzutU2VK9mAx4p9pzB7A8EMZC2h&services',
     config: {
         width: '100%',
