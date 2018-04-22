@@ -213,7 +213,7 @@
             "remote": true
         },
         {
-            "path": "http://api.map.baidu.com/getscript?v=3.0&ak=jgFF0lzutU2VK9mAx4p9pzB7A8EMZC2h&services",
+            "path": "https://api.map.baidu.com/getscript?v=3.0&ak=jgFF0lzutU2VK9mAx4p9pzB7A8EMZC2h&services",
             "remote": true
         }
     ],
