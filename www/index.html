@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE HTML>
 <html manifest="">
+
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="UTF-8">
@@ -31,15 +32,15 @@
             -webkit-animation-direction: linear;
         }
 
-            #appLoadingIndicator > * {
-                background-color: #1985D0;
-                display: inline-block;
-                height: 30px;
-                -webkit-border-radius: 15px;
-                margin: 0 5px;
-                width: 30px;
-                opacity: 0.8;
-            }
+        #appLoadingIndicator>* {
+            background-color: #1985D0;
+            display: inline-block;
+            height: 30px;
+            -webkit-border-radius: 15px;
+            margin: 0 5px;
+            width: 30px;
+            opacity: 0.8;
+        }
 
         @-webkit-keyframes appLoadingIndicator {
             0% {
@@ -55,11 +56,15 @@
             }
         }
     </style>
+    <script type="text/javascript">
+        window.HOST_TYPE = '2';
+    </script>
     <!-- The line below must be kept intact for Sencha Cmd to build your application -->
     <!--data-app的值与app.json中的id值需保持一致，不要随便就复制了-->
     <script id="microloader" data-app="1900dd7d-7922-4a63-a091-ff81f79d5617" type="text/javascript" src="bootstrap.js"></script>
 
 </head>
+
 <body>
     <!--加载动画html-->
     <div id="loading-mask">
@@ -70,4 +75,5 @@
         </div>
     </div>
 </body>
+
 </html>
