@@ -40,10 +40,10 @@ Ext.define('app.view.basis.level.Controller', {
     //点击待遇设置
     onPlayClick: function () {
         var grid = this.getView(),
-        //获取已选中项
-        rec = grid.getSelectionModel().getSelection()[0],
-        //获取数据仓库
-        store = this.getStore('payStore');
+            //获取已选中项
+            rec = grid.getSelectionModel().getSelection()[0],
+            //获取数据仓库
+            store = this.getStore('payStore');
         Ext.widget('levelPay', {
             viewModel: {
                 stores: {
@@ -58,20 +58,22 @@ Ext.define('app.view.basis.level.Controller', {
     //员工待遇分配界面显示时
     onPayShow: function () {
         //获取已设置的待遇
+        //在6.2.1版本中需要延迟执行。否则会出现布局错误导致树形菜单无法展开
+        //在6.5.3版本中不需要延迟执行，否则会出现提交数据时不能正确获取当前勾选项的问题
         util.storeLoad(this.getStore('payStore'), {
-            id: this.getViewModel().get('data').getId()
-        },
-        true);
+                id: this.getViewModel().get('data').getId()
+            },
+            true);
     },
     //保存待遇
     onSavePay: function () {
         var me = this,
-        view = this.getView(),
-        //获取选中项集合
-        list = view.down('treepanel').getChecked(),
-        length = list.length,
-        ids = [],
-        i;
+            view = this.getView(),
+            //获取选中项集合
+            list = view.down('treepanel').getChecked(),
+            length = list.length,
+            ids = [],
+            i;
         for (i = 0; i < length; i++) {
             ids.push(list[i].getId())
         }
