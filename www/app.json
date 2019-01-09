@@ -264,6 +264,10 @@
      */
     "production": {
         "output": {
+            //打包输出位置
+            //直接写在最外层output.base配置中会导致通过sencha app watch命令生成的站点无法访问css资源
+            //写在这里就不会有这个问题
+            "base": "../docs",
             "appCache": {
                 "enable": true,
                 "path": "cache.appcache"
@@ -369,9 +373,9 @@
      *
      */
     "output": {
-        //如果使用sencha app watch命令生成站点访问，请把base配置换成以下配置，否则css文件无法加载
-        //"base": "${workspace.build.dir}/${build.environment}/${app.name}",
-        "base": "../docs",
+
+        "base": "${workspace.build.dir}/${build.environment}/${app.name}",
+
         "appCache": {
             "enable": false
         }

@@ -52,14 +52,6 @@ Ext.define('app.data.faq.FAQ', {
             }]
         },
         {
-            name: '编译',
-
-            questions: [{
-                question: '为什么我使用sencha app watch命令生成站点访问时无法访问到样式文件',
-                answer: '示例修改了app.json中的base配置，将base配置修改为注释掉的默认配置即可解决问题。'
-            }]
-        },
-        {
             name: '疑问',
 
             questions: [{
