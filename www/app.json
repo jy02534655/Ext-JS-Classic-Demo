@@ -234,18 +234,16 @@
      *          "update": ""      // OPTIONAL
      *      }
      */
-    "css": [
-        {
-            // this entry uses an ant variable that is the calculated
-            // value of the generated output css file for the app,
-            // defined in .sencha/app/defaults.properties
-            "path": "${build.out.css.path}",
-            "bundle": true,
-            "exclude": [
-                "fashion"
-            ]
-        }
-    ],
+    "css": [{
+        // this entry uses an ant variable that is the calculated
+        // value of the generated output css file for the app,
+        // defined in .sencha/app/defaults.properties
+        "path": "${build.out.css.path}",
+        "bundle": true,
+        "exclude": [
+            "fashion"
+        ]
+    }],
     /**
      * 应用加载配置
      *
@@ -371,23 +369,25 @@
      *
      */
     "output": {
+        //如果使用sencha app watch命令生成站点访问，请把base配置换成以下配置，否则css文件无法加载
+        //"base": "${workspace.build.dir}/${build.environment}/${app.name}",
         "base": "../docs",
         "appCache": {
             "enable": false
         }
     },
     /**
-    *  缓存配置
-    *   "cache": {
-    *       // 是否禁用缓存，为true将全局禁用
-    *       "enable": false,
-    *
-    *       // 全局配置
-    *       // 设置为deltas，或者true表示增量更新
-    *       // 不设置或者为false将禁用
-    *       "deltas": "deltas"
-    *   }
-    */
+     *  缓存配置
+     *   "cache": {
+     *       // 是否禁用缓存，为true将全局禁用
+     *       "enable": false,
+     *
+     *       // 全局配置
+     *       // 设置为deltas，或者true表示增量更新
+     *       // 不设置或者为false将禁用
+     *       "deltas": "deltas"
+     *   }
+     */
     "cache": {
         "enable": false,
         "deltas": true
@@ -416,12 +416,10 @@
     /**
      * 项目生成时需要复制的资源文件
      */
-    "resources": [
-        {
-            "path": "resources",
-            "output": "shared"
-        }
-    ],
+    "resources": [{
+        "path": "resources",
+        "output": "shared"
+    }],
     /**
      * Directory path to store all previous production builds. Note that the content
      * generated inside this directory must be kept intact for proper generation of
@@ -432,12 +430,10 @@
      * Additional resources used during theme slicing operations
      */
     "slicer": {
-        "js": [
-            {
-                "path": "sass/example/custom.js",
-                "isWidgetManifest": true
-            }
-        ],
+        "js": [{
+            "path": "sass/example/custom.js",
+            "isWidgetManifest": true
+        }],
         "output": {
             "appCache": {
                 "enable": false
