@@ -7,8 +7,6 @@ Sencha Cmd 版本：v6.5.1.240
 
 在线演示地址：https://jy02534655.github.io/Ext-JS-Classic-Demo/
 
-购买教程：https://item.taobao.com/item.htm?id=557223076969
-
 注意本示例使用 sencha -sdk SDK位置 generate app --classic app 项目路径 命令生成，此命令生成的项目只有app目录（Classic包）
 
 本示例使用了console.log()输出日志，请使用谷歌浏览器打开
